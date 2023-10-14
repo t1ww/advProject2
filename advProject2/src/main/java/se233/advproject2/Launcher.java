@@ -11,9 +11,10 @@ public class Launcher extends Application {
     public void start(Stage stage) {
         GameScreen p = new GameScreen();
         GameLoop gameLoop = new GameLoop(p);
-        Scene scene = new Scene(p, GameScreen.WIDTH* GameScreen.TILE_SIZE, GameScreen.HEIGHT * GameScreen.TILE_SIZE);
-        scene.setOnKeyPressed(event-> p.setKey(event.getCode()));
-        scene.setOnKeyReleased(event -> p.setKey(null));
+        gameLoop.Start();
+        Scene scene = new Scene(p, GameScreen.WIDTH, GameScreen.HEIGHT);
+        scene.setOnKeyPressed(event-> p.pressKey(event.getCode()));
+        scene.setOnKeyReleased(event -> p.releaseKey(event.getCode()));
         stage.setTitle("Shooter game");
         stage.setScene(scene);
         stage.setResizable(false);
