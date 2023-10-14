@@ -3,77 +3,156 @@
 ////             ////
 package se233.advproject2.controller;
 
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
+import javafx.scene.input.KeyCode;
 import se233.advproject2.example.SpaceInvaderApp;
+import se233.advproject2.objects.Bullet;
 import se233.advproject2.objects.Enemy;
 import se233.advproject2.objects.Entity;
 import se233.advproject2.objects.Player;
 import se233.advproject2.view.GameScreen;
 
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class GameLoop implements Runnable {
     public static GameLoop Instance;
+    public void setInstance(GameLoop inst){
+        Instance = inst;
+    };
     // variables
     public GameScreen platform;
     private Player player;
-    private boolean running;
     private List<Entity> entities = new ArrayList<Entity>();
+    private List<Enemy> enemyList = new ArrayList<Enemy>();
+    public List<Bullet> bulletList = new ArrayList<Bullet>();
     public int level;
     public int score;
     private float fps = 1000.0f / 60;
+    private int runtime;
 
     // constructor
     public GameLoop(GameScreen p) {
         this.platform = p;
-        running = true;
+        this.runtime = 0;
     }
     // states
     private enum STATE {
-        PreStart,
-        Running,
-        End
+        PreStart, Running, End
     }
+    public STATE gameState = STATE.PreStart;
     /// running
     @Override
     public void run() {
-        while (running){
-            step();
-            draw();
-            try {
-                Thread.sleep((long)fps);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        while (true){
+            switch (gameState){
+                case PreStart -> {
+                    platform.renderText("press Space to start game", 200, 300);
+                    if(platform.getKeys().contains(KeyCode.SPACE)){
+                        Start();
+                    }
+                    try {
+                        Thread.sleep((long)fps);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                case Running -> {
+                    step();
+                    draw();
+                    try {
+                        Thread.sleep((long)fps);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                case End -> {
+                    platform.renderText("Game over, press enter to restart", platform.WIDTH/2, 50);
+                    if(platform.getKeys().contains(KeyCode.ENTER)){
+                        Start();
+                    }
+                    try {
+                        Thread.sleep((long)fps);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
     }
     // step
     private void step(){
-        // run
-        player.move(platform);
+        try {
+            bulletList.removeIf(n -> n.dead);
+            for (Bullet b : bulletList) {
+                b.move();
+                b.bulletCollision(entities);
+            }
+        }catch (ConcurrentModificationException e) {
+            System.out.println("bulletListEmpty");
+        }
+        entities.removeIf(n -> n.dead); // cleanup on dead
+        for (Entity ent: entities) {
+            ent.step();
+        }
+        // runtime counting
+        runtime++;
     }
     // draw
-    private void draw(){
-        platform.render(entities, score);
-    }
     ///
+    private void draw(){
+        // handled rendering exceptions
+        try {
+            // render
+            platform.renderReset();
+            platform.render(player);
+            platform.render(entities);
+            platform.renderBullets(bulletList);
+            platform.renderHP(player.hp);
+            platform.renderScore(score);
+        } catch (NullPointerException | IndexOutOfBoundsException e){
+            e.printStackTrace();
+        }
+    }
     // start
     public void Start(){
-        level = 0; // reset level
+        /// clean up
+        clear(); // clear lists
+        // resets
+        runtime = 0;
+        level = 0;
         score = 0;
+        platform.renderReset();
+        /// creating
         // create player
         player = new Player(300, 600, 40);
         entities.add(player);
         // create enemies
-        for (int i = 0; i < 5; i++) {
-            entities.add(new Enemy(90 + i*100, 150, 40));
-        }
+        spawnEnemyWave();
+        gameState = STATE.Running;
         System.out.println("game start");
+    }
+    public void spawnEnemyWave(){
+        System.out.println("spawning new enemy wave");
+        enemyList = entities.stream()
+                .filter(ent -> ent instanceof Enemy)
+                .map(ent -> (Enemy) ent)
+                .toList();
+        enemyList.forEach(enemy -> enemy.setY(enemy.getY() + 50));
+        for (int i = 0; i < 5; i++) {
+            Enemy e = new Enemy(90 + i*100, 150, 40);
+            entities.add(e);
+        }
     }
     // end
     public void End(){
+        gameState = STATE.End;
+    }
+    public void clear(){
+        // clear lists
         entities.clear();
+        bulletList.clear();
+        player = null;
     }
 }

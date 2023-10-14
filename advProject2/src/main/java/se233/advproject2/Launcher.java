@@ -11,7 +11,7 @@ public class Launcher extends Application {
     public void start(Stage stage) {
         GameScreen p = new GameScreen();
         GameLoop gameLoop = new GameLoop(p);
-        gameLoop.Start();
+        gameLoop.setInstance(gameLoop);
         Scene scene = new Scene(p, GameScreen.WIDTH, GameScreen.HEIGHT);
         scene.setOnKeyPressed(event-> p.pressKey(event.getCode()));
         scene.setOnKeyReleased(event -> p.releaseKey(event.getCode()));
