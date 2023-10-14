@@ -31,6 +31,7 @@ public class GameLoop implements Runnable {
     public int score;
     private float fps = 1000.0f / 60;
     private int runtime;
+    private int spawning = 0;
 
     // constructor
     public GameLoop(GameScreen p) {
@@ -82,20 +83,18 @@ public class GameLoop implements Runnable {
         }
     }
     // step
-    private void step(){
-        try {
-            bulletList.removeIf(n -> n.dead);
-            for (Bullet b : bulletList) {
-                b.move();
-                b.bulletCollision(entities);
-            }
-        }catch (ConcurrentModificationException e) {
-            System.out.println("bulletListEmpty");
+    private void step() {
+        bulletList.removeIf(n -> n.dead);
+        // clear bullets when out of bound
+        bulletList.removeIf(n -> n.getY() > platform.WIDTH + 50 || n.getY() < -50);
+        for (Bullet b : bulletList) {
+            b.move();
+            b.bulletCollision(entities);
         }
-        entities.removeIf(n -> n.dead); // cleanup on dead
-        for (Entity ent: entities) {
+        for (Entity ent : entities) {
             ent.step();
         }
+        entities.removeIf(n -> n.dead); // cleanup on dead
         // runtime counting
         runtime++;
     }
