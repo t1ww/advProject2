@@ -40,29 +40,16 @@ public class GameScreen extends Pane {
     public void render(Entity ent) // render one ent
             throws NullPointerException,IndexOutOfBoundsException {
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        if (ent.getClass().equals(Player.class)) {
-            gc.setFill(Color.BLUE);
-        } else if (ent.getClass().equals(Enemy.class)) {
-            gc.setFill(Color.RED);
-        }
+        gc.setFill(ent.getSprite());
         gc.fillRect(ent.getX(), ent.getY(), ent.getSize(), ent.getSize());
     }
     public void render(List<Entity> ent) // render ent list
             throws NullPointerException,IndexOutOfBoundsException{
         GraphicsContext gc = canvas.getGraphicsContext2D();
         for (Entity e : ent) {
-            if (e.getClass().equals(Player.class)) {
-                gc.setFill(Color.BLUE);
-            }else if(e.getClass().equals(Enemy.class)){
-                gc.setFill(Color.RED);
-            }
+            gc.setFill(e.getSprite());
             gc.fillRect(e.getX() , e.getY() , e.getSize(), e.getSize());
         }
-    }
-    public void renderScore(int score){
-        GraphicsContext gc = canvas.getGraphicsContext2D();
-        gc.setFill(Color.BLACK);
-        gc.fillText("score : " + score , 10 , 10);
     }
     public void renderText(String Text, int x, int y) {
         GraphicsContext gc = canvas.getGraphicsContext2D();

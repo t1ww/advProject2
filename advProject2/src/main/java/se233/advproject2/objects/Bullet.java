@@ -4,7 +4,6 @@ import se233.advproject2.controller.GameLoop;
 
 import java.util.ConcurrentModificationException;
 import java.util.List;
-import java.util.Map;
 
 public class Bullet {
     public boolean dead = false;
@@ -44,31 +43,24 @@ public class Bullet {
         this.speed = speed;
         this.damage = damage;
     }
-    public boolean bulletCollision(List<Entity> entityList) throws ConcurrentModificationException {
-        if(!hit)
-        for (Entity ent: entityList) {
-            if(checkFor == ent.getClass()) { // check for targeted entity
+    public void bulletCollision(List<Entity> entityList) throws ConcurrentModificationException {
+        if(!hit) for (Entity ent: entityList) {
+            if(checkFor.isAssignableFrom(ent.getClass())) { // check for targeted entity and it's subclasses
                 int buffer = 15;
+                if(checkFor == Player.class){ buffer = -5; }
                 boolean checkinX = (this.x > ent.getX() - buffer && this.x < ent.getX() + ent.getSize() + buffer);
                 boolean checkinY = (this.y > ent.getY() && this.y < ent.getY() + ent.getSize());
                 if (checkinX && checkinY) {
-                    String collided = "noone";
-                    if (ent.getClass() == Player.class) {
-                        collided = "player";
-                    } else if (ent.getClass() == Enemy.class) {
-                        collided = "enemy";
-                    }
                     ent.hurt(damage);
                     hit = true; // set hit so no more damaging
                     // add score
                     if (ent.getClass() != Player.class) GameLoop.Instance.score++;
-                    System.out.println("Collided with " + collided);
-                    return true;
+                    System.out.println("Collided with " + ent.name);
+                    return;
                 }
             }
         }
         if(hit) dead = true;
-        return false;
     }
     // move
     public void move() throws ConcurrentModificationException {

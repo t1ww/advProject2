@@ -24,9 +24,11 @@ public class GameLoop implements Runnable {
     private List<Entity> entities = new ArrayList<Entity>();
     private List<Enemy> enemyList = new ArrayList<Enemy>();
     public List<Bullet> bulletList = new ArrayList<Bullet>();
+    private float fps = 1000.0f / 60;
+    private int waveCD = 800;
+    int waveCD_count = 0;
     public int level = 0;
     public int score;
-    private float fps = 1000.0f / 60;
     private int runtime;
     public int enemycount = -1;
     Alarm alarm;
@@ -34,10 +36,13 @@ public class GameLoop implements Runnable {
     private enum STATE {
         PreStart, Running, End
     } public STATE gameState = STATE.PreStart;
+    private enum WAVE {
+        Creeps, Boss
+    } public WAVE gameWave = WAVE.Creeps;
     // constructor
     public GameLoop(GameScreen p) {
         this.platform = p;
-        this.runtime = 0;
+        this.runtime = 1;
     }
     /// running
     @Override
@@ -65,7 +70,9 @@ public class GameLoop implements Runnable {
                     }
                 }
                 case End -> {
-                    platform.renderText("Game over, press enter to restart", platform.WIDTH/2, 50);
+                    String time = getTime(runtime);
+                    platform.renderText("YOU LASTED : " + time, 200, 300);
+                    platform.renderText("Game OVER, press enter to restart", 200, 330);
                     if(platform.getKeys().contains(KeyCode.ENTER)){
                         Start();
                     }
@@ -82,7 +89,7 @@ public class GameLoop implements Runnable {
             }
         }
     }
-    // step
+    /// step
     private void step() {
         // step events
         if(alarm != null)alarm.step();
@@ -99,18 +106,24 @@ public class GameLoop implements Runnable {
         bulletList.removeIf(n -> n.getY() > platform.WIDTH + 50 || n.getY() < -50); // remove when out of bound
         entities.removeIf(n -> n.dead); // remove on dead
         // spawn next wave on cleared
-        if (enemycount == 0){
+        if (enemycount == 0 && alarm == null)  { // only when haven't init (alarm was null)
+            // change next wave
+            gameWave = (WAVE.Creeps == gameWave)? WAVE.Boss : WAVE.Creeps;
             spawnWaveInit(3);
             enemycount--;
         }
         // runtime counting
         runtime++;
-        if(runtime == 600){ // next wave every 10 sec
-            spawnWaveInit(3);
+        //,/ only on creeps wave
+        if(gameWave.equals(WAVE.Creeps)) {
+            waveCD_count++;
+            // next wave every given time
+            if (waveCD_count == waveCD) {
+                spawnWaveInit(3);
+            }
         }
     }
-    // draw
-    ///
+    /// draw
     private void draw(){
         // handled rendering exceptions
         try {
@@ -120,36 +133,19 @@ public class GameLoop implements Runnable {
             platform.render(entities);
             platform.renderBullets(bulletList);
             platform.renderHP(player.hp);
-            platform.renderScore(score);
-            if(alarm != null)platform.renderText("Enemy spawn in " + alarm.countdown, 300,300);
+            platform.renderText("Score : " + score , 10, 10);
+            platform.renderText("Level : " + level , 10, 30);
+            platform.renderText("Enemy count : " + enemycount, 100, 10);
+            String spawning = (gameWave == WAVE.Creeps) ? "Enemy Creeps" : "Boss" ;
+            if(alarm != null)platform.renderText(spawning + " spawn in " + alarm.countdown, 300,300);
         } catch (NullPointerException | IndexOutOfBoundsException e){
             e.printStackTrace();
         }
     }
-    // start
-    public void Start(){
-        /// clean up
-        clear(); // clear lists
-        // resets
-        runtime = 0;
-        level = 0;
-        score = 0;
-        platform.renderReset();
-        /// creating
-        // create player
-        player = new Player(300, 600, 40);
-        entities.add(player);
-        // create enemies
-        alarm = new Alarm(5);
-        gameState = STATE.Running;
-        System.out.println("game start");
-    }
     public void spawnWaveInit(int count){
-        if(alarm == null) alarm = new Alarm(count);
+        alarm = new Alarm(count);
     }
     public void spawnEnemyWave(){
-        level++; // next level
-        runtime = 0; // reset runtime
         System.out.println("spawning new enemy wave");
         enemyList = entities.stream()
                 .filter(ent -> ent instanceof Enemy)
@@ -157,13 +153,36 @@ public class GameLoop implements Runnable {
                 .toList();
         enemyList.forEach(enemy -> enemy.setY(enemy.getY() + 50));
         enemycount = enemyList.size();
-        for (int i = 0; i < 5; i++) {
-            Enemy e = new Enemy(90 + i*100, 150, 40, level);
-            entities.add(e);
+        if(gameWave == WAVE.Creeps) { // wave check
+            // small wave
+            for (int i = 0; i < 5; i++) {
+                entities.add(new Enemy(90 + i * 100, 150, 32, level));
+                enemycount++;
+            }
+            waveCD_count = 0; // reset counter
+        } else {
+            // boss wave
+            entities.add(new Boss((platform.WIDTH / 2) , 150, 64, level));
             enemycount++;
         }
     }
-    // end
+    // game setup methods
+    public void Start(){
+        /// clean up
+        clear(); // clear lists
+        // reset variables
+        runtime = 0;level = 0;score = 0;
+        waveCD_count = 0;enemycount = -1;
+        platform.renderReset();
+        /// creating
+        // create player
+        player = new Player(300, 600, 32);
+        entities.add(player);
+        // create enemies
+        alarm = new Alarm(5);
+        gameState = STATE.Running;
+        System.out.println("game start");
+    }
     public void End(){
         gameState = STATE.End;
     }
@@ -172,5 +191,17 @@ public class GameLoop implements Runnable {
         entities.clear();
         bulletList.clear();
         player = null;
+    }
+
+    /// misc methods
+    public String getTime(int time){
+        String str = "";
+        int hours = time/216000;
+        time -= hours * 216000;
+        int minutes = time/3600;
+        time -= minutes * 3600;
+        int seconds = time/60;
+        str = String.format("%02d:%02d:%02d", hours, minutes, seconds);
+        return str;
     }
 }
