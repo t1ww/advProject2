@@ -4,14 +4,11 @@
 package se233.advproject2.controller;
 
 import javafx.scene.input.KeyCode;
-import se233.advproject2.example.SpaceInvaderApp;
 import se233.advproject2.objects.*;
 import se233.advproject2.view.GameScreen;
 
 import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class GameLoop implements Runnable {
     public static GameLoop Instance;
@@ -30,7 +27,7 @@ public class GameLoop implements Runnable {
     public int level = 0;
     public int score;
     private int runtime;
-    public int enemycount = -1;
+    public int enemyCount = -1;
     Alarm alarm;
     // states
     private enum STATE {
@@ -45,12 +42,21 @@ public class GameLoop implements Runnable {
         this.runtime = 1;
     }
     /// running
+    double xStart = -200,xto = 200,_x = xStart;
+    double xStart2 = -300,xto2 = 200,_x2 = xStart;
+    boolean pause = false;
     @Override
     public void run() {
         while (true){
+            if(platform.getKeyPressed().equals(KeyCode.BACK_SPACE)){
+                gameRestart();
+            }
+            if(pause)continue; // simple pause
             switch (gameState){
                 case PreStart -> {
-                    platform.renderText("press Space to start game", 200, 300);
+                    _x += lerp(_x, xto, .05);
+                    platform.renderReset();
+                    platform.renderText("press Space to start game", (int)_x, 300);
                     if(platform.getKeys().contains(KeyCode.SPACE)){
                         Start();
                     }
@@ -71,8 +77,11 @@ public class GameLoop implements Runnable {
                 }
                 case End -> {
                     String time = getTime(runtime);
-                    platform.renderText("YOU LASTED : " + time, 200, 300);
-                    platform.renderText("Game OVER, press enter to restart", 200, 330);
+                    _x += lerp(_x, xto, .05);
+                    _x2 += lerp(_x2, xto2, .04);
+                    platform.renderReset();
+                    platform.renderText("YOU LASTED : " + time, (int) _x2, 300);
+                    platform.renderText("Game OVER, press enter to restart", (int) _x, 330);
                     if(platform.getKeys().contains(KeyCode.ENTER)){
                         Start();
                     }
@@ -106,11 +115,11 @@ public class GameLoop implements Runnable {
         bulletList.removeIf(n -> n.getY() > platform.WIDTH + 50 || n.getY() < -50); // remove when out of bound
         entities.removeIf(n -> n.dead); // remove on dead
         // spawn next wave on cleared
-        if (enemycount == 0 && alarm == null)  { // only when haven't init (alarm was null)
+        if (enemyCount == 0 && alarm == null)  { // only when haven't init (alarm was null)
             // change next wave
             gameWave = (WAVE.Creeps == gameWave)? WAVE.Boss : WAVE.Creeps;
             spawnWaveInit(3);
-            enemycount--;
+            enemyCount--;
         }
         // runtime counting
         runtime++;
@@ -135,7 +144,9 @@ public class GameLoop implements Runnable {
             platform.renderHP(player.hp);
             platform.renderText("Score : " + score , 10, 10);
             platform.renderText("Level : " + level , 10, 30);
-            platform.renderText("Enemy count : " + enemycount, 100, 10);
+            String time = getTime(runtime);
+            platform.renderText("Time : " + time, 100, 10);
+            platform.renderText("Enemy count : " + enemyCount, 100, 30);
             String spawning = (gameWave == WAVE.Creeps) ? "Enemy Creeps" : "Boss" ;
             if(alarm != null)platform.renderText(spawning + " spawn in " + alarm.countdown, 300,300);
         } catch (NullPointerException | IndexOutOfBoundsException e){
@@ -151,19 +162,20 @@ public class GameLoop implements Runnable {
                 .filter(ent -> ent instanceof Enemy)
                 .map(ent -> (Enemy) ent)
                 .toList();
-        enemyList.forEach(enemy -> enemy.setY(enemy.getY() + 50));
-        enemycount = enemyList.size();
+        // move old enemies
+        enemyList.forEach(enemy -> enemy.move());
+        enemyCount = enemyList.size();
         if(gameWave == WAVE.Creeps) { // wave check
             // small wave
             for (int i = 0; i < 5; i++) {
                 entities.add(new Enemy(90 + i * 100, 150, 32, level));
-                enemycount++;
+                enemyCount++;
             }
             waveCD_count = 0; // reset counter
         } else {
             // boss wave
             entities.add(new Boss((platform.WIDTH / 2) , 150, 64, level));
-            enemycount++;
+            enemyCount++;
         }
     }
     // game setup methods
@@ -172,7 +184,8 @@ public class GameLoop implements Runnable {
         clear(); // clear lists
         // reset variables
         runtime = 0;level = 0;score = 0;
-        waveCD_count = 0;enemycount = -1;
+        waveCD_count = 0;
+        enemyCount = -1;
         platform.renderReset();
         /// creating
         // create player
@@ -185,6 +198,8 @@ public class GameLoop implements Runnable {
     }
     public void End(){
         gameState = STATE.End;
+        xStart = -200;xto = 200;_x = xStart;
+        xStart2 = -400;xto2 = 200;_x2 = xStart;
     }
     public void clear(){
         // clear lists
@@ -192,7 +207,11 @@ public class GameLoop implements Runnable {
         bulletList.clear();
         player = null;
     }
-
+    public void gameRestart(){
+        End();
+        clear();
+        Start();
+    }
     /// misc methods
     public String getTime(int time){
         String str = "";
@@ -203,5 +222,8 @@ public class GameLoop implements Runnable {
         int seconds = time/60;
         str = String.format("%02d:%02d:%02d", hours, minutes, seconds);
         return str;
+    }
+    public double lerp(double v1, double v2, double amount){
+        return (v2-v1)*amount;
     }
 }

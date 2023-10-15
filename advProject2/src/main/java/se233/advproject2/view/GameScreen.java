@@ -57,6 +57,13 @@ public class GameScreen extends Pane {
         gc.fillText(Text, x , y);
     }
     public List<KeyCode> getKeys() { return key; }
+    KeyCode keyPressed;
+    public KeyCode getKeyPressed() {
+        if(!key.isEmpty() && keyPressed != key.get(key.size()-1)) {
+            keyPressed = key.get(key.size()-1);
+            return keyPressed;
+        }else return null;
+    }
     public void pressKey(KeyCode key) {
         if (!this.key.contains(key)) { // don't add if already have
             this.key.add(key);

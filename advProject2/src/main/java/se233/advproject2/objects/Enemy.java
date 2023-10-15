@@ -8,6 +8,7 @@ public class Enemy extends Entity {
     int shootCD_Counter = 0;
     int shootCD_reduction = 0;
     int Level;
+    private int movestreak = 0;
     // constructor
     public Enemy(double x, double y, int size, int lvl) {
         super(x,y,size);
@@ -42,8 +43,13 @@ public class Enemy extends Entity {
         hp -= dmg;
         if(hp <= 0){
             dead = true;
-            game.enemycount--;
+            game.enemyCount--;
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
+    }
+
+    public void move() {
+        y += 50;
+        movestreak++;
     }
 }
