@@ -29,19 +29,16 @@ public class GameLoop implements Runnable {
     private float fps = 1000.0f / 60;
     private int runtime;
     public int enemycount = -1;
-
     Alarm alarm;
-
+    // states
+    private enum STATE {
+        PreStart, Running, End
+    } public STATE gameState = STATE.PreStart;
     // constructor
     public GameLoop(GameScreen p) {
         this.platform = p;
         this.runtime = 0;
     }
-    // states
-    private enum STATE {
-        PreStart, Running, End
-    }
-    public STATE gameState = STATE.PreStart;
     /// running
     @Override
     public void run() {
@@ -92,10 +89,10 @@ public class GameLoop implements Runnable {
         for (Bullet b : bulletList) {
             b.move();
             b.bulletCollision(entities);
-        }
+        } // bullet steps
         for (Entity ent : entities) {
             ent.step();
-        }
+        } // entities steps
         // cleanups
         if(alarm.countdown < 0) alarm = null;
         bulletList.removeIf(n -> n.dead); // remove on hit
