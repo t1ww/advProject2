@@ -11,8 +11,11 @@ public class Player extends Entity {
     // init variables
     int startX = 300, startY = 750;
     int speed = 5;
+    int fireRate = 16;
+    int fireDelay = 0;
+    public int hp = 3;
     boolean keyLeft = false,keyRight = false, keySprint = false;
-    boolean keyShoot = false,trigger = false, auto = false;
+    boolean keyShoot = false,trigger = false, auto = true;
     public Player(double x, double y, int size) {
         super(x,y,size);
         this.name = "player";
@@ -34,17 +37,30 @@ public class Player extends Entity {
                 }
             }
         if(keyShoot){
+            if(auto){
+                if(fireDelay <= 0){
+                    // shot fired
+                    createBullet();
+                    // delay the shot
+                    fireDelay = fireRate;
+                }
+            }else
             if (!trigger){// semi auto
-                System.out.println("player shot bullet");
-                // create bullet
-                Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 10);
-                game.bulletList.add(b);
-                trigger = true;
+                createBullet();
             }
         }else{
             // reset trigger
             trigger = false;
+            fireDelay = 0;
         }
+        if(fireDelay > 0) fireDelay--;
+    }
+    private void createBullet(){
+        System.out.println("player shot fired");
+        // create bullet
+        Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 10, Enemy.class);
+        game.bulletList.add(b);
+        trigger = true;
     }
     // move
     public void move() {

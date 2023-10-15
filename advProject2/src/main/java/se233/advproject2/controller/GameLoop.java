@@ -5,10 +5,7 @@ package se233.advproject2.controller;
 
 import javafx.scene.input.KeyCode;
 import se233.advproject2.example.SpaceInvaderApp;
-import se233.advproject2.objects.Bullet;
-import se233.advproject2.objects.Enemy;
-import se233.advproject2.objects.Entity;
-import se233.advproject2.objects.Player;
+import se233.advproject2.objects.*;
 import se233.advproject2.view.GameScreen;
 
 import java.util.ArrayList;
@@ -27,11 +24,13 @@ public class GameLoop implements Runnable {
     private List<Entity> entities = new ArrayList<Entity>();
     private List<Enemy> enemyList = new ArrayList<Enemy>();
     public List<Bullet> bulletList = new ArrayList<Bullet>();
-    public int level;
+    public int level = 0;
     public int score;
     private float fps = 1000.0f / 60;
     private int runtime;
-    private int spawning = 0;
+    public int enemycount = -1;
+
+    Alarm alarm;
 
     // constructor
     public GameLoop(GameScreen p) {
@@ -80,13 +79,16 @@ public class GameLoop implements Runnable {
                     }
                 }
             }
+            // if esc leave game
+            if(platform.getKeys().contains(KeyCode.ESCAPE)){
+                System.exit(0);
+            }
         }
     }
     // step
     private void step() {
-        bulletList.removeIf(n -> n.dead);
-        // clear bullets when out of bound
-        bulletList.removeIf(n -> n.getY() > platform.WIDTH + 50 || n.getY() < -50);
+        // step events
+        if(alarm != null)alarm.step();
         for (Bullet b : bulletList) {
             b.move();
             b.bulletCollision(entities);
@@ -94,9 +96,21 @@ public class GameLoop implements Runnable {
         for (Entity ent : entities) {
             ent.step();
         }
-        entities.removeIf(n -> n.dead); // cleanup on dead
+        // cleanups
+        if(alarm.countdown < 0) alarm = null;
+        bulletList.removeIf(n -> n.dead); // remove on hit
+        bulletList.removeIf(n -> n.getY() > platform.WIDTH + 50 || n.getY() < -50); // remove when out of bound
+        entities.removeIf(n -> n.dead); // remove on dead
+        // spawn next wave on cleared
+        if (enemycount == 0){
+            spawnWaveInit(3);
+            enemycount--;
+        }
         // runtime counting
         runtime++;
+        if(runtime == 600){ // next wave every 10 sec
+            spawnWaveInit(3);
+        }
     }
     // draw
     ///
@@ -110,6 +124,7 @@ public class GameLoop implements Runnable {
             platform.renderBullets(bulletList);
             platform.renderHP(player.hp);
             platform.renderScore(score);
+            if(alarm != null)platform.renderText("Enemy spawn in " + alarm.countdown, 300,300);
         } catch (NullPointerException | IndexOutOfBoundsException e){
             e.printStackTrace();
         }
@@ -128,20 +143,27 @@ public class GameLoop implements Runnable {
         player = new Player(300, 600, 40);
         entities.add(player);
         // create enemies
-        spawnEnemyWave();
+        alarm = new Alarm(5);
         gameState = STATE.Running;
         System.out.println("game start");
     }
+    public void spawnWaveInit(int count){
+        if(alarm == null) alarm = new Alarm(count);
+    }
     public void spawnEnemyWave(){
+        level++; // next level
+        runtime = 0; // reset runtime
         System.out.println("spawning new enemy wave");
         enemyList = entities.stream()
                 .filter(ent -> ent instanceof Enemy)
                 .map(ent -> (Enemy) ent)
                 .toList();
         enemyList.forEach(enemy -> enemy.setY(enemy.getY() + 50));
+        enemycount = enemyList.size();
         for (int i = 0; i < 5; i++) {
-            Enemy e = new Enemy(90 + i*100, 150, 40);
+            Enemy e = new Enemy(90 + i*100, 150, 40, level);
             entities.add(e);
+            enemycount++;
         }
     }
     // end

@@ -7,17 +7,18 @@ public class Entity {
     GameLoop game = GameLoop.Instance;
     GameScreen platform = GameLoop.Instance.platform;
     String name;
+    // init variables
+    public boolean dead = false;
+    public int hp;
+    private double x, y;
+    private int size;
     public Entity(double x, double y, int size){
         this.x = x;
         this.y = y;
         this.size = size;
         this.name = "entity";
+        this.hp = 1;
     }
-    // init variables
-    public boolean dead = false;
-    public int hp = 3;
-    private double x, y;
-    private int size;
     public void step(){}
     public double getX() { return x; }
     public double getY() { return y; }
@@ -28,6 +29,7 @@ public class Entity {
         hp -= dmg;
         if(hp <= 0){
             dead = true;
+            if(getClass() == Enemy.class) game.enemycount--;
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
     }
