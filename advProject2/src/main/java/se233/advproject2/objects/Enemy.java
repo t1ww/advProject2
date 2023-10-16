@@ -44,7 +44,7 @@ public class Enemy extends Entity {
     }
     public void shoot(){
         // create bullet
-        Bullet b = new Bullet(getX() + (getSize()/2), getY() + getSize() + 5, -90, 10, Player.class);
+        Bullet b = new Bullet(getX() + (getSize()/2), getY() + getSize() + 5, -90, 8, Player.class);
         game.bulletList.add(b);
         cdReset();
     }
@@ -77,12 +77,9 @@ public class Enemy extends Entity {
                     game.End();
                 }
                 yto += 50;
-                // create new friends
-                for (int i = 0; i < 5; i++) {
-                    game.entities.add(new Enemy(90 + i * 100, 150, 32, game.level));
-                    game.enemyCount++;
-                }
                 moveDir = MOVE_ROTAION.left;
+                // set next move to create more friends C:
+                game.creationPhase = true;
             }
         }
     }

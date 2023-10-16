@@ -22,13 +22,15 @@ public class GameLoop implements Runnable {
     private List<Enemy> enemyList = new ArrayList<Enemy>();
     public List<Bullet> bulletList = new ArrayList<Bullet>();
     private float fps = 1000.0f / 60;
-    private int waveCD = 800;
+    private int waveCD = 360;
     int waveCD_count = 0;
     public int level = 0;
     public int score;
     private int runtime;
     public int enemyCount = -1;
     Alarm alarm;
+
+    public boolean creationPhase;
     // states
     private enum STATE {
         PreStart, Running, End
@@ -126,7 +128,16 @@ public class GameLoop implements Runnable {
         // spawn next wave on cleared
         if (enemyCount == 0 && alarm == null)  { // only when haven't init (alarm was null)
             // change next wave
-            gameWave = (WAVE.Creeps == gameWave)? WAVE.Boss : WAVE.Creeps;
+            switch (gameWave){
+                case Creeps -> {
+                    // dont spawn more enemy
+                    creationPhase = false;
+                    gameWave = WAVE.Boss;
+                }
+                case Boss -> {
+                    gameWave = WAVE.Creeps;
+                }
+            }
             spawnWaveInit(3);
             enemyCount--;
         }
@@ -176,6 +187,7 @@ public class GameLoop implements Runnable {
             enemyList.forEach(Enemy::move);
             waveCD_count = 0; // reset counter
         } else {
+            creationPhase = false;
             // boss wave
             entities.add(new Boss((platform.WIDTH / 2) , 150, 64, level));
             enemyCount++;
@@ -186,6 +198,7 @@ public class GameLoop implements Runnable {
         /// clean up
         clear(); // clear lists
         // reset variables
+        creationPhase = true;
         runtime = 0;level = 0;score = 0;
         waveCD_count = 0;
         enemyCount = -1;
@@ -196,7 +209,6 @@ public class GameLoop implements Runnable {
         entities.add(player);
         // create enemies
         alarm = new Alarm(1);
-        // MAKE SURE TO FORCE CREATE ON FIRST WAVE
         gameState = STATE.Running;
         gameWave = WAVE.Creeps;
         System.out.println("game start");

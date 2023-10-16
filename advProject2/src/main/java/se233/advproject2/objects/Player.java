@@ -10,7 +10,7 @@ import java.util.ConcurrentModificationException;
 public class Player extends Entity {
     // init variables
     boolean starting = true;
-    int speed = 5;
+    int speed = 3;
     int fireRate = 16;
     int fireDelay = 0;
     public int hp = 3;
@@ -75,7 +75,7 @@ public class Player extends Entity {
     private void createBullet(){
         System.out.println("player shot fired");
         // create bullet
-        Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 10, Enemy.class);
+        Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class);
         game.bulletList.add(b);
         trigger = true;
     }

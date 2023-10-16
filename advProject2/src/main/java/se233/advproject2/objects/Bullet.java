@@ -28,6 +28,8 @@ public class Bullet {
     }
     private boolean hit = false;
     private Class checkFor;
+    private int changeDirTime = 90; // 1.30s
+    private boolean homing;
 
     public Bullet(double x, double y, double direction, double speed, Class checkFor){
         this.x = x;
@@ -35,13 +37,25 @@ public class Bullet {
         this.direction = direction;
         this.speed = speed;
         this.checkFor = checkFor;
+        this.homing = false;
     }
-    public Bullet(double x, double y, double direction, double speed, int damage){
+    public Bullet(double x, double y, double direction, double speed, Class checkFor, int damage){
         this.x = x;
         this.y = y;
         this.direction = direction;
         this.speed = speed;
+        this.checkFor = checkFor;
         this.damage = damage;
+        this.homing = false;
+    }
+    public Bullet(double x, double y, double direction, double speed, Class checkFor, int damage, boolean homing){
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
+        this.speed = speed;
+        this.checkFor = checkFor;
+        this.damage = damage;
+        this.homing = homing;
     }
     public void bulletCollision(List<Entity> entityList) throws ConcurrentModificationException {
         if(!hit) for (Entity ent: entityList) {
@@ -64,6 +78,18 @@ public class Bullet {
     }
     // move
     public void move() throws ConcurrentModificationException {
+        if(homing) {
+            // change direction
+            if (changeDirTime > 0) changeDirTime--;
+            if (changeDirTime == 0) {
+                // change direction to towards player
+
+                // prevent redo
+                changeDirTime--;
+                // no reset
+            }
+        }
+        // handling
         double angleRad = Math.toRadians(direction);
         double hsp = Math.cos(angleRad) * speed;
         double vsp = Math.sin(angleRad) * speed;
@@ -71,5 +97,4 @@ public class Bullet {
         x += hsp;
         y -= vsp;
     }
-    // hit
 }

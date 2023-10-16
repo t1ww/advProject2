@@ -30,7 +30,7 @@ public class Boss extends Enemy {
                 this.shootCD_reduction = -10;
             }
             case 1 -> {
-                hp = 100;
+                hp = 80;
                 name = "tracker";
                 type = bossType.tracker;
                 sprite = Color.PURPLE;
@@ -113,6 +113,8 @@ public class Boss extends Enemy {
             dead = true;
             game.enemyCount--; // removed from list
             game.level++; // next level
+            // reset phase
+            game.creationPhase = true;
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
     }
