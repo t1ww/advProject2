@@ -21,18 +21,35 @@ public class Alarm {
             counter = 0; // reset counter
         }
         if (countdown == 0){
-            GameLoop game = GameLoop.Instance;
-            game.enemyMove();
             // run the method
-            if(game.creationPhase){
-                // create new friends
-                for (int i = 0; i < 5; i++) {
-                    game.entities.add(new Enemy(90 + i * 100, 150, 32, game.level));
+            if(game.creationPhase){ // frontline creation
+                /// create a wave of enemies 
+                // left wall
+                for (int i = 0; i < 3; i++) {
+                    game.entities.add(new Enemy(90 + (i * 34), 150, 32, game.level));
                     game.enemyCount++;
                 }
                 // started the game
                 game.creationPhase = false;
             }
+            // move all previous enemies down
+                game.enemiesMoveDown();
+            /// create a wave of enemies 
+                // left wall
+                for (int i = 0; i < 3; i++) {
+                    game.entities.add(new Enemy(90 + (i * 34), 150, 32, game.level));
+                    game.enemyCount++;
+                }
+                // second tier
+                for (int i = 0; i < 3; i++) {
+                    game.entities.add(new Enemy(90 + (i * 34), 150, 32, game.level));
+                    game.enemyCount++;
+                }
+                // right wall
+                for (int i = 0; i < 3; i++) {
+                    game.entities.add(new Enemy(90 + (i * 34), 150, 32, game.level));
+                    game.enemyCount++;
+                }
             countdown--;
         }
     }
