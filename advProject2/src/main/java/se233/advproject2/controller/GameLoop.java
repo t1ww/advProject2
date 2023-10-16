@@ -43,10 +43,13 @@ public class GameLoop implements Runnable {
         this.platform = p;
         this.runtime = 1;
     }
-    /// running
+
+    /// // METHODS // ///
+    // misc vars
     double xStart = -200,xto = 200,_x = xStart;
     double xStart2 = -300,xto2 = 200,_x2 = xStart;
     boolean pause = false;
+    /// running
     @Override
     public void run() {
         while (true){
@@ -176,7 +179,18 @@ public class GameLoop implements Runnable {
     public void spawnWaveInit(int count){
         alarm = new Alarm(count);
     }
-    public void enemyMove(){
+    public void enemiesSpawn(){
+        
+    } 
+    public void enemiesMoveDown(){
+        enemyList = entities.stream()
+                .filter(ent -> ent instanceof Enemy)
+                .map(ent -> (Enemy) ent)
+                .toList();
+        enemyCount = enemyList.size(); // recheck size
+        enemyList.forEach(Enemy::moveDown);
+    }
+    public void enemyMove(){ // remove this
         System.out.println("firing new enemy wave");
         enemyList = entities.stream()
                 .filter(ent -> ent instanceof Enemy)
