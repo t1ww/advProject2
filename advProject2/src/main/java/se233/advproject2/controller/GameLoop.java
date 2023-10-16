@@ -129,13 +129,18 @@ public class GameLoop implements Runnable {
         bulletList.removeIf(n -> n.getY() > platform.WIDTH + 50 || n.getY() < -50); // remove when out of bound
         entities.removeIf(n -> n.dead); // remove on dead
         // spawn next wave on cleared
-        if (enemyCount == 0 && alarm == null)  { // only when haven't init (alarm was null)
+        
+
+// put this on enemy death instead 
+if (enemyCount == 0 && alarm == null)  { // only when haven't init (alarm was null)
             // change next wave
             switch (gameWave){
                 case Creeps -> {
                     // dont spawn more enemy
                     creationPhase = false;
-                    gameWave = WAVE.Boss;
+
+// make setBoseWave() and setCreepsWave()
+                    gameWave = WAVE.Boss; 
                 }
                 case Boss -> {
                     gameWave = WAVE.Creeps;
@@ -144,6 +149,9 @@ public class GameLoop implements Runnable {
             spawnWaveInit(3);
             enemyCount--;
         }
+
+
+
         // runtime counting
         runtime++;
         //,/ only on creeps wave
@@ -179,8 +187,15 @@ public class GameLoop implements Runnable {
     public void spawnWaveInit(int count){
         alarm = new Alarm(count);
     }
-    public void enemiesSpawn(){
-        
+    public void enemiesSpawn(){ // put this in alarm
+        if(gameWave == WAVE.Creeps) { // wave check
+            // spawn enemies (code is in alarm)
+            waveCD_count = 0; // reset counter
+        } else { // boss wave
+            // boss creation
+            entities.add(new Boss((platform.WIDTH / 2) , 150, 64, level));
+            enemyCount++;
+        }
     } 
     public void enemiesMoveDown(){
         enemyList = entities.stream()
@@ -222,13 +237,14 @@ public class GameLoop implements Runnable {
         player = new Player(300, 600, 32);
         entities.add(player);
         // create enemies
-        alarm = new Alarm(1);
+        alarm = new Alarm(3);
         gameState = STATE.Running;
         gameWave = WAVE.Creeps;
         System.out.println("game start");
     }
     public void End(){
         gameState = STATE.End;
+        // set pos to ease in from
         xStart = -200;xto = 200;_x = xStart;
         xStart2 = -400;xto2 = 200;_x2 = xStart;
     }
@@ -255,6 +271,6 @@ public class GameLoop implements Runnable {
         return str;
     }
     public double lerp(double v1, double v2, double amount){
-        return (v2-v1)*amount;
+        return Math.round((v2-v1)*amount);
     }
 }
