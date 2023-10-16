@@ -17,8 +17,8 @@ public class GameLoop implements Runnable {
     };
     // variables
     public GameScreen platform;
-    private Player player;
-    private List<Entity> entities = new ArrayList<Entity>();
+    public Player player;
+    public List<Entity> entities = new ArrayList<Entity>();
     private List<Enemy> enemyList = new ArrayList<Enemy>();
     public List<Bullet> bulletList = new ArrayList<Bullet>();
     private float fps = 1000.0f / 60;
@@ -48,15 +48,24 @@ public class GameLoop implements Runnable {
     @Override
     public void run() {
         while (true){
-            if(platform.getKeyPressed().equals(KeyCode.BACK_SPACE)){
-                gameRestart();
+            try {
+                if(platform.getKeyPressed() == KeyCode.BACK_SPACE){
+                    gameRestart();
+                }
+            }catch (NullPointerException e){
+                // no key press
             }
             if(pause)continue; // simple pause
             switch (gameState){
                 case PreStart -> {
                     _x += lerp(_x, xto, .05);
                     platform.renderReset();
-                    platform.renderText("press Space to start game", (int)_x, 300);
+                    // key instruction
+                    String str = "A, D or <-arrow-> to move" +
+                            "\nPRESS SPACE TO SHOOT" +
+                            "\nPRESS LSHIFT TO SPRINT";
+                    platform.renderText(str, (int)_x, 300);
+                    platform.renderText("press Space to start game", (int)_x, 400);
                     if(platform.getKeys().contains(KeyCode.SPACE)){
                         Start();
                     }
@@ -148,7 +157,7 @@ public class GameLoop implements Runnable {
             platform.renderText("Time : " + time, 100, 10);
             platform.renderText("Enemy count : " + enemyCount, 100, 30);
             String spawning = (gameWave == WAVE.Creeps) ? "Enemy Creeps" : "Boss" ;
-            if(alarm != null)platform.renderText(spawning + " spawn in " + alarm.countdown, 300,300);
+            if(alarm != null)platform.renderText(spawning + " next move in " + alarm.countdown, 300,300);
         } catch (NullPointerException | IndexOutOfBoundsException e){
             e.printStackTrace();
         }
@@ -156,21 +165,15 @@ public class GameLoop implements Runnable {
     public void spawnWaveInit(int count){
         alarm = new Alarm(count);
     }
-    public void spawnEnemyWave(){
-        System.out.println("spawning new enemy wave");
+    public void enemyMove(){
+        System.out.println("firing new enemy wave");
         enemyList = entities.stream()
                 .filter(ent -> ent instanceof Enemy)
                 .map(ent -> (Enemy) ent)
                 .toList();
-        // move old enemies
-        enemyList.forEach(enemy -> enemy.move());
         enemyCount = enemyList.size();
         if(gameWave == WAVE.Creeps) { // wave check
-            // small wave
-            for (int i = 0; i < 5; i++) {
-                entities.add(new Enemy(90 + i * 100, 150, 32, level));
-                enemyCount++;
-            }
+            enemyList.forEach(Enemy::move);
             waveCD_count = 0; // reset counter
         } else {
             // boss wave
@@ -192,8 +195,10 @@ public class GameLoop implements Runnable {
         player = new Player(300, 600, 32);
         entities.add(player);
         // create enemies
-        alarm = new Alarm(5);
+        alarm = new Alarm(1);
+        // MAKE SURE TO FORCE CREATE ON FIRST WAVE
         gameState = STATE.Running;
+        gameWave = WAVE.Creeps;
         System.out.println("game start");
     }
     public void End(){

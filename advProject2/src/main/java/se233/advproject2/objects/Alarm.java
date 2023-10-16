@@ -22,7 +22,7 @@ public class Alarm {
         }
         if (countdown == 0){
             // run the method
-            GameLoop.Instance.spawnEnemyWave();
+            GameLoop.Instance.enemyMove();
             countdown--;
         }
     }

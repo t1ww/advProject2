@@ -9,22 +9,39 @@ import java.util.ConcurrentModificationException;
 
 public class Player extends Entity {
     // init variables
-    int startX = 300, startY = 750;
+    boolean starting = true;
     int speed = 5;
     int fireRate = 16;
     int fireDelay = 0;
     public int hp = 3;
     boolean keyLeft = false,keyRight = false, keySprint = false;
     boolean keyShoot = false,trigger = false, auto = true;
+    double startX = x;
+    double startY = y;
     public Player(double x, double y, int size) {
         super(x,y,size);
         this.name = "player";
+        this.startX = x;
+        this.startY = y;
+        this.x = Math.random()*800;
+        this.y = 750;
     }
     // step
     public void step(){
-        shoot();
-        move();
+        if(starting){
+            // ease in player when starting
+            x += game.lerp(x, startX,0.1);
+            y += game.lerp(y, startY, 0.1);
+            if(Math.round(x) == startX && Math.round(y) == startY) {
+                System.out.println("player ready, game started");
+                starting = false;
+            }
+        }else {// allow inputs when started
+            shoot();
+            move();
+        }
     }
+
     // shoot
     public void shoot(){
         resetKeys();
@@ -70,8 +87,8 @@ public class Player extends Entity {
             for (KeyCode cur_key : p.getKeys()) {
                 switch (cur_key) {
                     // key setup
-                    case A -> keyLeft = true;
-                    case D -> keyRight = true;
+                    case A, LEFT -> keyLeft = true;
+                    case D, RIGHT -> keyRight = true;
                     case SHIFT -> keySprint = true;
                 }
             }

@@ -4,12 +4,15 @@ import javafx.scene.paint.Color;
 
 public class Boss extends Enemy {
     enum bossType {
-        scatter, laser, fast
+        scatter, tracker, fast
     }
     private bossType type;
     int moveCD = 180;
     int moveCD_count = 0;
     int moveCD_reduction = 0;
+    int atkCD = 360;
+    int atkCD_count = 0;
+    int atkCD_reduction = 0;
     double xto, yto;
     // constructor
     public Boss (double x, double y, int size, int lvl){
@@ -24,11 +27,12 @@ public class Boss extends Enemy {
                 name = "scatter";
                 type = bossType.scatter;
                 sprite = Color.PINK;
+                this.shootCD_reduction = -10;
             }
             case 1 -> {
                 hp = 100;
-                name = "laser";
-                type = bossType.laser;
+                name = "tracker";
+                type = bossType.tracker;
                 sprite = Color.PURPLE;
             }
             case 2 -> {
@@ -36,7 +40,6 @@ public class Boss extends Enemy {
                 name = "fast";
                 type = bossType.fast;
                 sprite = Color.GREEN;
-                this.size = 48;
                 this.shootCD_reduction = 20;
             }
         }
@@ -45,7 +48,7 @@ public class Boss extends Enemy {
     public void step(){ // base step
         switch (type){
             case scatter -> scatterStep();
-            case laser -> laserStep();
+            case tracker -> trackerStep();
             case fast -> fastStep();
         }
         // randomly move
@@ -55,7 +58,7 @@ public class Boss extends Enemy {
             moveCD_count++;
         }
         // if move to changed, lerp x and y to that move to
-        if(xto != x || yto != y){
+        if(xto != Math.round(x) || yto != Math.round(y)){
             x += game.lerp(x, xto, 0.05);
             y += game.lerp(y, yto, 0.05);
         }
@@ -63,9 +66,10 @@ public class Boss extends Enemy {
     private void scatterStep(){
         if(shootCD_Counter > shootCD){
             // create bullet
-            for (int i = 0; i < 5; i++) {
-                int dir = -70 - (10*i);
-                Bullet b = new Bullet(getX() + (getSize()/2), getY() + getSize() + 5, dir, 10, Player.class);
+            int dir = -(int)(Math.random()*90) ;
+            for (int i = 0; i < 9; i++) {
+                dir -= 10;
+                Bullet b = new Bullet(getX() + (getSize()/2), getY() + getSize() + 5, dir, 3, Player.class);
                 game.bulletList.add(b);
             }
             cdReset();
@@ -73,7 +77,7 @@ public class Boss extends Enemy {
             shootCD_Counter++;
         }
     }
-    private void laserStep(){
+    private void trackerStep(){
         // shoot
         if(shootCD_Counter > shootCD){
             shoot();
@@ -93,8 +97,15 @@ public class Boss extends Enemy {
     }
     public void move(){
         xto = 50 + (Math.random()*500);
-        yto = 100 + (Math.random()*200);
+        yto = 100 + (Math.random()*100);
         moveCDReset();
+    }
+    void atkCDReset(){//randomness + reduction
+        atkCD_count = (int)(Math.random()*((atkCD-atkCD_reduction)/2)) + (atkCD_reduction);
+    }
+    public void changeAtk(){
+
+        atkCDReset();
     }
     public void hurt(int dmg){
         hp -= dmg;

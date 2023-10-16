@@ -34,7 +34,7 @@ public class GameScreen extends Pane {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         for (Bullet e : ent) {
             gc.setFill(Color.BLACK);
-            gc.fillRect(e.getX()-2 , e.getY() , 5, 20);
+            gc.fillRect(e.getX()-2 , e.getY()-2 , 5, 5);
         }
     }
     public void render(Entity ent) // render one ent
@@ -58,11 +58,12 @@ public class GameScreen extends Pane {
     }
     public List<KeyCode> getKeys() { return key; }
     KeyCode keyPressed;
-    public KeyCode getKeyPressed() {
+    public KeyCode getKeyPressed() throws NullPointerException {
         if(!key.isEmpty() && keyPressed != key.get(key.size()-1)) {
             keyPressed = key.get(key.size()-1);
-            return keyPressed;
-        }else return null;
+            return keyPressed; // return this if haven't returned this keycode
+        }else return null; // else don't return
+        // reset on release
     }
     public void pressKey(KeyCode key) {
         if (!this.key.contains(key)) { // don't add if already have
@@ -70,7 +71,10 @@ public class GameScreen extends Pane {
         }
     }
 
-    public void releaseKey(KeyCode key) { this.key.remove(key); }
+    public void releaseKey(KeyCode key) {
+        this.key.remove(key);
+        keyPressed = null;
+    }
 
     public void renderHP(int hp)
             throws NullPointerException,IndexOutOfBoundsException {
