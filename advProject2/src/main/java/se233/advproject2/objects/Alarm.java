@@ -5,6 +5,7 @@ import se233.advproject2.controller.GameLoop;
 import java.lang.reflect.Method;
 
 public class Alarm {
+    GameLoop game = GameLoop.Instance;
     public static int countdown;
     private int counter = 0;
     public Alarm(int countdown){
@@ -22,34 +23,7 @@ public class Alarm {
         }
         if (countdown == 0){
             // run the method
-            if(game.creationPhase){ // frontline creation
-                /// create a wave of enemies 
-                // left wall
-                for (int i = 0; i < 3; i++) {
-                    game.entities.add(new Enemy(90 + (i * 34), 150, 32, game.level));
-                    game.enemyCount++;
-                }
-                // started the game
-                game.creationPhase = false;
-            }
-            // move all previous enemies down
-                game.enemiesMoveDown();
-            /// create a wave of enemies 
-                // left wall
-                for (int i = 0; i < 3; i++) {
-                    game.entities.add(new Enemy(90 + (i * 34), 150, 32, game.level));
-                    game.enemyCount++;
-                }
-                // second tier
-                for (int i = 0; i < 3; i++) {
-                    game.entities.add(new Enemy(90 + (i * 34), 150, 32, game.level));
-                    game.enemyCount++;
-                }
-                // right wall
-                for (int i = 0; i < 3; i++) {
-                    game.entities.add(new Enemy(90 + (i * 34), 150, 32, game.level));
-                    game.enemyCount++;
-                }
+            game.enemiesSpawn();
             countdown--;
         }
     }

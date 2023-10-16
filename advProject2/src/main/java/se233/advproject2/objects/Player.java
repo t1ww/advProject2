@@ -16,8 +16,11 @@ public class Player extends Entity {
     public int hp = 3;
     boolean keyLeft = false,keyRight = false, keySprint = false;
     boolean keyShoot = false,trigger = false, auto = true;
+    boolean keySpecial = false, specialTrigger = false;
     double startX = x;
     double startY = y;
+
+    GameScreen p = platform;
     public Player(double x, double y, int size) {
         super(x,y,size);
         this.name = "player";
@@ -27,12 +30,12 @@ public class Player extends Entity {
         this.y = 750;
     }
     // step
-    public void step(){
+    public void step() throws ConcurrentModificationException {
         if(starting){
             // ease in player when starting
             x += game.lerp(x, startX,0.1);
             y += game.lerp(y, startY, 0.1);
-            if(x == startX && y == startY) {
+            if(Math.round(x) == startX && Math.round(y) == startY) {
                 System.out.println("player ready, game started");
                 starting = false;
             }
@@ -45,14 +48,17 @@ public class Player extends Entity {
     // shoot
     public void shoot(){
         resetKeys();
-        GameScreen p = platform;
-        if(!p.getKeys().isEmpty())
+        if(!p.getKeys().isEmpty()) {
             for (KeyCode cur_key : p.getKeys()) {
                 switch (cur_key) {
                     // key setup
                     case SPACE -> keyShoot = true;
+                    case G -> keySpecial = true;
                 }
             }
+        }
+/////////////
+        // normal attack
         if(keyShoot){
             if(auto){
                 if(fireDelay <= 0){
@@ -71,12 +77,29 @@ public class Player extends Entity {
             fireDelay = 0;
         }
         if(fireDelay > 0) fireDelay--;
+/////////////
+        // special attack
+        if(keySpecial){
+            if (!specialTrigger){// semi auto
+                createSpecialBullet();
+            }
+        }else{
+            // reset trigger
+            specialTrigger = false;
+        }
     }
     private void createBullet(){
         System.out.println("player shot fired");
         // create bullet
         Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class);
         game.bulletList.add(b);
+        trigger = true;
+    }
+    private void createSpecialBullet(){
+        System.out.println("player shot fired");
+        // create bullet
+        //Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class);
+        //game.bulletList.add(b);
         trigger = true;
     }
     // move
@@ -112,6 +135,7 @@ public class Player extends Entity {
         keyRight = false;
         keyShoot = false;
         keySprint = false;
+        keySpecial = false;
     }
     public void hurt(int dmg){
         hp -= dmg;

@@ -4,14 +4,23 @@ import javafx.scene.paint.Color;
 
 public class Enemy extends Entity {
     // var init
-    int shootCD = 50;
+    int shootCD = 300;
     int shootCD_Counter = 0;
     int shootCD_reduction = 0;
+    int moveCD = 60;
+    int moveCD_Counter = 0;
+    int moveCD_reduction = 0;
     int Level;
     private int movestreak = 0;
     double xto, yto;
+
+    public void moveDown() {
+        yto += 50;
+        if(movestreak++ >= 10) game.End();
+    }
+
     enum MOVE_ROTAION{
-        left,right,down
+        left,right
     }
     public MOVE_ROTAION moveDir = MOVE_ROTAION.left;
     // constructor
@@ -24,7 +33,8 @@ public class Enemy extends Entity {
         this.Level = lvl;
         this.hp += lvl;
         this.sprite = Color.RED;
-        this.shootCD_reduction += Math.min(lvl, 35);
+        this.shootCD_reduction += Math.min(lvl, 60);
+        this.moveCD_reduction += Math.min(lvl, 60);
         cdReset();
     }
     // state machine
@@ -35,6 +45,11 @@ public class Enemy extends Entity {
             shoot();
         }else {
             shootCD_Counter++;
+        }
+        if(moveCD_Counter > moveCD){
+            move();
+        }else {
+            moveCD_Counter++;
         }
         // if move to changed, lerp x and y to that move to
         if(xto != Math.round(x) || yto != Math.round(y)){
@@ -57,30 +72,35 @@ public class Enemy extends Entity {
         if(hp <= 0){
             dead = true;
             game.enemyCount--;
+            if(game.enemyCount == 0) {
+                game.setBossWave();
+                game.spawnWaveInit(5);
+            }
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
     }
+    int move_count = 10;
+    int move_counter = move_count;
 
-    public void move() { // MOVE IS STARTED AT LEFT SO NOBODY SPAWNS
+    public void move() {
         switch (moveDir){
             case left -> {
                 xto -= 10;
-                moveDir = MOVE_ROTAION.right;
+                if(move_counter <= 0) {
+                    moveDir = MOVE_ROTAION.right;
+                    move_counter = move_count;
+                }
             }
             case right -> {
                 xto += 10;
-                moveDir = MOVE_ROTAION.down;
-            }
-            case down -> {
-                movestreak++;
-                if(movestreak == 10){
-                    game.End();
+                if(move_counter <= 0) {
+                    moveDir = MOVE_ROTAION.left;
+                    move_counter = move_count;
                 }
-                yto += 50;
-                moveDir = MOVE_ROTAION.left;
-                // set next move to create more friends C:
-                game.creationPhase = true;
             }
         }
+        move_counter--;
+        // reset move
+        moveCD_Counter = moveCD_reduction;
     }
 }

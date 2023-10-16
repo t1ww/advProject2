@@ -68,7 +68,11 @@ public class Bullet {
                     ent.hurt(damage);
                     hit = true; // set hit so no more damaging
                     // add score
-                    if (ent.getClass() != Player.class) GameLoop.Instance.score++;
+                    if (ent.getClass() == Enemy.class) {
+                        GameLoop.Instance.score++;
+                    }else if (ent.getClass() == EnemyHighRank.class){
+                        GameLoop.Instance.score += 2;
+                    }
                     System.out.println("Collided with " + ent.name);
                     return;
                 }

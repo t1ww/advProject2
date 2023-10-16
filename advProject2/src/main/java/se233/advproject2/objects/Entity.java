@@ -35,4 +35,7 @@ public class Entity {
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
     }
+    public void draw(){
+        platform.render(getSprite(),getX(),getY(),getSize());
+    }
 }

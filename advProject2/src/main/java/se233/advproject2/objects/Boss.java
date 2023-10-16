@@ -1,6 +1,7 @@
 package se233.advproject2.objects;
 
 import javafx.scene.paint.Color;
+import se233.advproject2.controller.GameLoop;
 
 public class Boss extends Enemy {
     enum bossType {
@@ -13,6 +14,7 @@ public class Boss extends Enemy {
     int atkCD = 360;
     int atkCD_count = 0;
     int atkCD_reduction = 0;
+    int shotsAmount = 10;
     double xto, yto;
     // constructor
     public Boss (double x, double y, int size, int lvl){
@@ -27,20 +29,22 @@ public class Boss extends Enemy {
                 name = "scatter";
                 type = bossType.scatter;
                 sprite = Color.PINK;
-                this.shootCD_reduction = -10;
+                this.shootCD_reduction = 150;
             }
             case 1 -> {
                 hp = 80;
                 name = "tracker";
                 type = bossType.tracker;
                 sprite = Color.PURPLE;
+                this.shootCD_reduction = 120;
             }
             case 2 -> {
                 hp = 40;
                 name = "fast";
                 type = bossType.fast;
                 sprite = Color.GREEN;
-                this.shootCD_reduction = 20;
+                this.shootCD_reduction = 260;
+                this.moveCD_reduction = 90;
             }
         }
     }
@@ -80,7 +84,14 @@ public class Boss extends Enemy {
     private void trackerStep(){
         // shoot
         if(shootCD_Counter > shootCD){
-            shoot();
+            // create bullet
+            int dir = 0;
+            for (int i = 0; i < shotsAmount; i++) {
+                dir -= (360 / shotsAmount);
+                Bullet b = new Bullet(getX() + (getSize()/2), getY() + getSize() + 5, dir, 5, Player.class);
+                game.bulletList.add(b);
+            }
+            cdReset();
         } else {
             shootCD_Counter++;
         }
@@ -104,7 +115,6 @@ public class Boss extends Enemy {
         atkCD_count = (int)(Math.random()*((atkCD-atkCD_reduction)/2)) + (atkCD_reduction);
     }
     public void changeAtk(){
-
         atkCDReset();
     }
     public void hurt(int dmg){
@@ -112,7 +122,12 @@ public class Boss extends Enemy {
         if(hp <= 0){
             dead = true;
             game.enemyCount--; // removed from list
+            if(game.enemyCount == 0) {
+                game.setCreepsWave();
+                game.spawnWaveInit(5);
+            }
             game.level++; // next level
+            GameLoop.Instance.score += 50; // score add
             // reset phase
             game.creationPhase = true;
             System.out.println(name + " is dead");
