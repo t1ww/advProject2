@@ -81,26 +81,8 @@ public class Enemy extends Entity {
         shootCD_Counter = (int)(Math.random()*((shootCD-shootCD_reduction)/2)) + (shootCD_reduction);
     }
     // dead
-    public void hurt(int dmg){
-        hp -= dmg;
-        if(hp <= 0){
-            dead = true;
-            // Use Platform.runLater to update rendering entity immediately upon death
-            Platform.runLater(() -> {
-                // Remove the entity to the platform's children
-                platform.getChildren().remove(this);
-            });
-            game.enemyCount--;
-            if(game.enemyCount == 0) {
-                game.setBossWave();
-                game.spawnWaveInit(5);
-            }
-            System.out.println(name + " is dead");
-        }else System.out.println(name + " now has " + hp + " hp");
-    }
     int move_count = 10;
     int move_counter = move_count;
-
     public void move() {
         switch (moveDir){
             case left -> {
@@ -122,12 +104,31 @@ public class Enemy extends Entity {
         // reset move
         moveCD_Counter = moveCD_reduction;
     }
-     double targetPlayerDir(){
+
+    double targetPlayerDir(){
         Player player = game.player;
         double x1 = x, y1 = y;
         double x2 = player.x, y2 = player.y;
         // Calculate the angle between the two points
         double angle = Math.toDegrees(Math.atan2(y2 - y1, x2 - x1));
         return -angle;
+    }
+    public void hurt(int dmg){
+        hp -= dmg;
+        if(hp <= 0){
+            dead = true;
+            Platform.runLater(() -> {
+                synchronized(game.getEntities()) {
+                    // Remove the entity to the platform's children
+                    platform.getChildren().remove(this);
+                }
+            });
+            game.enemyCount--;
+            if(game.enemyCount == 0) {
+                game.setBossWave();
+                game.spawnWaveInit(5);
+            }
+            System.out.println(name + " is dead");
+        }else System.out.println(name + " now has " + hp + " hp");
     }
 }

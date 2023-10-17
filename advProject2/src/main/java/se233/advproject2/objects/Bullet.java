@@ -61,26 +61,28 @@ public class Bullet {
     GameLoop game = GameLoop.Instance;
     boolean check;
     public void bulletCollision(List<Entity> entityList) throws ConcurrentModificationException {
-        for (Entity ent: entityList) {
-            if(bulletType == type.piercing){
-                check = !hit.contains(ent);
-            }else check = hit.isEmpty();
-            if(check && checkFor.isAssignableFrom(ent.getClass())) { // check for targeted entity and it's subclasses
-                int buffer = 15;
-                if(checkFor == Player.class){ buffer = -5; }
-                boolean checkinX = (this.x > ent.getX() - buffer && this.x < ent.getX() + ent.getSize() + buffer);
-                boolean checkinY = (this.y > ent.getY() && this.y < ent.getY() + ent.getSize());
-                if (checkinX && checkinY) {
-                    ent.hurt(damage);
-                    hit.add(ent); // set hit so no more damaging
-                    // add score
-                    if (ent.getClass() == Enemy.class) {
-                        game.setScore(game.getScore()+1); // score add
-                    }else if (ent.getClass() == EnemyHighRank.class){
-                        game.setScore(game.getScore()+2); // score add
+        synchronized(game.getEntities()) {
+            for (Entity ent: game.getEntities()) {
+                if(bulletType == type.piercing){
+                    check = !hit.contains(ent);
+                }else check = hit.isEmpty();
+                if(check && checkFor.isAssignableFrom(ent.getClass())) { // check for targeted entity and it's subclasses
+                    int buffer = 15;
+                    if(checkFor == Player.class){ buffer = -5; }
+                    boolean checkinX = (this.x > ent.getX() - buffer && this.x < ent.getX() + ent.getSize() + buffer);
+                    boolean checkinY = (this.y > ent.getY() && this.y < ent.getY() + ent.getSize());
+                    if (checkinX && checkinY) {
+                        ent.hurt(damage);
+                        hit.add(ent); // set hit so no more damaging
+                        // add score
+                        if (ent.getClass() == Enemy.class) {
+                            game.setScore(game.getScore()+1); // score add
+                        }else if (ent.getClass() == EnemyHighRank.class){
+                            game.setScore(game.getScore()+2); // score add
+                        }
+                        System.out.println("Collided with " + ent.name);
+                        return;
                     }
-                    System.out.println("Collided with " + ent.name);
-                    return;
                 }
             }
         }
@@ -90,21 +92,25 @@ public class Bullet {
     public void move() throws ConcurrentModificationException {
         switch (bulletType){
             case homing -> {
-                if(!game.entities.isEmpty()) {
-                    if (target == null) {
-                        List<Entity> nonPlayerEntities = game.entities.stream()
-                                .filter(e -> !(e instanceof Player))
-                                .toList();
-                        if(!nonPlayerEntities.isEmpty()) {
-                            target = nonPlayerEntities.get((int) (Math.random() * nonPlayerEntities.size()));
-                        }
-                    } else {
-                        double x1 = x, y1 = y;
-                        double x2 = target.x, y2 = target.y;
-                        // Calculate the angle between the two points
-                        double angle = Math.toDegrees(Math.atan2(y2 - y1, x2 - x1));
-                        direction = -angle;
-                    }
+                if (target == null) {
+                    List<Entity> nonPlayerEntities = game.getEntities().stream()
+                            .filter(e -> !(e instanceof Player))
+                            .toList();
+                    if (!nonPlayerEntities.isEmpty()) {
+                        target = nonPlayerEntities.get((int) (Math.random() * nonPlayerEntities.size()));
+                    }else target = null;
+                } else {
+                    // check if target is still exist
+                    List<Entity> nonPlayerEntities = game.getEntities().stream()
+                            .filter(e -> !(e instanceof Player))
+                            .toList();
+                    if(!nonPlayerEntities.contains(target)){target = null;}
+                    //
+                    double x1 = x, y1 = y;
+                    double x2 = target.x, y2 = target.y;
+                    // Calculate the angle between the two points
+                    double angle = Math.toDegrees(Math.atan2(y2 - y1, x2 - x1));
+                    direction = -angle;
                 }
             }
             case targetting -> {

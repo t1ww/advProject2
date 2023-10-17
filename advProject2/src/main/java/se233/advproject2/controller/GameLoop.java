@@ -12,8 +12,10 @@ import se233.advproject2.objects.*;
 import se233.advproject2.view.GameScreen;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class GameLoop implements Runnable {
     public static GameLoop Instance;
@@ -22,10 +24,11 @@ public class GameLoop implements Runnable {
     };
     // variables
     public GameScreen platform;
+    public DrawingLoop drawingLoop;
     public Player player;
-    public List<Entity> entities = new ArrayList<Entity>();
-    private List<Enemy> enemyList = new ArrayList<Enemy>();
-    public List<Bullet> bulletList = new ArrayList<Bullet>();
+    private final List<Entity> entities = Collections.synchronizedList(new ArrayList<>());
+    private List<Enemy> enemyList = new CopyOnWriteArrayList<Enemy>();
+    public List<Bullet> bulletList = new CopyOnWriteArrayList<Bullet>();
     private float interval = 1000.0f / 60;
     private int waveCD = 1200;
     public int waveCD_count = 0;
@@ -143,41 +146,36 @@ public class GameLoop implements Runnable {
     }
 
     /// // METHODS // ///
-
     private void step() throws Exception {
         // step events
         if (alarm != null) alarm.step();
-        Iterator<Bullet> bulletIterator = bulletList.iterator();
-        while (bulletIterator.hasNext()) {
-            Bullet b = bulletIterator.next();
+
+        // Move and check bullet collisions
+        List<Bullet> bulletsToRemove = new ArrayList<>();
+        for (Bullet b : bulletList) {
             b.move();
             b.bulletCollision(entities);
             if (b.dead || b.getY() > platform.WIDTH + 50 || b.getY() < -50) {
-                bulletIterator.remove();
+                bulletsToRemove.add(b);
             }
         }
-        Iterator<Entity> entityIterator = entities.iterator();
-        while(entityIterator.hasNext()) {
-            Entity ent = entityIterator.next();
+        bulletList.removeAll(bulletsToRemove);
+
+
+        // Update entities
+        for (Entity ent : entities) {
             ent.step();
         }
-        // bullet remove
-        bulletIterator = bulletList.iterator();
-        while(bulletIterator.hasNext()) {
-            Bullet b = bulletIterator.next();
-            if (b.dead || b.getY() > platform.WIDTH + 50 || b.getY() < -50) {
-                bulletIterator.remove();
-            }
-        }
-        entityIterator = entities.iterator();
-        while(entityIterator.hasNext()) {
+
+        // Remove dead entities
+        Iterator<Entity> entityIterator = entities.iterator();
+        while (entityIterator.hasNext()) {
             Entity ent = entityIterator.next();
             if (ent.dead) {
                 entityIterator.remove();
             }
         }
-        // entity remove
-        entities.removeIf(n -> n.dead); // remove on dead
+
         /// only during creeps wave
         if (gameWave.equals(WAVE.Creeps)) {
             waveCD_count++;
@@ -186,11 +184,14 @@ public class GameLoop implements Runnable {
                 spawnWaveInit(3);
             }
         }
+
         // runtime counting
         runtime++;
+
         // cleanups
         if (Alarm.countdown < 0) alarm = null;
     }
+
     /// draw
     private void draw() throws Exception {
         /// render setup
@@ -269,6 +270,8 @@ public class GameLoop implements Runnable {
     }
     // game setup methods
     public void Start(){
+        // start drawing loop
+        drawingLoop.running = true;
     /// / clean up
         clear(); // clear lists
         // reset variables
@@ -293,6 +296,8 @@ public class GameLoop implements Runnable {
         logger.info("Game started.");
     }
     public void End(){
+        // stop drawing loop
+        drawingLoop.running = false;
         Platform.runLater(()->{
             entities.forEach(ent ->{
                 platform.getChildren().remove(ent);
@@ -330,8 +335,11 @@ public class GameLoop implements Runnable {
         clear();
         Start();
     }
+    public List<Entity> getEntities() {
+        return this.entities;
+    }
     // logger //
-    private static final Logger logger = LogManager.getLogger(Character.class);
+    private static final Logger logger = LogManager.getLogger(GameLoop.class);
     private void logScoreChange() {
         logger.info("Score has been updated to: " + score);
     }
