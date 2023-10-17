@@ -156,6 +156,11 @@ public class GameLoop implements Runnable {
         alarm = new Alarm(count);
     }
     public void enemiesSpawn(){ // put this in alarm
+        enemyList = entities.stream()
+                .filter(ent -> ent instanceof Enemy)
+                .map(ent -> (Enemy) ent)
+                .toList();
+        enemyCount = enemyList.size(); // recheck size
         if(gameWave == WAVE.Creeps) { // wave check
             /// create a frontline wave of enemies
             if(creationPhase){
@@ -193,11 +198,6 @@ public class GameLoop implements Runnable {
         waveCD_count = 0; // reset spawn wave
     } 
     public void enemiesMoveDown(){
-        enemyList = entities.stream()
-                .filter(ent -> ent instanceof Enemy)
-                .map(ent -> (Enemy) ent)
-                .toList();
-        enemyCount = enemyList.size(); // recheck size
         enemyList.forEach(Enemy::moveDown);
     }
     // game setup methods
@@ -217,7 +217,8 @@ public class GameLoop implements Runnable {
         // create enemies
         alarm = new Alarm(3);
         gameState = STATE.Running;
-        gameWave = WAVE.Creeps;
+//        gameWave = WAVE.Creeps;
+        gameWave = WAVE.Boss; // forcing boss for testing
     /// / set pos to ease in from
         xStart = -200;xto = 200;_x = xStart;
         xStart2 = -400;xto2 = 200;_x2 = xStart;

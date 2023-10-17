@@ -11,10 +11,10 @@ public class Boss extends Enemy {
     int moveCD = 180;
     int moveCD_count = 0;
     int moveCD_reduction = 0;
+    int attack = 0;
     int atkCD = 360;
     int atkCD_count = 0;
     int atkCD_reduction = 0;
-    int shotsAmount = 10;
     double xto, yto;
     // constructor
     public Boss (double x, double y, int size, int lvl){
@@ -23,7 +23,8 @@ public class Boss extends Enemy {
         this.y = -100;
         this.moveCD_reduction += Math.min(lvl, 35);
         // random type
-        switch ((int) (Math.random()*3)){
+//        switch ((int) (Math.random()*3)){
+        switch (1){ // for force test
             default -> {
                 hp = 60;
                 name = "scatter";
@@ -37,6 +38,7 @@ public class Boss extends Enemy {
                 type = bossType.tracker;
                 sprite = Color.PURPLE;
                 this.shootCD_reduction = 120;
+                this.shotsAmount += lvl;
             }
             case 2 -> {
                 hp = 40;
@@ -61,6 +63,12 @@ public class Boss extends Enemy {
         } else {
             moveCD_count++;
         }
+//        // change attack sometimes
+//        if(atkCD_count > atkCD){
+//            changeAtk();
+//        } else {
+//            atkCD_count++;
+//        }
         // if move to changed, lerp x and y to that move to
         if(xto != Math.round(x) || yto != Math.round(y)){
             x += game.lerp(x, xto, 0.05);
@@ -69,27 +77,34 @@ public class Boss extends Enemy {
     }
     private void scatterStep(){
         if(shootCD_Counter > shootCD){
-            // create bullet
-            int dir = -(int)(Math.random()*90) ;
-            for (int i = 0; i < 9; i++) {
-                dir -= 10;
-                Bullet b = new Bullet(getX() + (getSize()/2), getY() + getSize() + 5, dir, 3, Player.class);
-                game.bulletList.add(b);
+            if (attack == 1) {
+            } else {// create bullet
+                int dir = -(int) (Math.random() * 90);
+                for (int i = 0; i < 9; i++) {
+                    dir -= 10;
+                    Bullet b = new Bullet(getX() + (getSize() / 2), getY() + getSize() + 5, dir, 3, Player.class);
+                    game.bulletList.add(b);
+                }
             }
             cdReset();
         } else {
             shootCD_Counter++;
         }
     }
+    // amount of shots for tracker
+    int shotsAmount = 20;
     private void trackerStep(){
         // shoot
         if(shootCD_Counter > shootCD){
-            // create bullet
-            int dir = 0;
-            for (int i = 0; i < shotsAmount; i++) {
-                dir -= (360 / shotsAmount);
-                Bullet b = new Bullet(getX() + (getSize()/2), getY() + getSize() + 5, dir, 5, Player.class);
-                game.bulletList.add(b);
+            if (attack == 1) {
+            } else {// create bullet
+                int dir = -90;
+                for (int i = 0; i < shotsAmount; i++) {
+                    dir -= (360 / shotsAmount);
+                    Bullet b = new Bullet(getX() + (getSize() / 2), getY() + getSize() + 5,
+                            dir, 4, Player.class, 1, true);
+                    game.bulletList.add(b);
+                }
             }
             cdReset();
         } else {
@@ -98,7 +113,11 @@ public class Boss extends Enemy {
     }
     private void fastStep(){
         if(shootCD_Counter > shootCD){
-            shoot();
+            if (attack == 1) {
+            } else {
+                // shoot faster and aim at player with small spreading
+            }
+            cdReset();
         } else {
             shootCD_Counter++;
         }
@@ -115,6 +134,11 @@ public class Boss extends Enemy {
         atkCD_count = (int)(Math.random()*((atkCD-atkCD_reduction)/2)) + (atkCD_reduction);
     }
     public void changeAtk(){
+        if (attack == 0){
+            attack = 1;
+        }else {
+            attack = 0;
+        }
         atkCDReset();
     }
     public void hurt(int dmg){

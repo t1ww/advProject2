@@ -17,7 +17,6 @@ public class GameScreen extends Pane {
     public static final int WIDTH = 600;
     public static final int HEIGHT = 700;
     private Canvas canvas;
-    private List<KeyCode> key = new ArrayList<>();
     GraphicsContext gc;
     public GameScreen() {
         this.setHeight(HEIGHT);
@@ -60,7 +59,7 @@ public class GameScreen extends Pane {
         }
 
     }
-    public List<KeyCode> getKeys() { return key; }
+    // key pressing
     KeyCode keyPressed;
     public KeyCode getKeyPressed() throws NullPointerException {
         if(!key.isEmpty() && keyPressed != key.get(key.size()-1)) {
@@ -68,7 +67,11 @@ public class GameScreen extends Pane {
             return keyPressed; // return this if haven't returned this keycode
         }else return null; // else don't return
         // reset on release
-    }
+    } // getKeyPress not working
+
+    /// getting keys pressed
+    private List<KeyCode> key = new ArrayList<>();
+    public List<KeyCode> getKeys() { return key; }
 
     public void pressKey(KeyCode key) {
         if (!this.key.contains(key)) { // don't add if already have

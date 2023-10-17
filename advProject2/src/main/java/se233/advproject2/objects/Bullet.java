@@ -28,7 +28,7 @@ public class Bullet {
     }
     private boolean hit = false;
     private Class checkFor;
-    private int changeDirTime = 90; // 1.30s
+    private int changeDirTime = 45; // 1.30s
     private boolean homing;
 
     public Bullet(double x, double y, double direction, double speed, Class checkFor){
@@ -87,7 +87,7 @@ public class Bullet {
             if (changeDirTime > 0) changeDirTime--;
             if (changeDirTime == 0) {
                 // change direction to towards player
-
+                targetPlayer();
                 // prevent redo
                 changeDirTime--;
                 // no reset
@@ -100,5 +100,13 @@ public class Bullet {
         // update pos
         x += hsp;
         y -= vsp;
+    }
+    Player player = GameLoop.Instance.player;
+    private void targetPlayer(){
+        double x1 = x, y1 = y;
+        double x2 = player.x, y2 = player.y - 100;
+        // Calculate the angle between the two points
+        double angle = Math.toDegrees(Math.atan2(y2 - y1, x2 - x1));
+        direction = -angle;
     }
 }

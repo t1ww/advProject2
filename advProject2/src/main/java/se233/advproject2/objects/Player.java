@@ -17,8 +17,8 @@ public class Player extends Entity {
     boolean keyLeft = false,keyRight = false, keySprint = false;
     boolean keyShoot = false,trigger = false, auto = true;
     boolean keySpecial = false, specialTrigger = false;
-    double startX = x;
-    double startY = y;
+    double startX;
+    double startY;
 
     GameScreen p = platform;
     public Player(double x, double y, int size) {
@@ -105,8 +105,9 @@ public class Player extends Entity {
     // move
     public void move() {
         GameScreen p = platform;
-        resetKeys();
-        if(!p.getKeys().isEmpty())
+        resetKeys(); // reset
+        // check keys
+        if(!p.getKeys().isEmpty()) {
             for (KeyCode cur_key : p.getKeys()) {
                 switch (cur_key) {
                     // key setup
@@ -115,17 +116,21 @@ public class Player extends Entity {
                     case SHIFT -> keySprint = true;
                 }
             }
+        }
+        // apply key
         int hsp;
         hsp = 0;
         if (keyLeft) hsp -= speed;
         if (keyRight) hsp += speed;
         if (keySprint) hsp *=2;
         hsp = playerCollision(hsp);
+        // update pos
         setX(getX() + hsp);
     }
     private int playerCollision(int hsp){
         if(getX() + hsp < 0
         || getX() + hsp > (GameScreen.WIDTH - getSize())){
+            // if next move hit edge, don't move
             hsp = 0;
         }
         return hsp;
