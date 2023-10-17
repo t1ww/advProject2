@@ -164,6 +164,7 @@ public class GameLoop implements Runnable {
         if(gameWave == WAVE.Creeps) { // wave check
             /// create a frontline wave of enemies
             if(creationPhase){
+                System.out.println("creating frontline");
                 for (int i = 0; i < 9; i++) {
                     entities.add(new Enemy(200 + (i * 34), 150, 32, level));
                     enemyCount++;
@@ -174,6 +175,7 @@ public class GameLoop implements Runnable {
             // move all previous enemies down
             enemiesMoveDown();
             /// create a wave of enemies
+            System.out.println("spawning creep wave");
             // left wall
             for (int i = 0; i < 3; i++) {
                 entities.add(new Enemy(200 + (i * 34), 150, 32, level));
@@ -198,6 +200,7 @@ public class GameLoop implements Runnable {
         waveCD_count = 0; // reset spawn wave
     } 
     public void enemiesMoveDown(){
+        System.out.println("moving down");
         enemyList.forEach(Enemy::moveDown);
     }
     // game setup methods
@@ -217,8 +220,8 @@ public class GameLoop implements Runnable {
         // create enemies
         alarm = new Alarm(3);
         gameState = STATE.Running;
-//        gameWave = WAVE.Creeps;
-        gameWave = WAVE.Boss; // forcing boss for testing
+        gameWave = WAVE.Creeps;
+//        gameWave = WAVE.Boss; // forcing boss for testing
     /// / set pos to ease in from
         xStart = -200;xto = 200;_x = xStart;
         xStart2 = -400;xto2 = 200;_x2 = xStart;
