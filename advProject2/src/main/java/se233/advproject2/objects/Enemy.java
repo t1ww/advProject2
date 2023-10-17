@@ -1,5 +1,6 @@
 package se233.advproject2.objects;
 
+import javafx.application.Platform;
 import javafx.scene.paint.Color;
 
 public class Enemy extends Entity {
@@ -25,7 +26,20 @@ public class Enemy extends Entity {
     public MOVE_ROTAION moveDir = MOVE_ROTAION.left;
     // constructor
     public Enemy(double x, double y, int size, int lvl) {
-        super(x,y,size);
+        super(x,y,size, "assets/enemySprite-Sheet.png");
+        xto = x;yto = y;
+        this.x = Math.random()*800;
+        this.y = -60;
+        this.name = "small enemy";
+        this.Level = lvl;
+        this.hp += lvl;
+        this.sprite = Color.RED;
+        this.shootCD_reduction += Math.min(lvl, 60);
+        this.moveCD_reduction += Math.min(lvl, 60);
+        cdReset();
+    }
+    public Enemy(double x, double y, int size, int lvl, String sprite) {
+        super(x,y,size, sprite);
         xto = x;yto = y;
         this.x = Math.random()*800;
         this.y = -60;
@@ -71,6 +85,11 @@ public class Enemy extends Entity {
         hp -= dmg;
         if(hp <= 0){
             dead = true;
+            // Use Platform.runLater to update rendering entity immediately upon death
+            Platform.runLater(() -> {
+                // Remove the entity to the platform's children
+                platform.getChildren().remove(this);
+            });
             game.enemyCount--;
             if(game.enemyCount == 0) {
                 game.setBossWave();

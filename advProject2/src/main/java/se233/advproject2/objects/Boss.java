@@ -18,7 +18,7 @@ public class Boss extends Enemy {
     double xto, yto;
     // constructor
     public Boss (double x, double y, int size, int lvl){
-        super(x, y, size, lvl);
+        super(x, y, size, lvl, "assets/bossSprite-Sheet.png");
         xto = x;yto = y;
         this.y = -100;
         this.moveCD_reduction += Math.min(lvl, 35);
@@ -102,7 +102,8 @@ public class Boss extends Enemy {
                 for (int i = 0; i < shotsAmount; i++) {
                     dir -= (360 / shotsAmount);
                     Bullet b = new Bullet(getX() + (getSize() / 2), getY() + getSize() + 5,
-                            dir, 4, Player.class, 1, true);
+                            dir, 4, Player.class);
+                    b.setTargetting();
                     game.bulletList.add(b);
                 }
             }

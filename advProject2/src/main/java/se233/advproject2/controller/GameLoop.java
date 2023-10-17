@@ -3,6 +3,7 @@
 ////             ////
 package se233.advproject2.controller;
 
+import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
 import se233.advproject2.objects.*;
 import se233.advproject2.view.GameScreen;
@@ -76,7 +77,13 @@ public class GameLoop implements Runnable {
                 case Running -> {
                     try {
                         step();
-//                        draw(); // might not draw anymore
+                        Platform.runLater(() -> {
+                            try {
+                                draw(); // ui
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
                     } catch (Exception e){
                         e.printStackTrace();
                     }
@@ -85,9 +92,11 @@ public class GameLoop implements Runnable {
                     String gametime = getTime(runtime);
                     _x += lerp(_x, xto, .07);
                     _x2 += lerp(_x2, xto2, .05);
-                    platform.renderReset();
-                    platform.renderText("YOU LASTED : " + gametime, (int) _x, 300);
-                    platform.renderText("Game OVER, press enter to restart", (int) _x2, 330);
+                    Platform.runLater(() -> {
+                        platform.renderReset();
+                        platform.renderText("YOU LASTED : " + gametime, (int) _x, 300);
+                        platform.renderText("Game OVER, press enter to restart", (int) _x2, 330);
+                    });
                     if(platform.getKeys().contains(KeyCode.ENTER)){
                         Start();
                     }
@@ -147,8 +156,6 @@ public class GameLoop implements Runnable {
     private void draw() throws Exception {
         /// render setup
         platform.renderReset();
-        // draw all entities
-//        entities.forEach(Entity :: draw);
         platform.renderBullets(bulletList);
         // draw ui
         platform.renderHP(player.hp);
@@ -230,7 +237,6 @@ public class GameLoop implements Runnable {
     /// / creating
         // create player
         player = new Player(300, 600, 32);
-        platform.getChildren().addAll(player);
         entities.add(player);
         // create enemies
         alarm = new Alarm(3);
@@ -244,6 +250,11 @@ public class GameLoop implements Runnable {
         System.out.println("game start");
     }
     public void End(){
+        Platform.runLater(()->{
+            entities.forEach(ent ->{
+                platform.getChildren().remove(ent);
+            }); // clear render
+        });
         gameState = STATE.End;
         // set pos to ease in from
         xStart = -200;xto = 200;_x = xStart;

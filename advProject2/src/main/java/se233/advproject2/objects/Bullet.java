@@ -30,7 +30,11 @@ public class Bullet {
     private Class checkFor;
     private int changeDirTime = 45; // 1.30s
     private boolean homing;
-
+    enum type {
+        normal,piercing,homing,targetting
+    }
+    type bulletType = type.normal;
+    public void setTargetting(){bulletType = type.targetting;}
     public Bullet(double x, double y, double direction, double speed, Class checkFor){
         this.x = x;
         this.y = y;
@@ -47,15 +51,6 @@ public class Bullet {
         this.checkFor = checkFor;
         this.damage = damage;
         this.homing = false;
-    }
-    public Bullet(double x, double y, double direction, double speed, Class checkFor, int damage, boolean homing){
-        this.x = x;
-        this.y = y;
-        this.direction = direction;
-        this.speed = speed;
-        this.checkFor = checkFor;
-        this.damage = damage;
-        this.homing = homing;
     }
     public void bulletCollision(List<Entity> entityList) throws ConcurrentModificationException {
         if(!hit) for (Entity ent: entityList) {
@@ -78,19 +73,21 @@ public class Bullet {
                 }
             }
         }
-        if(hit) dead = true;
+        if(hit && bulletType != type.piercing) dead = true;
     }
     // move
     public void move() throws ConcurrentModificationException {
-        if(homing) {
-            // change direction
-            if (changeDirTime > 0) changeDirTime--;
-            if (changeDirTime == 0) {
-                // change direction to towards player
-                targetPlayer();
-                // prevent redo
-                changeDirTime--;
-                // no reset
+        switch (bulletType){
+            case targetting -> {
+                // change direction
+                if (changeDirTime > 0) changeDirTime--;
+                if (changeDirTime == 0) {
+                    // change direction to towards player
+                    targetPlayer();
+                    // prevent redo
+                    changeDirTime--;
+                    // no reset
+                }
             }
         }
         // handling

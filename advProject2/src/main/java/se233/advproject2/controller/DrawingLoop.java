@@ -23,8 +23,12 @@ public class DrawingLoop implements Runnable {
         GameLoop game = GameLoop.Instance;
         while (running) {
             float time = System.currentTimeMillis();
-            game.entities.forEach(this::paint);
-            time = System.currentTimeMillis() - time;
+            try {
+                game.entities.forEach(entity -> {
+                    paint(entity);
+                });
+                time = System.currentTimeMillis() - time;
+            }catch (Exception e){}
             if (time < interval) {
                 try {
                     Thread.sleep((long) (interval - time));
