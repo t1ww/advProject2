@@ -3,6 +3,8 @@ package se233.advproject2.objects;
 import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import se233.advproject2.Launcher;
 import se233.advproject2.view.AnimatedSprite;
 import se233.advproject2.view.GameScreen;
@@ -93,17 +95,21 @@ public class Player extends Entity {
     private void createBullet(){
         // create bullet
         Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class);
+        logger.info("shot fired at x:{} y:{}",x,y);
         game.bulletList.add(b);
         trigger = true;
     }
     private void createSpecialBullet(){
-        System.out.println("player special fired");
         // create bullet
-        //Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class);
-        //game.bulletList.add(b);
+        Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class,10);
+        b.setHoming();
+        logger.info("special fired at x:{} y:{}",x,y);
+        game.bulletList.add(b);
         specialTrigger = true;
     }
     // move
+    boolean wasKeyLeftPressed = false;
+    boolean wasKeyRightPressed = false;
     public void move() {
         GameScreen p = platform;
         resetKeys(); // reset
@@ -124,9 +130,26 @@ public class Player extends Entity {
         if (keyLeft) hsp -= speed;
         if (keyRight) hsp += speed;
         if (keySprint) hsp *=2;
+        // logger // log only when key state changes
+        if (keyLeft && !wasKeyLeftPressed) {
+            trace();
+            wasKeyLeftPressed = true;
+        } else if (!keyLeft) {
+            wasKeyLeftPressed = false;
+        }
+
+        if (keyRight && !wasKeyRightPressed) {
+            trace();
+            wasKeyRightPressed = true;
+        } else if (!keyRight) {
+            wasKeyRightPressed = false;
+        }
+
+        //
         hsp = playerCollision(hsp);
         // update pos
         setX(getX() + hsp);
+        // log
     }
     private int playerCollision(int hsp){
         if(getX() + hsp < 0
@@ -145,6 +168,7 @@ public class Player extends Entity {
     }
     public void hurt(int dmg){
         hp -= dmg;
+        logger.info("hp:{}",hp);
         if(hp <= 0){ // player dead
             dead = true;
             // Use Platform.runLater to update rendering entity immediately upon death
@@ -156,10 +180,9 @@ public class Player extends Entity {
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
     }
-    // logger // import later
-//    private static final Logger logger = LogManager.getLogger(Character.class);
-//    public void trace() {
-//        logger.info("x:{} y:{} vx:{} vy:{}",x,y,xVelocity,yVelocity);
-//    }
-
+    // logger //
+    private static final Logger logger = LogManager.getLogger(Character.class);
+    public void trace() {
+        logger.info("x:{} y:{} left:{} right:{} sprint:{}",x,y,keyLeft,keyRight,keySprint);
+    }
 }

@@ -34,7 +34,11 @@ public class Bullet {
         normal,piercing,homing,targetting
     }
     type bulletType = type.normal;
+    Entity target;
+
+    public void setPiercing(){bulletType = type.piercing;}
     public void setTargetting(){bulletType = type.targetting;}
+    public void setHoming(){bulletType = type.homing;}
     public Bullet(double x, double y, double direction, double speed, Class checkFor){
         this.x = x;
         this.y = y;
@@ -52,6 +56,7 @@ public class Bullet {
         this.damage = damage;
         this.homing = false;
     }
+    GameLoop game = GameLoop.Instance;
     public void bulletCollision(List<Entity> entityList) throws ConcurrentModificationException {
         if(!hit) for (Entity ent: entityList) {
             if(checkFor.isAssignableFrom(ent.getClass())) { // check for targeted entity and it's subclasses
@@ -64,9 +69,9 @@ public class Bullet {
                     hit = true; // set hit so no more damaging
                     // add score
                     if (ent.getClass() == Enemy.class) {
-                        GameLoop.Instance.score++;
+                        game.setScore(game.getScore()+1); // score add
                     }else if (ent.getClass() == EnemyHighRank.class){
-                        GameLoop.Instance.score += 2;
+                        game.setScore(game.getScore()+2); // score add
                     }
                     System.out.println("Collided with " + ent.name);
                     return;
@@ -78,6 +83,19 @@ public class Bullet {
     // move
     public void move() throws ConcurrentModificationException {
         switch (bulletType){
+            case homing -> {
+                if(!game.entities.isEmpty()) {
+                    if (target == null) {
+                        target = game.entities.get((int) (Math.random() * game.entities.size()));
+                    } else {
+                        double x1 = x, y1 = y;
+                        double x2 = target.x, y2 = target.y;
+                        // Calculate the angle between the two points
+                        double angle = Math.toDegrees(Math.atan2(y2 - y1, x2 - x1));
+                        direction = -angle;
+                    }
+                }
+            }
             case targetting -> {
                 // change direction
                 if (changeDirTime > 0) changeDirTime--;

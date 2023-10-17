@@ -2,6 +2,8 @@ package se233.advproject2.objects;
 
 import javafx.application.Platform;
 import javafx.scene.paint.Color;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Enemy extends Entity {
     // var init

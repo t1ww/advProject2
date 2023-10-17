@@ -11,9 +11,6 @@ public class Alarm {
     public Alarm(int countdown){
         this.countdown = countdown;
     }
-    public Alarm(int countdown, Method method){
-        this.countdown = countdown;
-    }
     public void step(){
         counter++;
         int second = 60;

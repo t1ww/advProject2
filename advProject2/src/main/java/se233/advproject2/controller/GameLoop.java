@@ -4,7 +4,10 @@
 package se233.advproject2.controller;
 
 import javafx.application.Platform;
+import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import se233.advproject2.objects.*;
 import se233.advproject2.view.GameScreen;
 
@@ -26,11 +29,27 @@ public class GameLoop implements Runnable {
     private int waveCD = 1200;
     public int waveCD_count = 0;
     public int level = 0;
-    public int score;
-    private int runtime;
+    private int score;
+    public int runtime;
     public int enemyCount = -1;
     Alarm alarm;
     public boolean creationPhase;
+    // getter setter
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        if (this.score != score) {
+            this.score = score;
+            logScoreChange();
+        }
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
     // states
     private enum STATE {
         PreStart, Running, End
@@ -85,7 +104,7 @@ public class GameLoop implements Runnable {
                             }
                         });
                     } catch (Exception e){
-                        e.printStackTrace();
+                        logger.error("Exception caught during game loop:", e);
                     }
                 }
                 case End -> {
@@ -111,7 +130,7 @@ public class GameLoop implements Runnable {
             if (time < interval) {
                 try {
                     Thread.sleep((long) (interval - time));
-                } catch (InterruptedException e) {
+                } catch (InterruptedException e) {logger.error("Interruption caught during game loop:", e);
                 }
             } else {
                 try {
@@ -246,8 +265,8 @@ public class GameLoop implements Runnable {
     /// / set pos to ease in from
         xStart = -200;xto = 200;_x = xStart;
         xStart2 = -400;xto2 = 200;_x2 = xStart;
-    /// / sysout
-        System.out.println("game start");
+    /// / log start
+        logger.info("Game started.");
     }
     public void End(){
         Platform.runLater(()->{
@@ -259,6 +278,8 @@ public class GameLoop implements Runnable {
         // set pos to ease in from
         xStart = -200;xto = 200;_x = xStart;
         xStart2 = -400;xto2 = 200;_x2 = xStart;
+    /// / log end
+        logger.info("Game ended. Lasted: " + getTime(runtime));
     }
     public void clear(){
         // clear lists
@@ -284,5 +305,10 @@ public class GameLoop implements Runnable {
         End();
         clear();
         Start();
+    }
+    // logger //
+    private static final Logger logger = LogManager.getLogger(Character.class);
+    private void logScoreChange() {
+        logger.info("Score has been updated to: " + score);
     }
 }

@@ -5,12 +5,10 @@ import se233.advproject2.objects.Entity;
 import se233.advproject2.view.GameScreen;
 
 public class DrawingLoop implements Runnable {
-    private GameScreen platform;
     private int frameRate;
     private float interval;
     private boolean running;
     public DrawingLoop(GameScreen platform) {
-        this.platform = platform;
         frameRate = 60;
         interval = 1000.0f / frameRate; // 1000 ms = 1 second
         running = true;
@@ -21,14 +19,10 @@ public class DrawingLoop implements Runnable {
     @Override
     public void run() {
         GameLoop game = GameLoop.Instance;
-        while (running) {
+        while (true) {
             float time = System.currentTimeMillis();
-            try {
-                game.entities.forEach(entity -> {
-                    paint(entity);
-                });
-                time = System.currentTimeMillis() - time;
-            }catch (Exception e){}
+            game.entities.forEach(this::paint);
+            time = System.currentTimeMillis() - time;
             if (time < interval) {
                 try {
                     Thread.sleep((long) (interval - time));

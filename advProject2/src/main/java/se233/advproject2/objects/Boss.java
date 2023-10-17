@@ -1,6 +1,9 @@
 package se233.advproject2.objects;
 
+import javafx.application.Platform;
 import javafx.scene.paint.Color;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import se233.advproject2.controller.GameLoop;
 
 public class Boss extends Enemy {
@@ -49,6 +52,7 @@ public class Boss extends Enemy {
                 this.moveCD_reduction = 90;
             }
         }
+        logger.info("boss created : {}",name);
     }
     // state machine
     public void step(){ // base step
@@ -146,16 +150,24 @@ public class Boss extends Enemy {
         hp -= dmg;
         if(hp <= 0){
             dead = true;
+            logger.info("boss killed");
+            // Use Platform.runLater to update rendering entity immediately upon death
+            Platform.runLater(() -> {
+                // Remove the entity to the platform's children
+                platform.getChildren().remove(this);
+            });
             game.enemyCount--; // removed from list
             if(game.enemyCount == 0) {
                 game.setCreepsWave();
                 game.spawnWaveInit(5);
             }
             game.level++; // next level
-            GameLoop.Instance.score += 50; // score add
+            game.setScore(game.getScore()+50); // score add
             // reset phase
             game.creationPhase = true;
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
     }
+    // logger //
+    private static final Logger logger = LogManager.getLogger(Character.class);
 }
