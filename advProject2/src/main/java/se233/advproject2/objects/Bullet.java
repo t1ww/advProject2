@@ -2,6 +2,7 @@ package se233.advproject2.objects;
 
 import se233.advproject2.controller.GameLoop;
 
+import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class Bullet {
     public void setSpeed(double speed) {
         this.speed = speed;
     }
-    private boolean hit = false;
+    private List<Entity> hit = new ArrayList<Entity>();
     private Class checkFor;
     private int changeDirTime = 45; // 1.30s
     private boolean homing;
@@ -57,16 +58,20 @@ public class Bullet {
         this.homing = false;
     }
     GameLoop game = GameLoop.Instance;
+    boolean check;
     public void bulletCollision(List<Entity> entityList) throws ConcurrentModificationException {
-        if(!hit) for (Entity ent: entityList) {
-            if(checkFor.isAssignableFrom(ent.getClass())) { // check for targeted entity and it's subclasses
+        for (Entity ent: entityList) {
+            if(bulletType == type.piercing){
+                check = !hit.contains(ent);
+            }else check = hit.isEmpty();
+            if(check && checkFor.isAssignableFrom(ent.getClass())) { // check for targeted entity and it's subclasses
                 int buffer = 15;
                 if(checkFor == Player.class){ buffer = -5; }
                 boolean checkinX = (this.x > ent.getX() - buffer && this.x < ent.getX() + ent.getSize() + buffer);
                 boolean checkinY = (this.y > ent.getY() && this.y < ent.getY() + ent.getSize());
                 if (checkinX && checkinY) {
                     ent.hurt(damage);
-                    hit = true; // set hit so no more damaging
+                    hit.add(ent); // set hit so no more damaging
                     // add score
                     if (ent.getClass() == Enemy.class) {
                         game.setScore(game.getScore()+1); // score add
@@ -78,7 +83,7 @@ public class Bullet {
                 }
             }
         }
-        if(hit && bulletType != type.piercing) dead = true;
+        if(!hit.isEmpty() && bulletType != type.piercing) dead = true;
     }
     // move
     public void move() throws ConcurrentModificationException {

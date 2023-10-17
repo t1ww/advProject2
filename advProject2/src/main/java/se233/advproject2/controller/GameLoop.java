@@ -32,7 +32,7 @@ public class GameLoop implements Runnable {
     private int score;
     public int runtime;
     public int enemyCount = -1;
-    Alarm alarm;
+    public Alarm alarm;
     public boolean creationPhase;
     // getter setter
     public int getScore() {

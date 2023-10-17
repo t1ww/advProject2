@@ -2,8 +2,6 @@ package se233.advproject2.objects;
 
 import javafx.application.Platform;
 import javafx.scene.paint.Color;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class Enemy extends Entity {
     // var init
@@ -15,7 +13,7 @@ public class Enemy extends Entity {
     int moveCD_reduction = 0;
     int Level;
     private int movestreak = 0;
-    double xto, yto;
+    public double xto, yto;
 
     public void moveDown() {
         yto += 50;

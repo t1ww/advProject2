@@ -14,7 +14,7 @@ import java.util.Objects;
 
 public class Player extends Entity {
     // init variables
-    boolean starting = true;
+    public boolean starting = true;
     int speed = 3;
     int fireRate = 16;
     int fireDelay = 0;
