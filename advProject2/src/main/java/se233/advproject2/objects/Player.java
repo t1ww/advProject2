@@ -1,8 +1,11 @@
 package se233.advproject2.objects;
 
 import javafx.application.Platform;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
+import se233.advproject2.Launcher;
 import se233.advproject2.controller.GameLoop;
+import se233.advproject2.view.AnimatedSprite;
 import se233.advproject2.view.GameScreen;
 
 import java.util.ConcurrentModificationException;
@@ -19,8 +22,10 @@ public class Player extends Entity {
     boolean keySpecial = false, specialTrigger = false;
     double startX;
     double startY;
-
+    private Image characterImg;
+    private AnimatedSprite imageView;
     GameScreen p = platform;
+    String spritePath = "assets/playerSprite-straight.png";
     public Player(double x, double y, int size) {
         super(x,y,size);
         this.name = "player";
@@ -28,6 +33,12 @@ public class Player extends Entity {
         this.startY = y;
         this.x = Math.random()*800;
         this.y = 750;
+        // sprite setting
+        this.characterImg = new Image(Launcher.class.getResourceAsStream(spritePath));
+        this.imageView = new AnimatedSprite(characterImg,2,2,1,0,0,32,32);
+        this.imageView.setFitWidth(32);
+        this.imageView.setFitHeight(32);
+        this.getChildren().addAll(this.imageView);
     }
     // step
     public void step() throws ConcurrentModificationException {
@@ -149,6 +160,10 @@ public class Player extends Entity {
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
     }
-    // state machine
+    // logger // import later
+//    private static final Logger logger = LogManager.getLogger(Character.class);
+//    public void trace() {
+//        logger.info("x:{} y:{} vx:{} vy:{}",x,y,xVelocity,yVelocity);
+//    }
 
 }

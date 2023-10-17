@@ -1,10 +1,11 @@
 package se233.advproject2.objects;
 
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import se233.advproject2.controller.GameLoop;
 import se233.advproject2.view.GameScreen;
 
-public class Entity {
+public class Entity extends Pane {
     GameLoop game = GameLoop.Instance;
     GameScreen platform = GameLoop.Instance.platform;
     String name;
@@ -28,6 +29,10 @@ public class Entity {
     public Color getSprite() { return sprite;}
     public void setX(double _x) { x = _x; }
     public void setY(double _y) { y = _y; }
+    public void repaint(){
+        setTranslateX(x);
+        setTranslateY(y);
+    }
     public void hurt(int dmg){
         hp -= dmg;
         if(hp <= 0){

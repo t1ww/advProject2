@@ -21,7 +21,7 @@ public class GameLoop implements Runnable {
     public List<Entity> entities = new ArrayList<Entity>();
     private List<Enemy> enemyList = new ArrayList<Enemy>();
     public List<Bullet> bulletList = new ArrayList<Bullet>();
-    private float fps = 1000.0f / 60;
+    private float interval = 1000.0f / 60;
     private int waveCD = 1200;
     public int waveCD_count = 0;
     public int level = 0;
@@ -57,6 +57,7 @@ public class GameLoop implements Runnable {
     @Override
     public void run() {
         while (true){
+            float time = System.currentTimeMillis();
             switch (gameState){
                 case PreStart -> {
                     _x += lerp(_x, xto, .07);
@@ -75,17 +76,17 @@ public class GameLoop implements Runnable {
                 case Running -> {
                     try {
                         step();
-                        draw();
+//                        draw(); // might not draw anymore
                     } catch (Exception e){
                         e.printStackTrace();
                     }
                 }
                 case End -> {
-                    String time = getTime(runtime);
+                    String gametime = getTime(runtime);
                     _x += lerp(_x, xto, .07);
                     _x2 += lerp(_x2, xto2, .05);
                     platform.renderReset();
-                    platform.renderText("YOU LASTED : " + time, (int) _x, 300);
+                    platform.renderText("YOU LASTED : " + gametime, (int) _x, 300);
                     platform.renderText("Game OVER, press enter to restart", (int) _x2, 330);
                     if(platform.getKeys().contains(KeyCode.ENTER)){
                         Start();
@@ -96,11 +97,18 @@ public class GameLoop implements Runnable {
             if(platform.getKeys().contains(KeyCode.ESCAPE)){
                 System.exit(0);
             }
+            time = System.currentTimeMillis() - time;
             /// delay a bit based on fps
-            try {
-                Thread.sleep((long)fps);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if (time < interval) {
+                try {
+                    Thread.sleep((long) (interval - time));
+                } catch (InterruptedException e) {
+                }
+            } else {
+                try {
+                    Thread.sleep((long) (interval - (interval % time)));
+                } catch (InterruptedException e) {
+                }
             }
         }
     }
@@ -108,7 +116,6 @@ public class GameLoop implements Runnable {
     /// // METHODS // ///
 
     private void step() throws Exception {
-
         // step events
         if (alarm != null) alarm.step();
         for (Bullet b : bulletList) {
@@ -118,8 +125,10 @@ public class GameLoop implements Runnable {
         for (Entity ent : entities) {
             ent.step();
         } // entities steps
-        bulletList.removeIf(n -> n.dead); // remove on hit
-        bulletList.removeIf(n -> n.getY() > platform.WIDTH + 50 || n.getY() < -50); // remove when out of bound
+        // bullet remove
+        bulletList.removeIf(n -> n.dead); // on hit
+        bulletList.removeIf(n -> n.getY() > platform.WIDTH + 50 || n.getY() < -50); // out of bound
+        // entity remove
         entities.removeIf(n -> n.dead); // remove on dead
         /// only during creeps wave
         if (gameWave.equals(WAVE.Creeps)) {
@@ -139,7 +148,7 @@ public class GameLoop implements Runnable {
         /// render setup
         platform.renderReset();
         // draw all entities
-        entities.forEach(Entity :: draw);
+//        entities.forEach(Entity :: draw);
         platform.renderBullets(bulletList);
         // draw ui
         platform.renderHP(player.hp);
@@ -221,6 +230,7 @@ public class GameLoop implements Runnable {
     /// / creating
         // create player
         player = new Player(300, 600, 32);
+        platform.getChildren().addAll(player);
         entities.add(player);
         // create enemies
         alarm = new Alarm(3);

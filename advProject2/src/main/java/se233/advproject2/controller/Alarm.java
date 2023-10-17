@@ -1,4 +1,4 @@
-package se233.advproject2.objects;
+package se233.advproject2.controller;
 
 import se233.advproject2.controller.GameLoop;
 
