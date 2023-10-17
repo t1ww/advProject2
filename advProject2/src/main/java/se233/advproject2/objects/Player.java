@@ -89,18 +89,17 @@ public class Player extends Entity {
         }
     }
     private void createBullet(){
-        System.out.println("player shot fired");
         // create bullet
         Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class);
         game.bulletList.add(b);
         trigger = true;
     }
     private void createSpecialBullet(){
-        System.out.println("player shot fired");
+        System.out.println("player special fired");
         // create bullet
         //Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class);
         //game.bulletList.add(b);
-        trigger = true;
+        specialTrigger = true;
     }
     // move
     public void move() {
