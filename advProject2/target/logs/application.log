@@ -1,0 +1,106 @@
+[ INFO] Tue 2023-10-17 22:17:12 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Tue 2023-10-17 22:17:13 [Thread-3] Character.(Line - ) - x:300.45105529749156 y:600.2425963904884 left:true right:false sprint:false
+[ INFO] Tue 2023-10-17 22:17:13 [Thread-3] Character.(Line - ) - x:93.45105529749156 y:600.2425963904884 left:true right:true sprint:true
+[ INFO] Tue 2023-10-17 22:17:14 [Thread-3] Character.(Line - ) - x:252.45105529749156 y:600.2425963904884 left:true right:true sprint:false
+[ INFO] Tue 2023-10-17 22:17:14 [Thread-3] Character.(Line - ) - x:234.45105529749156 y:600.2425963904884 left:true right:true sprint:false
+[ INFO] Tue 2023-10-17 22:17:14 [Thread-3] Character.(Line - ) - x:276.45105529749156 y:600.2425963904884 left:true right:false sprint:true
+[ INFO] Tue 2023-10-17 22:17:15 [Thread-3] Character.(Line - ) - x:102.45105529749156 y:600.2425963904884 left:true right:true sprint:true
+[ INFO] Tue 2023-10-17 22:17:15 [Thread-3] Character.(Line - ) - shot fired at x:162.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:15 [Thread-3] Character.(Line - ) - shot fired at x:195.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:15 [Thread-3] Character.(Line - ) - shot fired at x:219.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:16 [Thread-3] Character.(Line - ) - shot fired at x:249.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:16 [Thread-3] Character.(Line - ) - shot fired at x:279.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:16 [Thread-3] Character.(Line - ) - x:285.45105529749156 y:600.2425963904884 left:true right:false sprint:false
+[ INFO] Tue 2023-10-17 22:17:16 [Thread-3] Character.(Line - ) - shot fired at x:261.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:16 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 1
+[ INFO] Tue 2023-10-17 22:17:16 [Thread-3] Character.(Line - ) - shot fired at x:234.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:16 [Thread-3] Character.(Line - ) - x:222.45105529749156 y:600.2425963904884 left:true right:true sprint:false
+[ INFO] Tue 2023-10-17 22:17:16 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 2
+[ INFO] Tue 2023-10-17 22:17:16 [Thread-3] Character.(Line - ) - shot fired at x:228.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:16 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 3
+[ INFO] Tue 2023-10-17 22:17:16 [Thread-3] Character.(Line - ) - shot fired at x:255.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 4
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] Character.(Line - ) - shot fired at x:309.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] Character.(Line - ) - shot fired at x:375.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 5
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] Character.(Line - ) - x:423.45105529749156 y:600.2425963904884 left:true right:true sprint:true
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] Character.(Line - ) - shot fired at x:423.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 6
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] Character.(Line - ) - shot fired at x:381.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] Character.(Line - ) - shot fired at x:321.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 8
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 9
+[ INFO] Tue 2023-10-17 22:17:17 [Thread-3] Character.(Line - ) - shot fired at x:261.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:18 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 10
+[ INFO] Tue 2023-10-17 22:17:18 [Thread-3] Character.(Line - ) - shot fired at x:207.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:18 [Thread-3] Character.(Line - ) - x:177.45105529749156 y:600.2425963904884 left:true right:true sprint:true
+[ INFO] Tue 2023-10-17 22:17:18 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 11
+[ INFO] Tue 2023-10-17 22:17:18 [Thread-3] Character.(Line - ) - shot fired at x:195.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:18 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 12
+[ INFO] Tue 2023-10-17 22:17:18 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 14
+[ INFO] Tue 2023-10-17 22:17:18 [Thread-3] Character.(Line - ) - x:285.45105529749156 y:600.2425963904884 left:true right:true sprint:false
+[ INFO] Tue 2023-10-17 22:17:18 [Thread-3] Character.(Line - ) - shot fired at x:279.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:18 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 16
+[ INFO] Tue 2023-10-17 22:17:18 [Thread-3] Character.(Line - ) - shot fired at x:249.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:19 [Thread-3] Character.(Line - ) - shot fired at x:216.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:19 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 17
+[ INFO] Tue 2023-10-17 22:17:19 [Thread-3] Character.(Line - ) - shot fired at x:186.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:19 [Thread-3] Character.(Line - ) - shot fired at x:141.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:19 [Thread-3] Character.(Line - ) - x:81.45105529749156 y:600.2425963904884 left:true right:true sprint:true
+[ INFO] Tue 2023-10-17 22:17:19 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 19
+[ INFO] Tue 2023-10-17 22:17:19 [Thread-3] Character.(Line - ) - shot fired at x:81.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:19 [Thread-3] Character.(Line - ) - x:111.45105529749156 y:600.2425963904884 left:true right:true sprint:false
+[ INFO] Tue 2023-10-17 22:17:19 [Thread-3] Character.(Line - ) - x:111.45105529749156 y:600.2425963904884 left:true right:false sprint:true
+[ INFO] Tue 2023-10-17 22:17:20 [Thread-3] Character.(Line - ) - x:63.451055297491564 y:600.2425963904884 left:true right:true sprint:true
+[ INFO] Tue 2023-10-17 22:17:20 [Thread-3] Character.(Line - ) - x:147.45105529749156 y:600.2425963904884 left:true right:false sprint:false
+[ INFO] Tue 2023-10-17 22:17:21 [Thread-3] Character.(Line - ) - x:108.45105529749156 y:600.2425963904884 left:false right:true sprint:false
+[ INFO] Tue 2023-10-17 22:17:21 [Thread-3] Character.(Line - ) - shot fired at x:255.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:21 [Thread-3] Character.(Line - ) - special fired at x:294.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:21 [Thread-3] Character.(Line - ) - x:294.45105529749156 y:600.2425963904884 left:true right:false sprint:false
+[ INFO] Tue 2023-10-17 22:17:22 [Thread-3] Character.(Line - ) - x:240.45105529749156 y:600.2425963904884 left:true right:true sprint:false
+[ INFO] Tue 2023-10-17 22:17:22 [Thread-3] Character.(Line - ) - special fired at x:240.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:22 [Thread-3] Character.(Line - ) - special fired at x:291.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:22 [Thread-3] Character.(Line - ) - special fired at x:324.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:22 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 20
+[ERROR] Tue 2023-10-17 22:17:22 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.lang.NullPointerException: Cannot read field "x" because "this.target" is null
+	at se233.advproject2.objects.Bullet.move(Bullet.java:110) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.step(GameLoop.java:156) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.run(GameLoop.java:102) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+[ INFO] Tue 2023-10-17 22:17:22 [Thread-3] Character.(Line - ) - special fired at x:357.45105529749156 y:600.2425963904884
+[ INFO] Tue 2023-10-17 22:17:22 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 21
+[ERROR] Tue 2023-10-17 22:17:22 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.lang.NullPointerException: Cannot read field "x" because "this.target" is null
+	at se233.advproject2.objects.Bullet.move(Bullet.java:110) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.step(GameLoop.java:156) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.run(GameLoop.java:102) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+[ERROR] Tue 2023-10-17 22:17:23 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.lang.NullPointerException: Cannot read field "x" because "this.target" is null
+	at se233.advproject2.objects.Bullet.move(Bullet.java:110) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.step(GameLoop.java:156) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.run(GameLoop.java:102) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+[ INFO] Tue 2023-10-17 22:17:23 [Thread-3] Character.(Line - ) - x:441.45105529749156 y:600.2425963904884 left:true right:true sprint:false
+[ INFO] Tue 2023-10-17 22:17:23 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 22
+[ INFO] Tue 2023-10-17 22:17:23 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 24
+[ERROR] Tue 2023-10-17 22:17:23 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.lang.NullPointerException: Cannot read field "x" because "this.target" is null
+	at se233.advproject2.objects.Bullet.move(Bullet.java:110) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.step(GameLoop.java:156) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.run(GameLoop.java:102) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+[ERROR] Tue 2023-10-17 22:17:23 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.lang.NullPointerException: Cannot read field "x" because "this.target" is null
+	at se233.advproject2.objects.Bullet.move(Bullet.java:110) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.step(GameLoop.java:156) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.run(GameLoop.java:102) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+[ INFO] Tue 2023-10-17 22:17:23 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 25
+[ERROR] Tue 2023-10-17 22:17:23 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.lang.NullPointerException: Cannot read field "x" because "this.target" is null
+	at se233.advproject2.objects.Bullet.move(Bullet.java:110) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.step(GameLoop.java:156) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at se233.advproject2.controller.GameLoop.run(GameLoop.java:102) ~[advProject2-1.0-SNAPSHOT.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]

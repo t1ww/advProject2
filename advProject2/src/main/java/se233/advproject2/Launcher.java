@@ -1,6 +1,7 @@
 package se233.advproject2;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import se233.advproject2.controller.DrawingLoop;
@@ -25,6 +26,10 @@ public class Launcher extends Application {
         stage.setTitle("Shooter game");
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.setOnCloseRequest(e -> {
+            Platform.exit(); // Close JavaFX platform
+            System.exit(0);  // Terminate JVM
+        });
         stage.show();
         // thread
         (new Thread(gameLoop)).start();

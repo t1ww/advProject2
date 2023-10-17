@@ -109,8 +109,8 @@ public class GameLoopTest {
                 Enemy etest = new Enemy(cur_x, cur_y-100,32,0);
                 etest.setX(cur_x);
                 etest.setY(cur_y);
-                gameLoopUnderTest.entities.add(etest);
-                Assert.assertEquals("Expect to have an enemy in the list",2, gameLoopUnderTest.entities.size());
+                gameLoopUnderTest.getEntities().add(etest);
+                Assert.assertEquals("Expect to have an enemy in the list",2, gameLoopUnderTest.getEntities().size());
                 // Simulate shooting key press
                 gameScreenUnderTest.pressKey(KeyCode.SPACE);
                 clockTickHelper();
