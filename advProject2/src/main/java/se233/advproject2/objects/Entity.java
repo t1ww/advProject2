@@ -58,8 +58,10 @@ public class Entity extends Pane {
     public void setX(double _x) { x = _x; }
     public void setY(double _y) { y = _y; }
     public void repaint(){
-        setTranslateX(x);
-        setTranslateY(y);
+        Platform.runLater(() -> {
+            setTranslateX(x);
+            setTranslateY(y);
+        });
     }
     public void hurt(int dmg){
         hp -= dmg;

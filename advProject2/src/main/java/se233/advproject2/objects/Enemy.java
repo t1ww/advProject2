@@ -122,4 +122,12 @@ public class Enemy extends Entity {
         // reset move
         moveCD_Counter = moveCD_reduction;
     }
+     double targetPlayerDir(){
+        Player player = game.player;
+        double x1 = x, y1 = y;
+        double x2 = player.x, y2 = player.y;
+        // Calculate the angle between the two points
+        double angle = Math.toDegrees(Math.atan2(y2 - y1, x2 - x1));
+        return -angle;
+    }
 }

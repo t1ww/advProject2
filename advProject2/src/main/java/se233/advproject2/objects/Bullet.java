@@ -5,6 +5,7 @@ import se233.advproject2.controller.GameLoop;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Bullet {
     public boolean dead = false;
@@ -91,7 +92,12 @@ public class Bullet {
             case homing -> {
                 if(!game.entities.isEmpty()) {
                     if (target == null) {
-                        target = game.entities.get((int) (Math.random() * game.entities.size()));
+                        List<Entity> nonPlayerEntities = game.entities.stream()
+                                .filter(e -> !(e instanceof Player))
+                                .toList();
+                        if(!nonPlayerEntities.isEmpty()) {
+                            target = nonPlayerEntities.get((int) (Math.random() * nonPlayerEntities.size()));
+                        }
                     } else {
                         double x1 = x, y1 = y;
                         double x2 = target.x, y2 = target.y;

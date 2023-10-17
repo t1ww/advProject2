@@ -16,7 +16,7 @@ public class Launcher extends Application {
         GameScreen p = new GameScreen();
         GameLoop gameLoop = new GameLoop(p);
         gameLoop.setInstance(gameLoop);
-        DrawingLoop drawingLoop = new DrawingLoop(p);
+        DrawingLoop drawingLoop = new DrawingLoop(gameLoop);
         // scene
         Scene scene = new Scene(p, GameScreen.WIDTH, GameScreen.HEIGHT);
         scene.setOnKeyPressed(event-> p.pressKey(event.getCode()));

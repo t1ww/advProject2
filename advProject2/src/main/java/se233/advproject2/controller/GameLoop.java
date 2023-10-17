@@ -12,6 +12,7 @@ import se233.advproject2.objects.*;
 import se233.advproject2.view.GameScreen;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class GameLoop implements Runnable {
@@ -146,16 +147,35 @@ public class GameLoop implements Runnable {
     private void step() throws Exception {
         // step events
         if (alarm != null) alarm.step();
-        for (Bullet b : bulletList) {
+        Iterator<Bullet> bulletIterator = bulletList.iterator();
+        while (bulletIterator.hasNext()) {
+            Bullet b = bulletIterator.next();
             b.move();
             b.bulletCollision(entities);
-        } // bullet steps
-        for (Entity ent : entities) {
+            if (b.dead || b.getY() > platform.WIDTH + 50 || b.getY() < -50) {
+                bulletIterator.remove();
+            }
+        }
+        Iterator<Entity> entityIterator = entities.iterator();
+        while(entityIterator.hasNext()) {
+            Entity ent = entityIterator.next();
             ent.step();
-        } // entities steps
+        }
         // bullet remove
-        bulletList.removeIf(n -> n.dead); // on hit
-        bulletList.removeIf(n -> n.getY() > platform.WIDTH + 50 || n.getY() < -50); // out of bound
+        bulletIterator = bulletList.iterator();
+        while(bulletIterator.hasNext()) {
+            Bullet b = bulletIterator.next();
+            if (b.dead || b.getY() > platform.WIDTH + 50 || b.getY() < -50) {
+                bulletIterator.remove();
+            }
+        }
+        entityIterator = entities.iterator();
+        while(entityIterator.hasNext()) {
+            Entity ent = entityIterator.next();
+            if (ent.dead) {
+                entityIterator.remove();
+            }
+        }
         // entity remove
         entities.removeIf(n -> n.dead); // remove on dead
         /// only during creeps wave
@@ -241,7 +261,11 @@ public class GameLoop implements Runnable {
                 .map(ent -> (Enemy) ent)
                 .toList();
         enemyCount = enemyList.size(); // recheck size
-        enemyList.forEach(Enemy::moveDown);
+        Iterator<Enemy> enemyIterator = enemyList.iterator();
+        while(enemyIterator.hasNext()) {
+            Enemy enemy = enemyIterator.next();
+            enemy.moveDown();
+        }
     }
     // game setup methods
     public void Start(){
