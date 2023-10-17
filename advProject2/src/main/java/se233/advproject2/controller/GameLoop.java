@@ -201,6 +201,11 @@ public class GameLoop implements Runnable {
     } 
     public void enemiesMoveDown(){
         System.out.println("moving down");
+        enemyList = entities.stream()
+                .filter(ent -> ent instanceof Enemy)
+                .map(ent -> (Enemy) ent)
+                .toList();
+        enemyCount = enemyList.size(); // recheck size
         enemyList.forEach(Enemy::moveDown);
     }
     // game setup methods
