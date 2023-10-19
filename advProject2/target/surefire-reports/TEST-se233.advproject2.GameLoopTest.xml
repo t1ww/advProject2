@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="se233.advproject2.GameLoopTest" time="0.728" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="se233.advproject2.GameLoopTest" time="0.648" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2023.1.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -65,8 +65,8 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="se233.advproject2.GameLoopTest" name="testSpecialAttackMechanism" time="0.714"/>
-  <testcase classname="se233.advproject2.GameLoopTest" name="testClockTick" time="0"/>
-  <testcase classname="se233.advproject2.GameLoopTest" name="testKeyPressHandling" time="0.002"/>
-  <testcase classname="se233.advproject2.GameLoopTest" name="testShootingMechanism" time="0.012"/>
+  <testcase classname="se233.advproject2.GameLoopTest" name="testSpecialAttackMechanism" time="0.645"/>
+  <testcase classname="se233.advproject2.GameLoopTest" name="testClockTick" time="0.001"/>
+  <testcase classname="se233.advproject2.GameLoopTest" name="testKeyPressHandling" time="0.001"/>
+  <testcase classname="se233.advproject2.GameLoopTest" name="testShootingMechanism" time="0.001"/>
 </testsuite>

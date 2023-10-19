@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import se233.advproject2.controller.DrawingLoop;
 import se233.advproject2.controller.GameLoop;
 import se233.advproject2.objects.Enemy;
 import se233.advproject2.objects.Player;
@@ -22,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GameLoopTest {
     private GameLoop gameLoopUnderTest;
     private GameScreen gameScreenUnderTest;
+    private DrawingLoop drawingLoop;
     private Method step;
     @BeforeClass
     public static void initJFX() throws InterruptedException {
@@ -41,6 +43,7 @@ public class GameLoopTest {
     public void init() throws NoSuchMethodException {
         gameScreenUnderTest = new GameScreen();
         gameLoopUnderTest = new GameLoop(gameScreenUnderTest);
+        drawingLoop = new DrawingLoop(gameLoopUnderTest);
         step = GameLoop.class.getDeclaredMethod("step");
         step.setAccessible(true);
     }
@@ -96,16 +99,16 @@ public class GameLoopTest {
                 // Initialize the game loop and start it
                 gameLoopUnderTest.setInstance(gameLoopUnderTest);
                 gameLoopUnderTest.Start();
+                gameLoopUnderTest.alarm = null; // don't spawn wave
                 clockTickHelper();
                 Player player = gameLoopUnderTest.getPlayer();
                 while (player.starting){
                     clockTickHelper();
-                }
-                player = gameLoopUnderTest.player;
+                }// wait for player in position
+                player = gameLoopUnderTest.getPlayer();
                 double cur_x = player.getX(), cur_y = player.getY();
                 gameLoopUnderTest.enemyCount = 0; // reset the count
                 gameLoopUnderTest.setScore(0); // reset the score
-                gameLoopUnderTest.alarm = null; // dont spawn wave
                 Enemy etest = new Enemy(cur_x, cur_y-100,32,0);
                 etest.setX(cur_x);
                 etest.setY(cur_y);
@@ -122,10 +125,9 @@ public class GameLoopTest {
                     clockTickHelper();
                 }
                 // Check if bullet was destroyed
-                Assert.assertEquals("Expected bullet to be removed from bullet list.", 0, gameLoopUnderTest.bulletList.size());
+                Assert.assertEquals("Expected bullet to be removed from bullet list.", 0, gameLoopUnderTest.bulletList.size());                                             gameLoopUnderTest.setScore(gameLoopUnderTest.getScore()+1);
                 Assert.assertEquals("Expected no more enemy.", 0, gameLoopUnderTest.enemyCount);
                 Assert.assertNotEquals("Expected score to not be 0",0, gameLoopUnderTest.getScore()); // score should be added
-
             } catch (Exception e) {
                 fail("Failed within Platform.runLater(): " + e.getMessage());
             } finally {
