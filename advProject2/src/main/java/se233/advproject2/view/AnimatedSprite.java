@@ -46,4 +46,8 @@ public class AnimatedSprite extends ImageView {
     public void stopAnimation() {
         animationTimeline.stop();
     }
+
+    public int getIndex() {
+        return cutIndex;
+    }
 }
