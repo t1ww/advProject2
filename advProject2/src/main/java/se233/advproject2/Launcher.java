@@ -27,8 +27,7 @@ public class Launcher extends Application {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setOnCloseRequest(e -> {
-            Platform.exit(); // Close JavaFX platform
-            System.exit(0);  // Terminate JVM
+            Platform.runLater(stage::close);
         });
         stage.show();
         // thread

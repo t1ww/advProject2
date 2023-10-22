@@ -5,6 +5,7 @@ package se233.advproject2.controller;
 
 import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
+import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import se233.advproject2.objects.*;
@@ -90,6 +91,7 @@ public class GameLoop implements Runnable {
                     // key instruction
                     String str = "A, D or <-arrow-> to move" +
                             "\nPRESS SPACE TO SHOOT" +
+                            "\nPRESS G TO USE BOMB (STUN AND CLEAR BULLETS)" +
                             "\nPRESS LSHIFT TO SPRINT";
                     platform.renderText(str, (int)_x, 300);
                     platform.renderText("press Space to start game", (int)_x2, 400);
@@ -99,9 +101,9 @@ public class GameLoop implements Runnable {
                 }
                 case Running -> {
                     try {
-                        step();
                         Platform.runLater(() -> {
                             try {
+                                step();
                                 draw(); // ui
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
@@ -128,7 +130,10 @@ public class GameLoop implements Runnable {
             }
             // if esc leave game
             if(platform.getKeys().contains(KeyCode.ESCAPE)){
-                System.exit(0);
+                Platform.runLater(() -> {
+                    Stage stage = (Stage) platform.getScene().getWindow();
+                    stage.close();
+                });
             }
             time = System.currentTimeMillis() - time;
             /// delay a bit based on fps
@@ -206,7 +211,13 @@ public class GameLoop implements Runnable {
         platform.renderReset();
         platform.renderBullets(bulletList);
         // draw ui
-        if(player != null)platform.renderHP(player.hp);
+        if(player != null) {
+            double px = player.getX();
+            double py = player.getY();
+            platform.renderHP(player.hp, px, py);
+            platform.renderSpecialAmmo(player.getSpecialAmmo(), px,py);
+            if(!player.isNormal())platform.renderText("Ammo : " + player.getAmmo(), px + 32, py-10);
+        }
         //
         platform.renderText("Score : " + score, 10, 10);
         platform.renderText("Level : " + level, 10, 30);

@@ -45,30 +45,24 @@ public class GameScreen extends Pane {
         gc.setFill(color);
         gc.fillRect(x, y, s, s);
     }
-    public void renderText(String Text, int x, int y) {
+    public void renderText(String Text, double x, double y) {
         gc.setFill(Color.BLACK);
         gc.fillText(Text, x , y);
     }
-    public void renderHP(int hp)
+    public void renderHP(int hp , double x, double y)
             throws NullPointerException,IndexOutOfBoundsException {
-        // draw hp text
-        gc.setFill(Color.BLACK);
-        gc.fillText("HP : " + hp + "/3", 10 ,50);
         gc.setFill(Color.GREEN);
         for (int i = 0; i < hp; i++) {
-            gc.fillRect(50 + (25*i), 50, 20, 10);
+            gc.fillRect(x-5, y + (i*11), 5, 10);
         }
-
     }
-    // key pressing
-    KeyCode keyPressed;
-    public KeyCode getKeyPressed() throws NullPointerException {
-        if(!key.isEmpty() && keyPressed != key.get(key.size()-1)) {
-            keyPressed = key.get(key.size()-1);
-            return keyPressed; // return this if haven't returned this keycode
-        }else return null; // else don't return
-        // reset on release
-    } // getKeyPress isn't working
+    public void renderSpecialAmmo(int ammo , double x, double y)
+            throws NullPointerException,IndexOutOfBoundsException {
+        gc.setFill(Color.BLUE);
+        for (int i = 0; i < ammo; i++) {
+            gc.fillRect(x+32, y + (i*7), 5, 5);
+        }
+    }
 
     /// getting keys pressed
     private List<KeyCode> key = new ArrayList<>();
@@ -82,7 +76,6 @@ public class GameScreen extends Pane {
 
     public void releaseKey(KeyCode key) {
         this.key.remove(key);
-        if(key == keyPressed) keyPressed = null;
     }
     public void reset(){
         Platform.runLater(()->{

@@ -21,13 +21,31 @@ public class Player extends Entity {
     double startX;
     double startY;
     GameScreen p = platform;
+    int SpecialAmmo = 3;
+    int ammo = 0;
+    public boolean isNormal(){
+        return shotType == ShotType.normal;
+    }
+    public int getAmmo() {
+        return ammo;
+    }
+    public int getSpecialAmmo(){
+        return SpecialAmmo;
+    }
 
     enum ShotType {
-        normal,
-        scatter,
-        homing
+        normal, scatter, homing
     }
     private ShotType shotType = ShotType.normal;
+    public void setNormalShot(){
+        shotType = ShotType.normal;
+    }
+    public void setScatterShot(){
+        shotType = ShotType.scatter;
+    }
+    public void setHomingShot(){
+        shotType = ShotType.homing;
+    }
     // sprites
     private final String sprite = "assets/playerSprite-straight.png";
     private final String spriteLeft = "assets/playerSprite-left.png";
@@ -121,6 +139,9 @@ public class Player extends Entity {
                 // make bullet shot effect
                 new Particle(getX()-16,getY()-48,"assets/shotSprite-Sheet.png",
                         64,64,0,0,true,4);
+                if(--ammo <= 0){
+                    setNormalShot();
+                }
             }
             case homing -> {
                 // create bullet
@@ -132,6 +153,9 @@ public class Player extends Entity {
                 // make bullet shot effect
                 new Particle(getX()-16,getY()-48,"assets/shotSprite-Sheet.png",
                         64,64,0,0,true,4);
+                if(--ammo <= 0){
+                    setNormalShot();
+                }
             }
         }
 

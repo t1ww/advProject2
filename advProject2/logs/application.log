@@ -13121,3 +13121,1182 @@ java.util.ConcurrentModificationException: null
 [ INFO] Sun 2023-10-22 21:34:26 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
 [ INFO] Sun 2023-10-22 21:34:26 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
 [ INFO] Sun 2023-10-22 21:34:27 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 80
+[ INFO] Sun 2023-10-22 21:36:57 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:36:58 [Thread-3] Character.(Line - ) - shot fired at x:299.57565017916875 y:600.4564879083257
+[ INFO] Sun 2023-10-22 21:36:58 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:36:59 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 1
+[ INFO] Sun 2023-10-22 21:36:59 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:36:59 [Thread-3] Character.(Line - ) - special fired at x:299.57565017916875 y:600.4564879083257
+[ INFO] Sun 2023-10-22 21:36:59 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:00 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 11
+[ INFO] Sun 2023-10-22 21:37:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 21:37:00 [Thread-3] Character.(Line - ) - x:299.57565017916875 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:37:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:01 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:01 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:01 [Thread-3] Character.(Line - ) - x:188.57565017916875 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:37:01 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:01 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:01 [Thread-3] Character.(Line - ) - special fired at x:251.57565017916875 y:600.4564879083257
+[ INFO] Sun 2023-10-22 21:37:01 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:01 [Thread-3] Character.(Line - ) - special fired at x:254.57565017916875 y:600.4564879083257
+[ INFO] Sun 2023-10-22 21:37:01 [Thread-3] Character.(Line - ) - x:254.57565017916875 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:37:02 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 21
+[ INFO] Sun 2023-10-22 21:37:02 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 21:37:02 [Thread-3] Character.(Line - ) - x:341.57565017916875 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:37:35 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:37:36 [Thread-3] Character.(Line - ) - shot fired at x:300.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:36 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:36 [Thread-3] Character.(Line - ) - shot fired at x:300.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:36 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:36 [Thread-3] Character.(Line - ) - shot fired at x:300.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:36 [Thread-3] Character.(Line - ) - x:300.49205062793027 y:600.1965030762956 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 1
+[ERROR] Sun 2023-10-22 21:37:37 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013) ~[?:?]
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967) ~[?:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.step(GameLoop.java:171) ~[classes/:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.run(GameLoop.java:103) ~[classes/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - shot fired at x:270.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - x:270.49205062793027 y:600.1965030762956 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 2
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - shot fired at x:234.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 3
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - shot fired at x:234.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:37 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 4
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - x:234.49205062793027 y:600.1965030762956 left:false right:true sprint:false
+[ERROR] Sun 2023-10-22 21:37:38 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013) ~[?:?]
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967) ~[?:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.step(GameLoop.java:171) ~[classes/:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.run(GameLoop.java:103) ~[classes/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - shot fired at x:252.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 5
+[ERROR] Sun 2023-10-22 21:37:38 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013) ~[?:?]
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967) ~[?:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.step(GameLoop.java:171) ~[classes/:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.run(GameLoop.java:103) ~[classes/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 6
+[ERROR] Sun 2023-10-22 21:37:38 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013) ~[?:?]
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967) ~[?:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.step(GameLoop.java:171) ~[classes/:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.run(GameLoop.java:103) ~[classes/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - x:306.49205062793027 y:600.1965030762956 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - shot fired at x:333.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - shot fired at x:378.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - x:378.49205062793027 y:600.1965030762956 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 7
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 8
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - special fired at x:249.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - x:219.49205062793027 y:600.1965030762956 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 18
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 21:37:41 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:41 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:41 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:41 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:41 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:41 [Thread-3] Character.(Line - ) - shot fired at x:318.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:41 [Thread-3] Character.(Line - ) - x:318.49205062793027 y:600.1965030762956 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:37:41 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:41 [Thread-3] Character.(Line - ) - shot fired at x:333.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:41 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - shot fired at x:360.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - x:387.49205062793027 y:600.1965030762956 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - shot fired at x:387.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - shot fired at x:360.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - x:351.49205062793027 y:600.1965030762956 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 20
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 22
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 23
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - shot fired at x:405.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 24
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:42 [Thread-3] Character.(Line - ) - x:429.49205062793027 y:600.1965030762956 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - shot fired at x:423.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 25
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - shot fired at x:360.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 26
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - shot fired at x:327.49205062793027 y:600.1965030762956
+[ERROR] Sun 2023-10-22 21:37:43 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013) ~[?:?]
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967) ~[?:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.step(GameLoop.java:171) ~[classes/:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.run(GameLoop.java:103) ~[classes/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 27
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - shot fired at x:264.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:43 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - shot fired at x:204.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - shot fired at x:171.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - x:162.49205062793027 y:600.1965030762956 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 29
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - shot fired at x:177.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - shot fired at x:204.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:44 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - shot fired at x:234.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 31
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - shot fired at x:261.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - x:321.49205062793027 y:600.1965030762956 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 33
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 35
+[ERROR] Sun 2023-10-22 21:37:45 [Thread-3] GameLoop.(Line - ) - Exception caught during game loop:
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013) ~[?:?]
+	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967) ~[?:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.step(GameLoop.java:171) ~[classes/:?]
+	at se233.advproject2/se233.advproject2.controller.GameLoop.run(GameLoop.java:103) ~[classes/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1623) [?:?]
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - x:285.49205062793027 y:600.1965030762956 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:37:45 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - x:252.49205062793027 y:600.1965030762956 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - shot fired at x:87.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:46 [Thread-3] Character.(Line - ) - x:63.49205062793027 y:600.1965030762956 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - shot fired at x:75.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - shot fired at x:129.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - shot fired at x:177.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - x:207.49205062793027 y:600.1965030762956 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 36
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 37
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - x:141.49205062793027 y:600.1965030762956 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:47 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - x:303.49205062793027 y:600.1965030762956 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:37:48 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:49 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:37:49 [Thread-3] Character.(Line - ) - shot fired at x:267.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:49 [Thread-3] Character.(Line - ) - shot fired at x:267.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:49 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:49 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:49 [Thread-3] Character.(Line - ) - shot fired at x:267.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:37:49 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:37:49 [Thread-3] Character.(Line - ) - special fired at x:267.49205062793027 y:600.1965030762956
+[ INFO] Sun 2023-10-22 21:41:56 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:41:57 [Thread-3] Character.(Line - ) - x:300.49438700979033 y:600.1965030762956 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:41:58 [Thread-3] Character.(Line - ) - x:261.49438700979033 y:600.1965030762956 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:41:58 [Thread-3] Character.(Line - ) - x:279.49438700979033 y:600.1965030762956 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:41:58 [Thread-3] Character.(Line - ) - x:264.49438700979033 y:600.1965030762956 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:41:58 [Thread-3] Character.(Line - ) - x:339.49438700979033 y:600.1965030762956 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:41:59 [Thread-3] Character.(Line - ) - x:210.49438700979033 y:600.1965030762956 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:42:47 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:42:48 [Thread-3] Character.(Line - ) - x:299.54735733881625 y:600.2425963904884 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:42:48 [Thread-3] Character.(Line - ) - x:233.54735733881625 y:600.2425963904884 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:42:49 [Thread-3] Character.(Line - ) - x:383.54735733881625 y:600.2425963904884 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:42:50 [Thread-3] Character.(Line - ) - x:98.54735733881625 y:600.2425963904884 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:42:50 [Thread-3] Character.(Line - ) - x:224.54735733881625 y:600.2425963904884 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:42:51 [Thread-3] Character.(Line - ) - x:371.54735733881625 y:600.2425963904884 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:42:51 [Thread-3] Character.(Line - ) - shot fired at x:341.54735733881625 y:600.2425963904884
+[ INFO] Sun 2023-10-22 21:42:51 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:51 [Thread-3] Character.(Line - ) - x:305.54735733881625 y:600.2425963904884 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:42:51 [Thread-3] Character.(Line - ) - shot fired at x:311.54735733881625 y:600.2425963904884
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - x:329.54735733881625 y:600.2425963904884 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - shot fired at x:311.54735733881625 y:600.2425963904884
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 1
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - x:302.54735733881625 y:600.2425963904884 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - shot fired at x:332.54735733881625 y:600.2425963904884
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 2
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - x:347.54735733881625 y:600.2425963904884 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - shot fired at x:350.54735733881625 y:600.2425963904884
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 4
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - x:392.54735733881625 y:600.2425963904884 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:42:52 [Thread-3] Character.(Line - ) - shot fired at x:392.54735733881625 y:600.2425963904884
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 6
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - shot fired at x:344.54735733881625 y:600.2425963904884
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 7
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] GameLoop.(Line - ) - Score has been updated to: 8
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:42:53 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:43:42 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:43:43 [Thread-3] Character.(Line - ) - x:300.2342917682281 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:43:44 [Thread-3] Character.(Line - ) - x:210.2342917682281 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:49:11 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:49:31 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:49:32 [Thread-3] Character.(Line - ) - x:299.53223643864396 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:49:32 [Thread-3] Character.(Line - ) - x:263.53223643864396 y:600.2995017166525 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:49:33 [Thread-3] Character.(Line - ) - x:410.53223643864396 y:600.2995017166525 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:49:34 [Thread-3] Character.(Line - ) - x:128.53223643864396 y:600.2995017166525 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:49:34 [Thread-3] Character.(Line - ) - x:272.53223643864396 y:600.2995017166525 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:49:34 [Thread-3] Character.(Line - ) - x:242.53223643864396 y:600.2995017166525 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:49:34 [Thread-3] Character.(Line - ) - x:266.53223643864396 y:600.2995017166525 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:49:34 [Thread-3] Character.(Line - ) - x:236.53223643864396 y:600.2995017166525 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:49:35 [Thread-3] Character.(Line - ) - x:266.53223643864396 y:600.2995017166525 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:49:35 [Thread-3] Character.(Line - ) - x:353.53223643864396 y:600.2995017166525 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:49:47 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:49:57 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:49:58 [Thread-3] Character.(Line - ) - x:299.83486293131006 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:49:58 [Thread-3] Character.(Line - ) - x:248.83486293131006 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:51:01 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:51:02 [Thread-3] Character.(Line - ) - x:300.48104237969113 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:51:02 [Thread-3] Character.(Line - ) - x:270.48104237969113 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:51:24 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:51:25 [Thread-3] Character.(Line - ) - x:299.5207245366257 y:600.2695515449872 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:51:25 [Thread-3] Character.(Line - ) - x:266.5207245366257 y:600.2695515449872 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:51:26 [Thread-3] Character.(Line - ) - x:566.5207245366257 y:600.2695515449872 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:27 [Thread-3] Character.(Line - ) - x:260.5207245366257 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:27 [Thread-3] Character.(Line - ) - x:308.5207245366257 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:27 [Thread-3] Character.(Line - ) - x:278.5207245366257 y:600.2695515449872 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:28 [Thread-3] Character.(Line - ) - x:308.5207245366257 y:600.2695515449872 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:51:29 [Thread-3] Character.(Line - ) - x:155.52072453662572 y:600.2695515449872 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:51:29 [Thread-3] Character.(Line - ) - x:260.5207245366257 y:600.2695515449872 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:51:30 [Thread-3] Character.(Line - ) - x:221.52072453662572 y:600.2695515449872 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:51:30 [Thread-3] Character.(Line - ) - x:131.52072453662572 y:600.2695515449872 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:31 [Thread-3] Character.(Line - ) - x:191.52072453662572 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:31 [Thread-3] Character.(Line - ) - x:305.5207245366257 y:600.2695515449872 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:51:31 [Thread-3] Character.(Line - ) - x:347.5207245366257 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:32 [Thread-3] Character.(Line - ) - x:305.5207245366257 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:32 [Thread-3] Character.(Line - ) - x:179.52072453662572 y:600.2695515449872 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:51:33 [Thread-3] Character.(Line - ) - x:239.52072453662572 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:33 [Thread-3] Character.(Line - ) - x:209.52072453662572 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:34 [Thread-3] Character.(Line - ) - x:281.5207245366257 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:34 [Thread-3] Character.(Line - ) - x:317.5207245366257 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:34 [Thread-3] Character.(Line - ) - hp:2
+[ INFO] Sun 2023-10-22 21:51:34 [Thread-3] Character.(Line - ) - x:275.5207245366257 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:34 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:51:35 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:35 [Thread-3] Character.(Line - ) - x:359.5207245366257 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:35 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:35 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:35 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:35 [Thread-3] Character.(Line - ) - x:287.5207245366257 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:35 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:35 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:35 [Thread-3] Character.(Line - ) - x:341.5207245366257 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:36 [Thread-3] Character.(Line - ) - x:299.5207245366257 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:36 [Thread-3] Character.(Line - ) - x:242.52072453662572 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:36 [Thread-3] Character.(Line - ) - x:170.52072453662572 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:37 [Thread-3] Character.(Line - ) - x:236.52072453662572 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:37 [Thread-3] Character.(Line - ) - x:302.5207245366257 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:38 [Thread-3] Character.(Line - ) - x:152.52072453662572 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:38 [Thread-3] Character.(Line - ) - x:188.52072453662572 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:38 [Thread-3] Character.(Line - ) - hp:1
+[ INFO] Sun 2023-10-22 21:51:38 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:51:38 [Thread-3] Character.(Line - ) - x:242.52072453662572 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:39 [Thread-3] Character.(Line - ) - x:314.5207245366257 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:39 [Thread-3] Character.(Line - ) - x:227.52072453662572 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:39 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:51:40 [Thread-3] Character.(Line - ) - x:275.5207245366257 y:600.2695515449872 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:51:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:51:40 [Thread-3] Character.(Line - ) - x:329.5207245366257 y:600.2695515449872 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:51:40 [Thread-3] Character.(Line - ) - x:215.52072453662572 y:600.2695515449872 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:51:40 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:51:41 [Thread-3] Character.(Line - ) - x:248.52072453662572 y:600.2695515449872 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:51:41 [Thread-3] Character.(Line - ) - x:224.52072453662572 y:600.2695515449872 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:51:41 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:51:42 [Thread-3] Character.(Line - ) - x:254.52072453662572 y:600.2695515449872 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:51:42 [Thread-3] Character.(Line - ) - x:287.5207245366257 y:600.2695515449872 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:51:42 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:51:42 [Thread-3] Character.(Line - ) - hp:0
+[ INFO] Sun 2023-10-22 21:51:42 [Thread-3] GameLoop.(Line - ) - Game ended. Lasted: 00:00:17
+[ INFO] Sun 2023-10-22 21:51:44 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:51:45 [Thread-3] Character.(Line - ) - x:299.533821620876 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:51:45 [Thread-3] Character.(Line - ) - x:254.53382162087598 y:600.2995017166525 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:51:45 [Thread-3] Character.(Line - ) - x:284.533821620876 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:51:46 [Thread-3] Character.(Line - ) - x:206.53382162087598 y:600.2995017166525 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:53:51 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:53:52 [Thread-3] Character.(Line - ) - x:300.27244697437294 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:53:52 [Thread-3] Character.(Line - ) - x:258.27244697437294 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:53:52 [Thread-3] Character.(Line - ) - x:342.27244697437294 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:53:53 [Thread-3] Character.(Line - ) - x:90.27244697437294 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:53:54 [Thread-3] Character.(Line - ) - x:351.27244697437294 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:53:55 [Thread-3] Character.(Line - ) - x:396.27244697437294 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:53:55 [Thread-3] Character.(Line - ) - x:345.27244697437294 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:53:55 [Thread-3] Character.(Line - ) - x:474.27244697437294 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:53:56 [Thread-3] Character.(Line - ) - x:306.27244697437294 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:53:56 [Thread-3] Character.(Line - ) - x:402.27244697437294 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:53:57 [Thread-3] Character.(Line - ) - x:462.27244697437294 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:53:57 [Thread-3] Character.(Line - ) - x:510.27244697437294 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:53:57 [Thread-3] Character.(Line - ) - x:354.27244697437294 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:53:57 [Thread-3] Character.(Line - ) - x:420.27244697437294 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:53:58 [Thread-3] Character.(Line - ) - x:384.27244697437294 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:53:58 [Thread-3] Character.(Line - ) - x:426.27244697437294 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:53:58 [Thread-3] Character.(Line - ) - x:462.27244697437294 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:53:59 [Thread-3] Character.(Line - ) - x:300.27244697437294 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:53:59 [Thread-3] Character.(Line - ) - hp:2
+[ INFO] Sun 2023-10-22 21:53:59 [Thread-3] Character.(Line - ) - x:348.27244697437294 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:53:59 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:53:59 [Thread-3] Character.(Line - ) - x:390.27244697437294 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:54:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:00 [Thread-3] Character.(Line - ) - x:198.27244697437294 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:54:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:00 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:00 [Thread-3] Character.(Line - ) - hp:1
+[ INFO] Sun 2023-10-22 21:54:00 [Thread-3] Character.(Line - ) - x:336.27244697437294 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:54:01 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:54:01 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:54:01 [Thread-3] Character.(Line - ) - x:390.27244697437294 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:54:01 [Thread-3] Character.(Line - ) - hp:0
+[ INFO] Sun 2023-10-22 21:54:01 [Thread-3] GameLoop.(Line - ) - Game ended. Lasted: 00:00:09
+[ INFO] Sun 2023-10-22 21:54:02 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:54:04 [Thread-3] Character.(Line - ) - x:300.4740297789992 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:54:04 [Thread-3] Character.(Line - ) - x:270.4740297789992 y:600.2183367514396 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:04 [Thread-3] Character.(Line - ) - x:312.4740297789992 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:54:06 [Thread-3] Character.(Line - ) - x:123.47402977899918 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:07 [Thread-3] Character.(Line - ) - x:336.4740297789992 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:54:08 [Thread-3] Character.(Line - ) - x:285.4740297789992 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:09 [Thread-3] Character.(Line - ) - x:387.4740297789992 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:54:09 [Thread-3] Character.(Line - ) - hp:2
+[ INFO] Sun 2023-10-22 21:54:09 [Thread-3] Character.(Line - ) - x:363.4740297789992 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:54:09 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:54:09 [Thread-3] Character.(Line - ) - hp:1
+[ INFO] Sun 2023-10-22 21:54:09 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - x:186.47402977899918 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:10 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:11 [Thread-3] Character.(Line - ) - x:225.47402977899918 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:54:11 [Thread-3] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:11 [Thread-3] Character.(Line - ) - x:180.47402977899918 y:600.2183367514396 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:45 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:54:46 [JavaFX Application Thread] Character.(Line - ) - x:300.2323948832443 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:54:46 [JavaFX Application Thread] Character.(Line - ) - x:246.2323948832443 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:47 [JavaFX Application Thread] Character.(Line - ) - x:324.2323948832443 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:54:47 [JavaFX Application Thread] Character.(Line - ) - x:228.2323948832443 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:48 [JavaFX Application Thread] Character.(Line - ) - x:450.2323948832443 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:54:49 [JavaFX Application Thread] Character.(Line - ) - x:150.2323948832443 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:49 [JavaFX Application Thread] Character.(Line - ) - x:237.2323948832443 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:50 [JavaFX Application Thread] Character.(Line - ) - x:183.2323948832443 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:50 [JavaFX Application Thread] Character.(Line - ) - hp:2
+[ INFO] Sun 2023-10-22 21:54:50 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:54:51 [JavaFX Application Thread] Character.(Line - ) - x:387.2323948832443 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:54:51 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:51 [JavaFX Application Thread] Character.(Line - ) - x:273.2323948832443 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:54:51 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:51 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:51 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:51 [JavaFX Application Thread] Character.(Line - ) - x:351.2323948832443 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:54:51 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:51 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:54:52 [JavaFX Application Thread] Character.(Line - ) - x:99.2323948832443 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:54:52 [JavaFX Application Thread] Character.(Line - ) - x:237.2323948832443 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:54:53 [JavaFX Application Thread] Character.(Line - ) - x:177.2323948832443 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:54:53 [JavaFX Application Thread] Character.(Line - ) - x:201.2323948832443 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:54:53 [JavaFX Application Thread] Character.(Line - ) - x:141.2323948832443 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:54:54 [JavaFX Application Thread] Character.(Line - ) - x:414.2323948832443 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:54 [JavaFX Application Thread] Character.(Line - ) - x:360.2323948832443 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:54:55 [JavaFX Application Thread] Character.(Line - ) - x:381.2323948832443 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:56:18 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:56:19 [JavaFX Application Thread] Character.(Line - ) - x:299.5434874314905 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:56:19 [JavaFX Application Thread] Character.(Line - ) - x:236.54348743149052 y:600.2995017166525 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:56:20 [JavaFX Application Thread] Character.(Line - ) - x:458.5434874314905 y:600.2995017166525 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:56:22 [JavaFX Application Thread] Character.(Line - ) - x:104.54348743149052 y:600.2995017166525 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:56:22 [JavaFX Application Thread] Character.(Line - ) - x:338.5434874314905 y:600.2995017166525 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:56:23 [JavaFX Application Thread] Character.(Line - ) - x:260.5434874314905 y:600.2995017166525 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:14 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 21:57:15 [JavaFX Application Thread] Character.(Line - ) - x:300.48427845700553 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:57:16 [JavaFX Application Thread] Character.(Line - ) - x:207.48427845700553 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:16 [JavaFX Application Thread] Character.(Line - ) - x:501.48427845700553 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:18 [JavaFX Application Thread] Character.(Line - ) - x:63.48427845700553 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:19 [JavaFX Application Thread] Character.(Line - ) - x:465.48427845700553 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:19 [JavaFX Application Thread] Character.(Line - ) - x:387.48427845700553 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:19 [JavaFX Application Thread] Character.(Line - ) - x:429.48427845700553 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:20 [JavaFX Application Thread] Character.(Line - ) - x:375.48427845700553 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:20 [JavaFX Application Thread] Character.(Line - ) - x:507.48427845700553 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:21 [JavaFX Application Thread] Character.(Line - ) - x:543.4842784570055 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:21 [JavaFX Application Thread] Character.(Line - ) - x:495.48427845700553 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:21 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:423.48427845700553 y:600.4564879083257
+[ INFO] Sun 2023-10-22 21:57:21 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:372.48427845700553 y:600.4564879083257
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:339.48427845700553 y:600.4564879083257
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] Character.(Line - ) - x:327.48427845700553 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 1
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] Character.(Line - ) - x:354.48427845700553 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 2
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 3
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:22 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - x:240.48427845700553 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - x:318.48427845700553 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:57:23 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 21:57:24 [JavaFX Application Thread] Character.(Line - ) - x:294.48427845700553 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:24 [JavaFX Application Thread] Character.(Line - ) - x:312.48427845700553 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:25 [JavaFX Application Thread] Character.(Line - ) - x:462.48427845700553 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:57:25 [JavaFX Application Thread] Character.(Line - ) - x:420.48427845700553 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:25 [JavaFX Application Thread] Character.(Line - ) - x:450.48427845700553 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:26 [JavaFX Application Thread] Character.(Line - ) - x:480.48427845700553 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:57:26 [JavaFX Application Thread] Character.(Line - ) - x:459.48427845700553 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:57:27 [JavaFX Application Thread] Character.(Line - ) - x:210.48427845700553 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:28 [JavaFX Application Thread] Character.(Line - ) - x:300.48427845700553 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:28 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:29 [JavaFX Application Thread] Character.(Line - ) - x:189.48427845700553 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:29 [JavaFX Application Thread] Character.(Line - ) - x:339.48427845700553 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:57:30 [JavaFX Application Thread] Character.(Line - ) - x:204.48427845700553 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:31 [JavaFX Application Thread] Character.(Line - ) - x:258.48427845700553 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:57:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:32 [JavaFX Application Thread] Character.(Line - ) - x:171.48427845700553 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 21:57:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:32 [JavaFX Application Thread] Character.(Line - ) - x:156.48427845700553 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:32 [JavaFX Application Thread] Character.(Line - ) - x:189.48427845700553 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:32 [JavaFX Application Thread] Character.(Line - ) - x:213.48427845700553 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:33 [JavaFX Application Thread] Character.(Line - ) - x:234.48427845700553 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 21:57:33 [JavaFX Application Thread] Character.(Line - ) - x:381.48427845700553 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:33 [JavaFX Application Thread] Character.(Line - ) - x:285.48427845700553 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:34 [JavaFX Application Thread] Character.(Line - ) - x:417.48427845700553 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:34 [JavaFX Application Thread] Character.(Line - ) - x:357.48427845700553 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:34 [JavaFX Application Thread] Character.(Line - ) - x:423.48427845700553 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:35 [JavaFX Application Thread] Character.(Line - ) - x:387.48427845700553 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:35 [JavaFX Application Thread] Character.(Line - ) - x:339.48427845700553 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:35 [JavaFX Application Thread] Character.(Line - ) - x:279.48427845700553 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:35 [JavaFX Application Thread] Character.(Line - ) - x:333.48427845700553 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:36 [JavaFX Application Thread] Character.(Line - ) - x:393.48427845700553 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:36 [JavaFX Application Thread] Character.(Line - ) - x:441.48427845700553 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:37 [JavaFX Application Thread] Character.(Line - ) - x:291.48427845700553 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:37 [JavaFX Application Thread] Character.(Line - ) - x:345.48427845700553 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:37 [JavaFX Application Thread] Character.(Line - ) - x:297.48427845700553 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:37 [JavaFX Application Thread] Character.(Line - ) - x:201.48427845700553 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:38 [JavaFX Application Thread] Character.(Line - ) - x:129.48427845700553 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 21:57:38 [JavaFX Application Thread] Character.(Line - ) - x:225.48427845700553 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 21:57:38 [JavaFX Application Thread] Character.(Line - ) - x:165.48427845700553 y:600.4564879083257 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 21:57:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 22:00:06 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 22:00:07 [JavaFX Application Thread] Character.(Line - ) - x:300.480959541326 y:600.2995017166525 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 22:00:07 [JavaFX Application Thread] Character.(Line - ) - x:360.480959541326 y:600.2995017166525 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 22:00:08 [JavaFX Application Thread] Character.(Line - ) - x:150.480959541326 y:600.2995017166525 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 22:00:09 [JavaFX Application Thread] Character.(Line - ) - x:300.480959541326 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:00:09 [JavaFX Application Thread] Character.(Line - ) - special fired at x:273.480959541326 y:600.2995017166525
+[ INFO] Sun 2023-10-22 22:00:09 [JavaFX Application Thread] Character.(Line - ) - x:219.480959541326 y:600.2995017166525 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:00:10 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 10
+[ INFO] Sun 2023-10-22 22:00:10 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 22:00:10 [JavaFX Application Thread] Character.(Line - ) - x:345.480959541326 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:00:10 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:00:11 [JavaFX Application Thread] Character.(Line - ) - x:300.480959541326 y:600.2995017166525 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:00:11 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:00:11 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:00:11 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:00:11 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:00:11 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:00:11 [JavaFX Application Thread] Character.(Line - ) - x:357.480959541326 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:00:11 [JavaFX Application Thread] Character.(Line - ) - x:330.480959541326 y:600.2995017166525 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:00:12 [JavaFX Application Thread] Character.(Line - ) - x:378.480959541326 y:600.2995017166525 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:00:12 [JavaFX Application Thread] Character.(Line - ) - x:474.480959541326 y:600.2995017166525 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:00:13 [JavaFX Application Thread] Character.(Line - ) - x:210.480959541326 y:600.2995017166525 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 22:00:13 [JavaFX Application Thread] Character.(Line - ) - x:282.480959541326 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:00:14 [JavaFX Application Thread] Character.(Line - ) - x:237.480959541326 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:00:14 [JavaFX Application Thread] Character.(Line - ) - x:201.480959541326 y:600.2995017166525 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:00:15 [JavaFX Application Thread] Character.(Line - ) - x:345.480959541326 y:600.2995017166525 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:00:15 [JavaFX Application Thread] Character.(Line - ) - x:303.480959541326 y:600.2995017166525 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 22:00:16 [JavaFX Application Thread] Character.(Line - ) - x:345.480959541326 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:00:16 [JavaFX Application Thread] Character.(Line - ) - x:321.480959541326 y:600.2995017166525 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:00:16 [JavaFX Application Thread] Character.(Line - ) - x:402.480959541326 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:00:17 [JavaFX Application Thread] Character.(Line - ) - x:201.480959541326 y:600.2995017166525 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 22:00:18 [JavaFX Application Thread] Character.(Line - ) - x:387.480959541326 y:600.2995017166525 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 22:00:18 [JavaFX Application Thread] Character.(Line - ) - x:327.480959541326 y:600.2995017166525 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 22:02:38 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 22:02:39 [JavaFX Application Thread] Character.(Line - ) - x:300.4886259585013 y:600.2995017166525 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:02:39 [JavaFX Application Thread] Character.(Line - ) - x:252.4886259585013 y:600.2995017166525 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:02:57 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 22:02:58 [JavaFX Application Thread] Character.(Line - ) - x:300.2204526890082 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:02:58 [JavaFX Application Thread] Character.(Line - ) - x:354.2204526890082 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:03:00 [JavaFX Application Thread] Character.(Line - ) - x:216.2204526890082 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:03:01 [JavaFX Application Thread] Character.(Line - ) - x:363.2204526890082 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:03:01 [JavaFX Application Thread] Character.(Line - ) - hp:2
+[ INFO] Sun 2023-10-22 22:03:01 [JavaFX Application Thread] Character.(Line - ) - x:390.2204526890082 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:03:02 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:03:02 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:02 [JavaFX Application Thread] Character.(Line - ) - x:306.2204526890082 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:03:02 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:02 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:02 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:02 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:02 [JavaFX Application Thread] Character.(Line - ) - x:354.2204526890082 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:03:03 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:03 [JavaFX Application Thread] Character.(Line - ) - x:249.2204526890082 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:03:04 [JavaFX Application Thread] Character.(Line - ) - x:387.2204526890082 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:03:04 [JavaFX Application Thread] Character.(Line - ) - x:297.2204526890082 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:03:04 [JavaFX Application Thread] Character.(Line - ) - hp:1
+[ INFO] Sun 2023-10-22 22:03:04 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:03:05 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:05 [JavaFX Application Thread] Character.(Line - ) - x:327.2204526890082 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:03:05 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:05 [JavaFX Application Thread] Character.(Line - ) - hp:0
+[ INFO] Sun 2023-10-22 22:03:05 [JavaFX Application Thread] GameLoop.(Line - ) - Game ended. Lasted: 00:00:08
+[ INFO] Sun 2023-10-22 22:03:35 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 22:03:36 [JavaFX Application Thread] Character.(Line - ) - x:300.1834316279098 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:03:37 [JavaFX Application Thread] Character.(Line - ) - x:231.18343162790978 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 22:03:37 [JavaFX Application Thread] Character.(Line - ) - x:477.1834316279098 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:03:38 [JavaFX Application Thread] Character.(Line - ) - x:417.1834316279098 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:03:38 [JavaFX Application Thread] Character.(Line - ) - x:375.1834316279098 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:03:38 [JavaFX Application Thread] Character.(Line - ) - special fired at x:285.1834316279098 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:39 [JavaFX Application Thread] Character.(Line - ) - x:285.1834316279098 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:03:39 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 10
+[ INFO] Sun 2023-10-22 22:03:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 22:03:40 [JavaFX Application Thread] Character.(Line - ) - x:219.18343162790978 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:03:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:40 [JavaFX Application Thread] Character.(Line - ) - x:273.1834316279098 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:03:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:40 [JavaFX Application Thread] Character.(Line - ) - special fired at x:252.18343162790978 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:40 [JavaFX Application Thread] Character.(Line - ) - x:204.18343162790978 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:03:41 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 20
+[ INFO] Sun 2023-10-22 22:03:41 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 22:03:41 [JavaFX Application Thread] Character.(Line - ) - x:366.1834316279098 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:03:41 [JavaFX Application Thread] Character.(Line - ) - special fired at x:348.1834316279098 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:41 [JavaFX Application Thread] Character.(Line - ) - x:348.1834316279098 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:03:41 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:41 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:41 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 30
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - x:270.1834316279098 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - special fired at x:282.1834316279098 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - special fired at x:300.1834316279098 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - special fired at x:300.1834316279098 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 40
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - special fired at x:300.1834316279098 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - special fired at x:300.1834316279098 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:42 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - special fired at x:300.1834316279098 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - special fired at x:300.1834316279098 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - special fired at x:300.1834316279098 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 50
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - special fired at x:300.1834316279098 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:43 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:03:44 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 60
+[ INFO] Sun 2023-10-22 22:04:17 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 22:04:18 [JavaFX Application Thread] Character.(Line - ) - x:300.4549018173843 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:18 [JavaFX Application Thread] Character.(Line - ) - x:252.45490181738433 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:18 [JavaFX Application Thread] Character.(Line - ) - x:348.4549018173843 y:600.1591674917994 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:04:19 [JavaFX Application Thread] Character.(Line - ) - x:288.4549018173843 y:600.1591674917994 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:04:20 [JavaFX Application Thread] Character.(Line - ) - x:216.45490181738433 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:20 [JavaFX Application Thread] Character.(Line - ) - x:312.4549018173843 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:21 [JavaFX Application Thread] Character.(Line - ) - x:288.4549018173843 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:21 [JavaFX Application Thread] Character.(Line - ) - x:327.4549018173843 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:21 [JavaFX Application Thread] Character.(Line - ) - x:276.4549018173843 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:23 [JavaFX Application Thread] Character.(Line - ) - x:51.454901817384325 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:23 [JavaFX Application Thread] Character.(Line - ) - x:66.45490181738433 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:23 [JavaFX Application Thread] Character.(Line - ) - x:27.454901817384325 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:24 [JavaFX Application Thread] Character.(Line - ) - x:96.45490181738433 y:600.1591674917994 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 22:04:24 [JavaFX Application Thread] Character.(Line - ) - x:150.45490181738433 y:600.1591674917994 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 22:04:25 [JavaFX Application Thread] Character.(Line - ) - x:294.4549018173843 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:26 [JavaFX Application Thread] Character.(Line - ) - x:264.4549018173843 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:26 [JavaFX Application Thread] Character.(Line - ) - x:231.45490181738433 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:27 [JavaFX Application Thread] Character.(Line - ) - x:249.45490181738433 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:27 [JavaFX Application Thread] Character.(Line - ) - x:276.4549018173843 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:27 [JavaFX Application Thread] Character.(Line - ) - x:252.45490181738433 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:28 [JavaFX Application Thread] Character.(Line - ) - x:384.4549018173843 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:28 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:273.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:234.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:189.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] Character.(Line - ) - x:171.45490181738433 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 1
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 2
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] Character.(Line - ) - x:240.45490181738433 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 3
+[ INFO] Sun 2023-10-22 22:04:29 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:234.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:204.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:165.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:132.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - x:129.45490181738433 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 5
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 6
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - x:189.45490181738433 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:30 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 7
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 8
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:87.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - x:75.45490181738433 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:93.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - x:102.45490181738433 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - x:90.45490181738433 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - hp:2
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 9
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:31 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 10
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - x:261.4549018173843 y:600.1591674917994 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - x:195.45490181738433 y:600.1591674917994 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - x:165.45490181738433 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:32 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:288.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - special fired at x:312.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - x:336.4549018173843 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] Character.(Line - ) - x:291.4549018173843 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:33 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 20
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:318.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - x:318.4549018173843 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:273.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - x:234.45490181738433 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:237.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 21
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:34 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:285.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 23
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:333.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 25
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:417.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - x:435.4549018173843 y:600.1591674917994 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 27
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - x:357.4549018173843 y:600.1591674917994 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:35 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 29
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 30
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - x:477.4549018173843 y:600.1591674917994 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:432.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - x:429.4549018173843 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:387.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:339.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 31
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - x:279.4549018173843 y:600.1591674917994 left:false right:true sprint:true
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:285.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 32
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - x:339.4549018173843 y:600.1591674917994 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:315.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 33
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - special fired at x:276.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 35
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 22:04:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:189.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 45
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - x:162.45490181738433 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:168.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:216.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - x:225.45490181738433 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:189.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - x:189.45490181738433 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:38 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:198.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 46
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:198.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - x:198.45490181738433 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:237.45490181738433 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:39 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:333.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:411.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - x:411.4549018173843 y:600.1591674917994 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - x:423.4549018173843 y:600.1591674917994 left:true right:true sprint:false
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:402.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - x:327.4549018173843 y:600.1591674917994 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:327.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 22:04:40 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 47
+[ INFO] Sun 2023-10-22 22:04:41 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:41 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:411.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:41 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:41 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:41 [JavaFX Application Thread] Character.(Line - ) - x:411.4549018173843 y:600.1591674917994 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:04:41 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:402.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:41 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Sun 2023-10-22 22:04:41 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:04:41 [JavaFX Application Thread] Character.(Line - ) - special fired at x:354.4549018173843 y:600.1591674917994
+[ INFO] Sun 2023-10-22 22:04:41 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:41 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:04:42 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:07:31 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 22:07:32 [JavaFX Application Thread] Character.(Line - ) - x:300.4728493807042 y:600.3327796851694 left:true right:false sprint:true
+[ INFO] Sun 2023-10-22 22:07:32 [JavaFX Application Thread] Character.(Line - ) - x:180.4728493807042 y:600.3327796851694 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 22:07:32 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:252.4728493807042 y:600.3327796851694
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:330.4728493807042 y:600.3327796851694
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] Character.(Line - ) - x:390.4728493807042 y:600.3327796851694 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 1
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:288.4728493807042 y:600.3327796851694
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 2
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:222.4728493807042 y:600.3327796851694
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] Character.(Line - ) - x:204.4728493807042 y:600.3327796851694 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 22:07:33 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:07:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:07:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:07:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:07:34 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 3
+[ INFO] Sun 2023-10-22 22:07:34 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:10:33 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 22:10:34 [JavaFX Application Thread] Character.(Line - ) - x:300.48462110948714 y:600.2695515449872 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:10:35 [JavaFX Application Thread] Character.(Line - ) - x:234.48462110948714 y:600.2695515449872 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 22:10:35 [JavaFX Application Thread] Character.(Line - ) - x:354.48462110948714 y:600.2695515449872 left:true right:true sprint:true
+[ INFO] Sun 2023-10-22 22:10:35 [JavaFX Application Thread] Character.(Line - ) - special fired at x:249.48462110948714 y:600.2695515449872
+[ INFO] Sun 2023-10-22 22:10:36 [JavaFX Application Thread] Character.(Line - ) - x:246.48462110948714 y:600.2695515449872 left:true right:false sprint:false
+[ INFO] Sun 2023-10-22 22:10:36 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 10
+[ INFO] Sun 2023-10-22 22:10:36 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/stunFlashSprite-Sheet-export.png
+[ INFO] Sun 2023-10-22 22:10:36 [JavaFX Application Thread] Character.(Line - ) - x:186.48462110948714 y:600.2695515449872 left:false right:true sprint:false
+[ INFO] Sun 2023-10-22 22:10:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:10:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:10:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:10:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:10:37 [JavaFX Application Thread] Character.(Line - ) - special fired at x:267.48462110948714 y:600.2695515449872
+[ INFO] Sun 2023-10-22 22:10:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:10:37 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Sun 2023-10-22 22:10:44 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:300.3571430390187 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:300.3571430390187 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:300.3571430390187 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:300.3571430390187 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:300.3571430390187 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:300.3571430390187 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - shot fired at x:300.3571430390187 y:600.4564879083257
+[ INFO] Sun 2023-10-22 22:10:45 [JavaFX Application Thread] Character.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
