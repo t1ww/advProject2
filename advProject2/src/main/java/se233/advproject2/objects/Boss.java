@@ -19,6 +19,7 @@ public class Boss extends Enemy {
     int atkCD_count = 0;
     int atkCD_reduction = 0;
     double xto, yto;
+    int shotsAmount;
     // constructor
     public Boss (double x, double y, int size, int lvl){
         super(x, y, size, lvl, "assets/bossSprite-Sheet.png");
@@ -26,14 +27,15 @@ public class Boss extends Enemy {
         this.y = -100;
         this.moveCD_reduction += Math.min(lvl, 35);
         // random type
-        switch ((int)Math.floor((Math.random()*3))){
-//        switch (0){ // for force test
+        switch ((int)Math.floor((Math.random()*3.99999999))){
+//        switch (2){ // for force test
             default -> {
                 hp = 60;
                 name = "scatter";
                 type = bossType.scatter;
                 sprite = Color.PINK;
                 this.shootCD_reduction = 150;
+                this.shotsAmount = 8+lvl;
             }
             case 1 -> {
                 hp = 80;
@@ -41,15 +43,16 @@ public class Boss extends Enemy {
                 type = bossType.tracker;
                 sprite = Color.PURPLE;
                 this.shootCD_reduction = 120;
-                this.shotsAmount += lvl;
+                this.shotsAmount += 20+lvl;
             }
             case 2 -> {
                 hp = 40;
                 name = "fast";
                 type = bossType.fast;
                 sprite = Color.GREEN;
-                this.shootCD_reduction = 260;
+                this.shootCD_reduction = 285;
                 this.moveCD_reduction = 90;
+                this.shotsAmount = 1;
             }
         }
         logger.info("boss created : {}",name);
@@ -79,12 +82,14 @@ public class Boss extends Enemy {
             y += game.lerp(y, yto, 0.05);
         }
     }
+    ///// STEPS //// FUNCTIONS ////
     private void scatterStep(){
         if(shootCD_Counter > shootCD){
             if (attack == 1) {
             } else {// create bullet
-                int dir = -(int) (Math.random() * 90);
-                for (int i = 0; i < 9; i++) {
+                int dir = (int)targetPlayerDir();
+                dir += 10 * shotsAmount / 2; // buffer the direction to cover the player equally left right
+                for (int i = 0; i < shotsAmount; i++) {
                     dir -= 10;
                     Bullet b = new Bullet(getX() + (getSize() / 2), getY() + getSize() + 5, dir, 3, Player.class);
                     game.bulletList.add(b);
@@ -95,8 +100,6 @@ public class Boss extends Enemy {
             shootCD_Counter++;
         }
     }
-    // amount of shots for tracker
-    int shotsAmount = 20;
     private void trackerStep(){
         // shoot
         if(shootCD_Counter > shootCD){
@@ -121,12 +124,20 @@ public class Boss extends Enemy {
             if (attack == 1) {
             } else {
                 // shoot faster and aim at player with small spreading
+                for (int i = 0; i < shotsAmount; i++) {
+                    Bullet b = new Bullet(getX() + (getSize() / 2), getY() + getSize() + 5,
+                            targetPlayerDir()+(Math.random()*40)-20, 5, Player.class);
+                    game.bulletList.add(b);
+                }
             }
             cdReset();
         } else {
             shootCD_Counter++;
         }
     }
+
+    //// MISC
+
     void moveCDReset(){//randomness + reduction
         moveCD_count = (int)(Math.random()*((moveCD-moveCD_reduction)/2)) + (moveCD_reduction);
     }
@@ -149,12 +160,12 @@ public class Boss extends Enemy {
     public void hurt(int dmg){
         hp -= dmg;
         if(hp <= 0){
-            dead = true;
             logger.info("boss killed");
             // Use Platform.runLater to update rendering entity immediately upon death
             Platform.runLater(() -> {
                 // Remove the entity to the platform's children
                 platform.getChildren().remove(this);
+                game.getEntities().remove(this);
             });
             game.enemyCount--; // removed from list
             if(game.enemyCount == 0) {

@@ -1,5 +1,6 @@
 package se233.advproject2.objects;
 
+import javafx.scene.layout.Pane;
 import se233.advproject2.controller.GameLoop;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.ConcurrentModificationException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Bullet {
+public class Bullet extends Pane {
     public boolean dead = false;
     private double x, y, direction, speed;
     private int damage = 1;
@@ -81,8 +82,13 @@ public class Bullet {
                             game.setScore(game.getScore()+2); // score add
                         }
                         // create explosion effect
-
-                        // create particle
+                        new Particle(getX()-32,getY()-32,"assets/bulletFlashSprite-Sheet.png",
+                                64,64,0,0,true,4);
+                        // create debris particle
+                        for (int i = 0; i < 6; i++) {
+                            new Particle(getX()-32,getY()-32,"assets/blackDot.png",
+                                    3,3,10+(Math.random()*10), 10, Math.random()*360,false,1);
+                        }
                         System.out.println("Collided with " + ent.name);
                         return;
                     }

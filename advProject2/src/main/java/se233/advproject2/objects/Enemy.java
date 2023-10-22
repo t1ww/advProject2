@@ -116,12 +116,10 @@ public class Enemy extends Entity {
     public void hurt(int dmg){
         hp -= dmg;
         if(hp <= 0){
-            dead = true;
             Platform.runLater(() -> {
-                synchronized(game.getEntities()) {
-                    // Remove the entity to the platform's children
-                    platform.getChildren().remove(this);
-                }
+                // Remove the entity to the platform's children
+                platform.getChildren().remove(this);
+                game.getEntities().remove(this);
             });
             game.enemyCount--;
             if(game.enemyCount == 0) {

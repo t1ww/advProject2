@@ -2,13 +2,11 @@ package se233.advproject2.objects;
 
 import javafx.application.Platform;
 import javafx.scene.image.Image;
-import javafx.scene.image.PixelWriter;
-import javafx.scene.image.WritableImage;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import se233.advproject2.Launcher;
 import se233.advproject2.controller.GameLoop;
-import se233.advproject2.view.AnimatedSprite;
+import se233.advproject2.model.AnimatedSprite;
 import se233.advproject2.view.GameScreen;
 
 import java.util.Objects;
@@ -18,7 +16,6 @@ public class Entity extends Pane {
     GameScreen platform = GameLoop.Instance.platform;
     String name;
     // init variables
-    public boolean dead = false;
     public int hp;
     double x, y;
     int size;
@@ -35,7 +32,7 @@ public class Entity extends Pane {
         this.hp = 1;
         this.spritePath = spritePath;
         this.characterImg = new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream(this.spritePath)));
-        this.imageView = new AnimatedSprite(characterImg,2,2,1,0,0,this.size,this.size);
+        this.imageView = new AnimatedSprite(characterImg,2,2,1,0,0,this.size,this.size,500);
         this.imageView.setFitWidth(this.size);
         this.imageView.setFitHeight(this.size);
         this.getChildren().addAll(this.imageView);
@@ -63,7 +60,6 @@ public class Entity extends Pane {
     public void hurt(int dmg){
         hp -= dmg;
         if(hp <= 0){
-            dead = true;
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
     }

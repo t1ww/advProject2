@@ -120,6 +120,7 @@ public class GameLoop implements Runnable {
                         platform.renderReset();
                         platform.renderText("YOU LASTED : " + gametime, (int) _x, 300);
                         platform.renderText("Game OVER, press enter to restart", (int) _x2, 330);
+                        platform.renderText("SCORE : " + score, 200,360);
                     });
                     if(platform.getKeys().contains(KeyCode.ENTER)){
                         Start();
@@ -148,6 +149,11 @@ public class GameLoop implements Runnable {
 
     /// // METHODS // ///
     private void step() throws Exception {
+        // small chance
+        if((int)Math.random()*100 == 1){
+            // create asteroides (decor)
+            new Particle(Math.random()*600,-100, "", 64,64,1,-90,false,1);
+        }
         // step events
         if (alarm != null) alarm.step();
 
@@ -161,14 +167,10 @@ public class GameLoop implements Runnable {
             }
         }
         bulletList.removeAll(bulletsToRemove);
-
         // Update entities
         for (Entity ent : entities) {
             ent.step();
         }
-
-        // Remove dead entities
-        entities.removeIf(ent -> ent.dead);
 //        Iterator<Entity> entityIterator = entities.iterator();
 //        while (entityIterator.hasNext()) {
 //            Entity ent = entityIterator.next();
@@ -205,7 +207,8 @@ public class GameLoop implements Runnable {
         platform.renderReset();
         platform.renderBullets(bulletList);
         // draw ui
-        platform.renderHP(player.hp);
+        if(player != null)platform.renderHP(player.hp);
+        //
         platform.renderText("Score : " + score, 10, 10);
         platform.renderText("Level : " + level, 10, 30);
         String time = getTime(runtime);
@@ -279,8 +282,6 @@ public class GameLoop implements Runnable {
     public void Start(){
         // start drawing loop
         drawingLoop.running = true;
-    /// / clean up
-        clear(); // clear lists
         // reset variables
         creationPhase = true;
         runtime = 0;level = 0;score = 0;
@@ -303,13 +304,10 @@ public class GameLoop implements Runnable {
         logger.info("Game started.");
     }
     public void End(){
+    /// / clean up
+        clear(); // clear lists
         // stop drawing loop
         drawingLoop.running = false;
-        Platform.runLater(()->{
-            entities.forEach(ent ->{
-                platform.getChildren().remove(ent);
-            }); // clear render
-        });
         gameState = STATE.End;
         // set pos to ease in from
         xStart = -200;xto = 200;_x = xStart;
@@ -318,10 +316,14 @@ public class GameLoop implements Runnable {
         logger.info("Game ended. Lasted: " + getTime(runtime));
     }
     public void clear(){
-        // clear lists
-        entities.clear();
-        bulletList.clear();
         player = null;
+        // clear lists
+        Platform.runLater(()->{
+            entities.clear();
+            particleList.clear();
+            bulletList.clear();
+            platform.reset();
+        });
     }
     /// misc methods
     public String getTime(int time){

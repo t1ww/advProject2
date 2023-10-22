@@ -1,13 +1,13 @@
 package se233.advproject2.objects;
 
 import javafx.application.Platform;
-import javafx.geometry.Bounds;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import se233.advproject2.Launcher;
 import se233.advproject2.controller.GameLoop;
-import se233.advproject2.view.AnimatedSprite;
+import se233.advproject2.model.AnimatedSprite;
 import se233.advproject2.view.GameScreen;
 
 import java.util.Objects;
@@ -16,55 +16,96 @@ public class Particle extends Pane {
     GameLoop game = GameLoop.Instance;
     GameScreen platform = game.platform;
 
-    private final ImageView imageView;
+    private final AnimatedSprite imageView;
     private final Image particleImage;
-    private final double speedX, speedY;
+    private double x, y, direction, speed, speedMin;
     private final boolean isAnimated;
     private int animationFrames;
+    private String spritePath;
 
-    public Particle(double x, double y, String spritePath, int width, int height, double speedX, double speedY, boolean isAnimated, int animationFrames) {
-        setTranslateX(x);
-        setTranslateY(y);
+    public Particle(double x, double y, String spritePath, int width, int height, double speed, double direction, boolean isAnimated, int animationFrames) {
+        this.x = x;
+        this.y = y;
+        setTranslateX(this.x);
+        setTranslateY(this.y);
+        this.spritePath = spritePath;
 
-        this.speedX = speedX;
-        this.speedY = speedY;
+        this.speed = speed;
+        this.direction = direction;
         this.isAnimated = isAnimated;
         this.animationFrames = animationFrames;
 
         this.particleImage = new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream(spritePath)));
-        this.imageView = new AnimatedSprite(particleImage,animationFrames,animationFrames,1,0,0,width,height);
+        this.imageView = new AnimatedSprite(particleImage,animationFrames,animationFrames,1,0,0,width,height, 50);
         this.imageView.setFitWidth(width);
         this.imageView.setFitHeight(height);
         this.getChildren().addAll(this.imageView);
-        System.out.println("particle create : " + spritePath);
         // setup
         game.particleList.add(this);
         Platform.runLater(() -> {
             // Add the particle to the platform's children
             platform.getChildren().addAll(this);
         });
+
+        this.animationFrames *= 3;
+    }
+    public Particle(double x, double y, String spritePath, int width, int height, double speed, double speedMin, double direction, boolean isAnimated, int animationFrames) {
+        this.x = x;
+        this.y = y;
+        setTranslateX(this.x);
+        setTranslateY(this.y);
+        this.spritePath = spritePath;
+
+        this.speed = speed;
+        this.speedMin = speedMin;
+        this.direction = direction;
+        this.isAnimated = isAnimated;
+        this.animationFrames = animationFrames;
+
+        this.particleImage = new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream(spritePath)));
+        this.imageView = new AnimatedSprite(particleImage,animationFrames,animationFrames,1,0,0,width,height, 50);
+        this.imageView.setFitWidth(width);
+        this.imageView.setFitHeight(height);
+        this.getChildren().addAll(this.imageView);
+        // setup
+        game.particleList.add(this);
+        Platform.runLater(() -> {
+            // Add the particle to the platform's children
+            platform.getChildren().addAll(this);
+        });
+
+        this.animationFrames *= 3;
     }
 
     public void move() {
-        if (isAnimated && animationFrames <= 0) {
-            removeSelf();
-            return;
+        if(isAnimated) {
+            animationFrames--;
+            if (animationFrames < 0) {
+                removeSelf();
+                return;
+            }
         }
+        ///handling
+        double angleRad = Math.toRadians(direction);
+        double hsp = Math.cos(angleRad) * speed;
+        double vsp = Math.sin(angleRad) * speed;
+        // slow down the speed
+        if(!isAnimated)speed += game.lerp(speed, speedMin, .1);
+        // update pos
+        x += hsp;
+        y -= vsp;
 
         Platform.runLater(() -> {
-            setTranslateX(getTranslateX() + speedX);
-            setTranslateY(getTranslateY() + speedY);
+            setTranslateX(x);
+            setTranslateY(y);
         });
 
         if (!isOnScreen()) {
             removeSelf();
         }
-
-        if (isAnimated) {
-            animationFrames--;
-        }
     }
     public void removeSelf(){
+        logger.info("Removing particle [ Path : {}", spritePath);
         // remove from update list
         game.particleList.remove(this);
         Platform.runLater(() -> {
@@ -73,7 +114,9 @@ public class Particle extends Pane {
         });
     }
     private boolean isOnScreen() {
-        Bounds bounds = this.getBoundsInParent();
-        return bounds.getMinX() < 800 && bounds.getMaxX() > 0 && bounds.getMinY() < 600 && bounds.getMaxY() > 0;
+        return  getTranslateX() > -200 &&  getTranslateX() < GameScreen.WIDTH +200 &&
+                getTranslateY() > -200 &&  getTranslateY() < GameScreen.HEIGHT +200;
     }
+    // logger //
+    private static final Logger logger = LogManager.getLogger(Character.class);
 }

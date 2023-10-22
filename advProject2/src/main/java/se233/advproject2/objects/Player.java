@@ -6,7 +6,7 @@ import javafx.scene.input.KeyCode;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import se233.advproject2.Launcher;
-import se233.advproject2.view.AnimatedSprite;
+import se233.advproject2.model.AnimatedSprite;
 import se233.advproject2.view.GameScreen;
 
 import java.util.ConcurrentModificationException;
@@ -25,6 +25,17 @@ public class Player extends Entity {
     double startX;
     double startY;
     GameScreen p = platform;
+
+    enum ShotType {
+        normal,
+        scatter,
+        homing
+    }
+    private ShotType shotType = ShotType.normal;
+    // sprites
+    private final String sprite = "assets/playerSprite-straight.png";
+    private final String spriteLeft = "assets/playerSprite-left.png";
+    private final String spriteRight = "assets/playerSprite-right.png";
     public Player(double x, double y, int size) {
         super(x,y,size, "assets/playerSprite-straight.png");
         this.name = "player";
@@ -32,6 +43,7 @@ public class Player extends Entity {
         this.startY = y;
         this.x = Math.random()*800;
         this.y = 750;
+
     }
     // step
     public void step() throws ConcurrentModificationException {
@@ -93,14 +105,42 @@ public class Player extends Entity {
         }
     }
     private void createBullet(){
-        // create bullet
-        Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class);
-        logger.info("shot fired at x:{} y:{}",x,y);
-        game.bulletList.add(b);
-        trigger = true;
-        // make bullet shot effect
-        new Particle(getX(),getY(),"assets/bulletFlashSprite-Sheet.png",
-                64,64,0,0,true,4);
+        switch (shotType){
+            case normal -> {
+                // create bullet
+                Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class, 1);
+                logger.info("shot fired at x:{} y:{}",x,y);
+                game.bulletList.add(b);
+                trigger = true;
+                // make bullet shot effect
+                new Particle(getX()-16,getY()-48,"assets/shotSprite-Sheet.png",
+                        64,64,0,0,true,4);
+            }
+            case scatter -> {
+                // create bullet
+                for (int i = 0; i < 5; i++) {
+                    Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 70 + (10*i), 8, Enemy.class, 2);
+                    game.bulletList.add(b);
+                }
+                logger.info("shot fired at x:{} y:{}",x,y);
+                trigger = true;
+                // make bullet shot effect
+                new Particle(getX()-16,getY()-48,"assets/shotSprite-Sheet.png",
+                        64,64,0,0,true,4);
+            }
+            case homing -> {
+                // create bullet
+                Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class);
+                b.setHoming();
+                logger.info("shot fired at x:{} y:{}",x,y);
+                game.bulletList.add(b);
+                trigger = true;
+                // make bullet shot effect
+                new Particle(getX()-16,getY()-48,"assets/shotSprite-Sheet.png",
+                        64,64,0,0,true,4);
+            }
+        }
+
     }
     private void createSpecialBullet(){
         // create bullet
@@ -113,6 +153,7 @@ public class Player extends Entity {
     // move
     boolean wasKeyLeftPressed = false;
     boolean wasKeyRightPressed = false;
+    boolean wasStraight = true;
     public void move() {
         GameScreen p = platform;
         resetKeys(); // reset
@@ -136,16 +177,30 @@ public class Player extends Entity {
         // logger // log only when key state changes
         if (keyLeft && !wasKeyLeftPressed) {
             trace();
+            // set sprite left
+            updateSprite(spriteLeft);
+            //
             wasKeyLeftPressed = true;
+            wasStraight = false;
         } else if (!keyLeft) {
             wasKeyLeftPressed = false;
         }
 
         if (keyRight && !wasKeyRightPressed) {
             trace();
+            // set sprite right
+            updateSprite(spriteRight);
+            //
             wasKeyRightPressed = true;
+            wasStraight = false;
         } else if (!keyRight) {
             wasKeyRightPressed = false;
+        }
+        if (!wasStraight && !wasKeyLeftPressed && !wasKeyRightPressed){
+            // set straight
+            updateSprite(sprite);
+            //
+            wasStraight = true;
         }
 
         //
@@ -173,15 +228,24 @@ public class Player extends Entity {
         hp -= dmg;
         logger.info("hp:{}",hp);
         if(hp <= 0){ // player dead
-            dead = true;
             // Use Platform.runLater to update rendering entity immediately upon death
             Platform.runLater(() -> {
                 // Remove the entity to the platform's children
                 platform.getChildren().remove(this);
+                game.getEntities().remove(this);
             });
             game.End();
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
+    }
+    private void updateSprite(String spritePath) {
+        Platform.runLater(() -> {
+            characterImg = new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream(spritePath)));
+            imageView = new AnimatedSprite(characterImg,2,2,1,0,0,this.size,this.size,500);
+            imageView.setFitWidth(this.size);
+            imageView.setFitHeight(this.size);
+            this.getChildren().setAll(imageView);
+        });
     }
     // logger //
     private static final Logger logger = LogManager.getLogger(Character.class);

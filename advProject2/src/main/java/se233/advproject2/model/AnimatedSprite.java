@@ -1,4 +1,4 @@
-package se233.advproject2.view;
+package se233.advproject2.model;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -13,7 +13,7 @@ public class AnimatedSprite extends ImageView {
             curColumnIndex = 0, curRowIndex = 0;
     private final Timeline animationTimeline;
     public AnimatedSprite(Image image, int count, int columns, int rows, int
-            offsetX, int offsetY, int width, int height) {
+            offsetX, int offsetY, int width, int height, int ms) {
         this.setImage(image);
         this.count = count;
         this.columns = columns;
@@ -24,7 +24,7 @@ public class AnimatedSprite extends ImageView {
         this.height = height;
         this.setViewport(new Rectangle2D(offsetX, offsetY, width, height));
         // Initialize and set up the Timeline to run tick() at 2fps
-        animationTimeline = new Timeline(new KeyFrame(Duration.millis(500), e -> tick()));
+        animationTimeline = new Timeline(new KeyFrame(Duration.millis(ms), e -> tick()));
         animationTimeline.setCycleCount(Timeline.INDEFINITE);
         startAnimation();
     }
@@ -48,6 +48,6 @@ public class AnimatedSprite extends ImageView {
     }
 
     public int getIndex() {
-        return cutIndex;
+        return curIndex;
     }
 }

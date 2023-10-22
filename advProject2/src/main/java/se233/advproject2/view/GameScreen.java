@@ -1,11 +1,13 @@
 package se233.advproject2.view;
 
+import javafx.application.Platform;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import se233.advproject2.objects.Bullet;
+import se233.advproject2.objects.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,5 +83,17 @@ public class GameScreen extends Pane {
     public void releaseKey(KeyCode key) {
         this.key.remove(key);
         if(key == keyPressed) keyPressed = null;
+    }
+    public void reset(){
+        Platform.runLater(()->{
+            this.getChildren().clear();
+            canvas = new Canvas(WIDTH, HEIGHT);
+            this.getChildren().add(canvas);
+            try {
+                gc = canvas.getGraphicsContext2D();
+            }catch (NullPointerException e){
+                e.printStackTrace();
+            }
+        });
     }
 }
