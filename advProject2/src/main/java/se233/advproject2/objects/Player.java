@@ -1,16 +1,12 @@
 package se233.advproject2.objects;
 
 import javafx.application.Platform;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import se233.advproject2.Launcher;
-import se233.advproject2.model.AnimatedSprite;
 import se233.advproject2.view.GameScreen;
 
 import java.util.ConcurrentModificationException;
-import java.util.Objects;
 
 public class Player extends Entity {
     // init variables
@@ -237,15 +233,6 @@ public class Player extends Entity {
             game.End();
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
-    }
-    private void updateSprite(String spritePath) {
-        Platform.runLater(() -> {
-            characterImg = new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream(spritePath)));
-            imageView = new AnimatedSprite(characterImg,2,2,1,0,0,this.size,this.size,500);
-            imageView.setFitWidth(this.size);
-            imageView.setFitHeight(this.size);
-            this.getChildren().setAll(imageView);
-        });
     }
     // logger //
     private static final Logger logger = LogManager.getLogger(Character.class);

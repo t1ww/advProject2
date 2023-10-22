@@ -4,7 +4,6 @@ import javafx.application.Platform;
 import javafx.scene.paint.Color;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import se233.advproject2.controller.GameLoop;
 
 public class Boss extends Enemy {
     enum bossType {
@@ -27,8 +26,8 @@ public class Boss extends Enemy {
         this.y = -100;
         this.moveCD_reduction += Math.min(lvl, 35);
         // random type
-        switch ((int)Math.floor((Math.random()*3.99999999))){
-//        switch (2){ // for force test
+//        switch ((int)Math.floor((Math.random()*2.99999999))){
+        switch (2){ // for force test
             default -> {
                 hp = 60;
                 name = "scatter";
@@ -53,6 +52,7 @@ public class Boss extends Enemy {
                 this.shootCD_reduction = 285;
                 this.moveCD_reduction = 90;
                 this.shotsAmount = 1;
+                updateSprite("assets/cirnoBoss-Sheet.png");
             }
         }
         logger.info("boss created : {}",name);

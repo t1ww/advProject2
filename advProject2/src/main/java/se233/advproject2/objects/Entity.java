@@ -63,4 +63,13 @@ public class Entity extends Pane {
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
     }
+    void updateSprite(String spritePath) {
+        Platform.runLater(() -> {
+            characterImg = new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream(spritePath)));
+            imageView = new AnimatedSprite(characterImg,2,2,1,0,0,this.size,this.size,500);
+            imageView.setFitWidth(this.size);
+            imageView.setFitHeight(this.size);
+            this.getChildren().setAll(imageView);
+        });
+    }
 }

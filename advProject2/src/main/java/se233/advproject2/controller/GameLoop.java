@@ -4,7 +4,6 @@
 package se233.advproject2.controller;
 
 import javafx.application.Platform;
-import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -150,9 +149,10 @@ public class GameLoop implements Runnable {
     /// // METHODS // ///
     private void step() throws Exception {
         // small chance
-        if((int)Math.random()*100 == 1){
-            // create asteroides (decor)
-            new Particle(Math.random()*600,-100, "", 64,64,1,-90,false,1);
+        if((int)(Math.random()*30) == 1){
+            // create stars (decor)
+            String sprPath = "assets/blackDot.png";
+            new Particle(Math.random()*800 -100,-100, sprPath, 64,64,1, 1,-85 + (Math.random()*10),false,1);
         }
         // step events
         if (alarm != null) alarm.step();

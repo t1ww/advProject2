@@ -18,7 +18,7 @@ public class Particle extends Pane {
 
     private final AnimatedSprite imageView;
     private final Image particleImage;
-    private double x, y, direction, speed, speedMin;
+    private double x, y, direction, speed, speedMin = 1;
     private final boolean isAnimated;
     private int animationFrames;
     private String spritePath;

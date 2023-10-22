@@ -86,7 +86,7 @@ public class Bullet extends Pane {
                                 64,64,0,0,true,4);
                         // create debris particle
                         for (int i = 0; i < 6; i++) {
-                            new Particle(getX()-32,getY()-32,"assets/blackDot.png",
+                            new Particle(getX()-32,getY()-32,"assets/debris.png",
                                     3,3,10+(Math.random()*10), 10, Math.random()*360,false,1);
                         }
                         System.out.println("Collided with " + ent.name);
