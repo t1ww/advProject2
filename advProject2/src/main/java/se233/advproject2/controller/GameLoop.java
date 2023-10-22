@@ -159,8 +159,6 @@ public class GameLoop implements Runnable {
             String sprPath = "assets/blackDot.png";
             new Particle(Math.random()*800 -100,-100, sprPath, 64,64,1, 1,-85 + (Math.random()*10),false,1);
         }
-        // step events
-        if (alarm != null) alarm.step();
 
         // Move and check bullet collisions
         List<Bullet> bulletsToRemove = new ArrayList<>();
@@ -191,11 +189,21 @@ public class GameLoop implements Runnable {
         }
 
         /// only during creeps wave
-        if (gameWave.equals(WAVE.Creeps)) {
-            waveCD_count++;
-            // next wave every given time
-            if (waveCD_count == waveCD) {
-                spawnWaveInit(3);
+        if(stun) { // wave stop stun
+            // count the stun
+            if(--stunTimer < 0){
+                stun = false;
+            }
+        } else {
+            // runs while not stun
+            if (gameWave.equals(WAVE.Creeps)) {
+                waveCD_count++;
+                // next wave every given time
+                if (waveCD_count == waveCD) {
+                    spawnWaveInit(3);
+                }
+                // step events
+                if (alarm != null) alarm.step();
             }
         }
 
@@ -209,6 +217,8 @@ public class GameLoop implements Runnable {
     private void draw() throws Exception {
         /// render setup
         platform.renderReset();
+        // draw the finishline for enemy
+        platform.renderDeadLine();
         platform.renderBullets(bulletList);
         // draw ui
         if(player != null) {
@@ -286,6 +296,15 @@ public class GameLoop implements Runnable {
         while(enemyIterator.hasNext()) {
             Enemy enemy = enemyIterator.next();
             enemy.moveDown();
+        }
+    }
+    // stun feature
+    boolean stun = false;
+    int stunTimer = 0;
+    public void stun(){
+        if(gameWave == WAVE.Creeps) {
+            stun = true;
+            stunTimer = 60;
         }
     }
     // game setup methods

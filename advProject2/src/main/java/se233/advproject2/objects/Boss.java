@@ -26,8 +26,8 @@ public class Boss extends Enemy {
         this.y = -100;
         this.moveCD_reduction += Math.min(lvl, 35);
         // random type
-//        switch ((int)Math.floor((Math.random()*2.99999999))){
-        switch (2){ // for force test
+        switch ((int)Math.floor((Math.random()*2.99999999))){
+//        switch (2){ // for force test
             default -> {
                 hp = 90;
                 name = "scatter";
@@ -160,12 +160,14 @@ public class Boss extends Enemy {
                 // Remove the entity to the platform's children
                 platform.getChildren().remove(this);
                 game.getEntities().remove(this);
+                // counting enemies
+                enemyCount();
+                if(game.enemyCount == 0) {
+                    // starting new wave
+                    game.setCreepsWave();
+                    game.spawnWaveInit(3);
+                }
             });
-            game.enemyCount--; // removed from list
-            if(game.enemyCount == 0) {
-                game.setCreepsWave();
-                game.spawnWaveInit(5);
-            }
             game.level++; // next level
             game.setScore(game.getScore()+50); // score add
             // reset phase

@@ -71,6 +71,10 @@ public class Bullet extends Pane {
         game.bulletList.add(this);
     }
     boolean check;
+    public void step(){
+        move();
+        bulletCollision(game.getEntities());
+    }
     public void bulletCollision(List<Entity> entityList) throws ConcurrentModificationException {
         synchronized(game.getEntities()) {
             for (Entity ent: game.getEntities()) {
@@ -107,10 +111,6 @@ public class Bullet extends Pane {
         }
         if(!hit.isEmpty() && bulletType != type.piercing) dead = true;
     }
-    public void step(){
-        move();
-        bulletCollision(game.getEntities());
-    }
     // move
     public void move() throws ConcurrentModificationException {
         switch (bulletType){
@@ -129,11 +129,13 @@ public class Bullet extends Pane {
                             .toList();
                     if(!nonPlayerEntities.contains(target)){target = null;}
                     //
-                    double x1 = x, y1 = y;
-                    double x2 = target.x, y2 = target.y;
-                    // Calculate the angle between the two points
-                    double angle = Math.toDegrees(Math.atan2(y2 - y1, x2 - x1));
-                    direction = -angle;
+                    if(target != null) {
+                        double x1 = x, y1 = y;
+                        double x2 = target.x, y2 = target.y;
+                        // Calculate the angle between the two points
+                        double angle = Math.toDegrees(Math.atan2(y2 - y1, x2 - x1));
+                        direction = -angle;
+                    }
                 }
             }
             case targetting -> {

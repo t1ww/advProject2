@@ -61,12 +61,16 @@ public class SpecialBullet extends Bullet {
     int timer = 30;
     public void bulletCollision(List<Entity> entityList) throws ConcurrentModificationException {
         if (timer <= 0) {
+            // stun the wave spawn
+            game.stun();
             // stun the enemies
             synchronized (game.getEntities()) {
-                for (Entity e : game.getEntities()) {
-                    if (e.getClass().isAssignableFrom(Enemy.class)) {
-                        e.stun();
-                    }
+                List<Enemy> enemyList = game.getEntities().stream()
+                        .filter(ent -> ent instanceof Enemy)
+                        .map(ent -> (Enemy) ent)
+                        .toList();
+                for (Enemy e : enemyList) {
+                    e.stun();
                 }
             }
             // remove special bullets render

@@ -21,7 +21,10 @@ public class Player extends Entity {
     double startX;
     double startY;
     GameScreen p = platform;
-    int SpecialAmmo = 3;
+    int specialRechargeTimer = 600;
+    int spcCounter = 0;
+    int spcMax = 5;
+    int SpecialAmmo = spcMax;
     int ammo = 0;
     public boolean isNormal(){
         return shotType == ShotType.normal;
@@ -42,9 +45,11 @@ public class Player extends Entity {
     }
     public void setScatterShot(){
         shotType = ShotType.scatter;
+        ammo = 50;
     }
     public void setHomingShot(){
         shotType = ShotType.homing;
+        ammo = 100;
     }
     // sprites
     private final String sprite = "assets/playerSprite-straight.png";
@@ -57,7 +62,7 @@ public class Player extends Entity {
         this.startY = y;
         this.x = Math.random()*800;
         this.y = 750;
-
+        setScatterShot(); // testing different ammo type
     }
     // step
     public void step() throws ConcurrentModificationException {
@@ -72,6 +77,15 @@ public class Player extends Entity {
         }else {// allow inputs when started
             shoot();
             move();
+            // recharge special ammo overtime
+            if(SpecialAmmo < spcMax){
+                if(++spcCounter >= specialRechargeTimer){
+                    // add ammo
+                    SpecialAmmo++;
+                    // reset timer counter
+                    spcCounter = 0;
+                }
+            }
         }
     }
 
@@ -131,8 +145,8 @@ public class Player extends Entity {
             }
             case scatter -> {
                 // create bullet
-                for (int i = 0; i < 5; i++) {
-                    new Bullet(getX() + (getSize()/2), getY()- 5, 70 + (10*i), 6, Enemy.class, 2);
+                for (int i = 0; i < 3; i++) {
+                    new Bullet(getX() + (getSize()/2), getY()- 5, 85 + (5*i), 6, Enemy.class, 2);
                 }
                 logger.info("shot fired at x:{} y:{}",x,y);
                 trigger = true;
@@ -161,11 +175,14 @@ public class Player extends Entity {
 
     }
     private void createSpecialBullet(){
-        // create bullet
-        SpecialBullet b = new SpecialBullet("assets/stunSprite-Sheet.png",
-                getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class,10);
-        logger.info("special fired at x:{} y:{}",x,y);
-        specialTrigger = true;
+        if(getSpecialAmmo() > 0) {
+            // create bullet
+            SpecialBullet b = new SpecialBullet("assets/stunSprite-Sheet.png",
+                    getX() + (getSize() / 2), getY() - 5, 90, 8, Enemy.class, 10);
+            logger.info("special fired at x:{} y:{}", x, y);
+            specialTrigger = true;
+            SpecialAmmo--; // reduce ammo
+        }
     }
     // move
     boolean wasKeyLeftPressed = false;

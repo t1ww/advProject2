@@ -3,6 +3,9 @@ package se233.advproject2.objects;
 import javafx.application.Platform;
 import javafx.scene.paint.Color;
 
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 public class Enemy extends Entity {
     // var init
     int shootCD = 300;
@@ -17,12 +20,14 @@ public class Enemy extends Entity {
 
     public void moveDown() {
         yto += 50;
-        if(movestreak++ >= 10) game.End();
+        if(movestreak++ > 5) game.End();
     }
 
     enum MOVE_ROTAION{
         left,right
     }
+    boolean stun = false;
+    int stunTimer = 0;
     public MOVE_ROTAION moveDir = MOVE_ROTAION.left;
     // constructor
     public Enemy(double x, double y, int size, int lvl) {
@@ -53,20 +58,28 @@ public class Enemy extends Entity {
     // alive
     // shoot
     public void step(){
-        if(shootCD_Counter > shootCD){
-            shoot();
+        // stop doing everything while stun
+        if(stun) {
+            // count the stun
+            if(--stunTimer < 0){
+                stun = false;
+            }
         }else {
-            shootCD_Counter++;
-        }
-        if(moveCD_Counter > moveCD){
-            move();
-        }else {
-            moveCD_Counter++;
-        }
-        // if move to changed, lerp x and y to that move to
-        if(xto != Math.round(x) || yto != Math.round(y)){
-            x += game.lerp(x, xto, 0.05);
-            y += game.lerp(y, yto, 0.05);
+            if (shootCD_Counter > shootCD) {
+                shoot();
+            } else {
+                shootCD_Counter++;
+            }
+            if (moveCD_Counter > moveCD) {
+                move();
+            } else {
+                moveCD_Counter++;
+            }
+            // if move to changed, lerp x and y to that move to
+            if (xto != Math.round(x) || yto != Math.round(y)) {
+                x += game.lerp(x, xto, 0.05);
+                y += game.lerp(y, yto, 0.05);
+            }
         }
     }
     public void shoot(){
@@ -117,16 +130,28 @@ public class Enemy extends Entity {
                 // Remove the entity to the platform's children
                 platform.getChildren().remove(this);
                 game.getEntities().remove(this);
+                // counting enemies
+                enemyCount();
+                if(game.enemyCount == 0) {
+                    // start new wave
+                    game.setBossWave();
+                    game.spawnWaveInit(5);
+                }
             });
-            game.enemyCount--;
-            if(game.enemyCount == 0) {
-                game.setBossWave();
-                game.spawnWaveInit(5);
-            }
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
     }
     public void stun(){
-        
+        stun = true;
+        stunTimer = 60;
+    }
+
+    public void enemyCount(){
+        // counting enemies
+        List<Enemy> enemyList = game.getEntities().stream()
+                .filter(ent -> ent instanceof Enemy)
+                .map(ent -> (Enemy) ent)
+                .toList();
+        game.enemyCount = enemyList.size(); // recheck size
     }
 }

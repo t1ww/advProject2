@@ -13,4 +13,8 @@ public class EnemyHighRank extends Enemy {
         Bullet b = new Bullet(getX() + (getSize()/2), getY() + getSize() + 5, targetPlayerDir(), 4, Player.class);
         cdReset();
     }
+    public void stun(){
+        stun = true;
+        stunTimer = 60;
+    }
 }

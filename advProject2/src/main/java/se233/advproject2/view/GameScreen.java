@@ -63,6 +63,11 @@ public class GameScreen extends Pane {
             gc.fillRect(x+32, y + (i*7), 5, 5);
         }
     }
+    public void renderDeadLine()
+            throws NullPointerException,IndexOutOfBoundsException {
+        gc.setFill(Color.LIGHTBLUE);
+        gc.fillRect(0, 500, 600, 1);
+    }
 
     /// getting keys pressed
     private List<KeyCode> key = new ArrayList<>();
