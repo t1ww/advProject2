@@ -25,9 +25,6 @@ public class Entity extends Pane {
     Color sprite = Color.BLACK;
     Image characterImg;
     AnimatedSprite imageView;
-    public AnimatedSprite getImageView() {
-        return imageView;
-    }
     // default
     String spritePath = "assets/prefabSprite.png";
     public Entity(double x, double y, int size, String spritePath){
@@ -54,7 +51,7 @@ public class Entity extends Pane {
     public double getX() { return x; }
     public double getY() { return y; }
     public int getSize() { return size;}
-    public Color getSprite() { return sprite;}
+
     public void setX(double _x) { x = _x; }
     public void setY(double _y) { y = _y; }
     public void repaint(){

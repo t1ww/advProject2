@@ -80,6 +80,9 @@ public class Bullet {
                         }else if (ent.getClass() == EnemyHighRank.class){
                             game.setScore(game.getScore()+2); // score add
                         }
+                        // create explosion effect
+
+                        // create particle
                         System.out.println("Collided with " + ent.name);
                         return;
                     }

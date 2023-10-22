@@ -29,6 +29,7 @@ public class GameLoop implements Runnable {
     private final List<Entity> entities = Collections.synchronizedList(new ArrayList<>());
     private List<Enemy> enemyList = new CopyOnWriteArrayList<Enemy>();
     public List<Bullet> bulletList = new CopyOnWriteArrayList<Bullet>();
+    public List<Particle> particleList = new CopyOnWriteArrayList<Particle>();
     private float interval = 1000.0f / 60;
     private int waveCD = 1200;
     public int waveCD_count = 0;
@@ -161,18 +162,25 @@ public class GameLoop implements Runnable {
         }
         bulletList.removeAll(bulletsToRemove);
 
-
         // Update entities
         for (Entity ent : entities) {
             ent.step();
         }
 
         // Remove dead entities
-        Iterator<Entity> entityIterator = entities.iterator();
-        while (entityIterator.hasNext()) {
-            Entity ent = entityIterator.next();
-            if (ent.dead) {
-                entityIterator.remove();
+        entities.removeIf(ent -> ent.dead);
+//        Iterator<Entity> entityIterator = entities.iterator();
+//        while (entityIterator.hasNext()) {
+//            Entity ent = entityIterator.next();
+//            if (ent.dead) {
+//                entityIterator.remove();
+//            }
+//        }
+
+        /// handling particles
+        synchronized(particleList) {
+            for (Particle p : particleList) {
+                p.move();
             }
         }
 
@@ -187,7 +195,6 @@ public class GameLoop implements Runnable {
 
         // runtime counting
         runtime++;
-
         // cleanups
         if (Alarm.countdown < 0) alarm = null;
     }
@@ -285,7 +292,7 @@ public class GameLoop implements Runnable {
         player = new Player(300, 600, 32);
         entities.add(player);
         // create enemies
-        alarm = new Alarm(3);
+        alarm = new Alarm(1);
         gameState = STATE.Running;
         gameWave = WAVE.Creeps;
 //        gameWave = WAVE.Boss; // forcing boss for testing

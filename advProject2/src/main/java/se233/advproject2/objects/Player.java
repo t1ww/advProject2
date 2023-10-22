@@ -98,6 +98,9 @@ public class Player extends Entity {
         logger.info("shot fired at x:{} y:{}",x,y);
         game.bulletList.add(b);
         trigger = true;
+        // make bullet shot effect
+        new Particle(getX(),getY(),"assets/bulletFlashSprite-Sheet.png",
+                64,64,0,0,true,4);
     }
     private void createSpecialBullet(){
         // create bullet
