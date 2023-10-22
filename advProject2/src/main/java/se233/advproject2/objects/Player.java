@@ -104,9 +104,8 @@ public class Player extends Entity {
         switch (shotType){
             case normal -> {
                 // create bullet
-                Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class, 1);
+                new Bullet(getX() + (getSize()/2), getY()- 5, 90, 10, Enemy.class, 2);
                 logger.info("shot fired at x:{} y:{}",x,y);
-                game.bulletList.add(b);
                 trigger = true;
                 // make bullet shot effect
                 new Particle(getX()-16,getY()-48,"assets/shotSprite-Sheet.png",
@@ -115,8 +114,7 @@ public class Player extends Entity {
             case scatter -> {
                 // create bullet
                 for (int i = 0; i < 5; i++) {
-                    Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 70 + (10*i), 8, Enemy.class, 2);
-                    game.bulletList.add(b);
+                    new Bullet(getX() + (getSize()/2), getY()- 5, 70 + (10*i), 6, Enemy.class, 2);
                 }
                 logger.info("shot fired at x:{} y:{}",x,y);
                 trigger = true;
@@ -126,10 +124,10 @@ public class Player extends Entity {
             }
             case homing -> {
                 // create bullet
-                Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class);
+                Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 6, Enemy.class);
                 b.setHoming();
                 logger.info("shot fired at x:{} y:{}",x,y);
-                game.bulletList.add(b);
+
                 trigger = true;
                 // make bullet shot effect
                 new Particle(getX()-16,getY()-48,"assets/shotSprite-Sheet.png",
@@ -140,10 +138,9 @@ public class Player extends Entity {
     }
     private void createSpecialBullet(){
         // create bullet
-        Bullet b = new Bullet(getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class,10);
-        b.setHoming();
+        SpecialBullet b = new SpecialBullet("assets/stunSprite-Sheet.png",
+                getX() + (getSize()/2), getY()- 5, 90, 8, Enemy.class,10);
         logger.info("special fired at x:{} y:{}",x,y);
-        game.bulletList.add(b);
         specialTrigger = true;
     }
     // move

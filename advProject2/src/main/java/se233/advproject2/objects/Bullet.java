@@ -1,7 +1,10 @@
 package se233.advproject2.objects;
 
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import se233.advproject2.controller.GameLoop;
+import se233.advproject2.model.AnimatedSprite;
+import se233.advproject2.view.GameScreen;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
@@ -9,9 +12,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Bullet extends Pane {
+    GameLoop game = GameLoop.Instance;
+    GameScreen platform = GameLoop.Instance.platform;
+    Image characterImg;
+    AnimatedSprite imageView;
+    // default
+    String spritePath;
     public boolean dead = false;
-    private double x, y, direction, speed;
-    private int damage = 1;
+    double x, y, direction, speed;
+    int damage = 1;
     public double getX() { return x; }
     public double getY() { return y; }
     public void setY(double y) {
@@ -29,8 +38,8 @@ public class Bullet extends Pane {
     public void setSpeed(double speed) {
         this.speed = speed;
     }
-    private List<Entity> hit = new ArrayList<Entity>();
-    private Class checkFor;
+    List<Entity> hit = new ArrayList<>();
+    Class checkFor;
     private int changeDirTime = 45; // 1.30s
     private boolean homing;
     enum type {
@@ -49,6 +58,7 @@ public class Bullet extends Pane {
         this.speed = speed;
         this.checkFor = checkFor;
         this.homing = false;
+        game.bulletList.add(this);
     }
     public Bullet(double x, double y, double direction, double speed, Class checkFor, int damage){
         this.x = x;
@@ -58,8 +68,8 @@ public class Bullet extends Pane {
         this.checkFor = checkFor;
         this.damage = damage;
         this.homing = false;
+        game.bulletList.add(this);
     }
-    GameLoop game = GameLoop.Instance;
     boolean check;
     public void bulletCollision(List<Entity> entityList) throws ConcurrentModificationException {
         synchronized(game.getEntities()) {
@@ -96,6 +106,10 @@ public class Bullet extends Pane {
             }
         }
         if(!hit.isEmpty() && bulletType != type.piercing) dead = true;
+    }
+    public void step(){
+        move();
+        bulletCollision(game.getEntities());
     }
     // move
     public void move() throws ConcurrentModificationException {

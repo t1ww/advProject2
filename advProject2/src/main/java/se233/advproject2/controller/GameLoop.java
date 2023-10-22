@@ -160,8 +160,7 @@ public class GameLoop implements Runnable {
         // Move and check bullet collisions
         List<Bullet> bulletsToRemove = new ArrayList<>();
         for (Bullet b : bulletList) {
-            b.move();
-            b.bulletCollision(entities);
+            b.step();
             if (b.dead || b.getY() > platform.WIDTH + 50 || b.getY() < -50) {
                 bulletsToRemove.add(b);
             }

@@ -33,7 +33,6 @@ public class Enemy extends Entity {
         this.name = "small enemy";
         this.Level = lvl;
         this.hp += lvl;
-        this.sprite = Color.RED;
         this.shootCD_reduction += Math.min(lvl, 60);
         this.moveCD_reduction += Math.min(lvl, 60);
         cdReset();
@@ -46,7 +45,6 @@ public class Enemy extends Entity {
         this.name = "small enemy";
         this.Level = lvl;
         this.hp += lvl;
-        this.sprite = Color.RED;
         this.shootCD_reduction += Math.min(lvl, 60);
         this.moveCD_reduction += Math.min(lvl, 60);
         cdReset();
@@ -73,8 +71,7 @@ public class Enemy extends Entity {
     }
     public void shoot(){
         // create bullet
-        Bullet b = new Bullet(getX() + (getSize()/2), getY() + getSize() + 5, -90, 8, Player.class);
-        game.bulletList.add(b);
+        Bullet b = new Bullet(getX() + (getSize()/2), getY() + getSize() + 5, -90, 7, Player.class);
         cdReset();
     }
     void cdReset(){//randomness + reduction
@@ -128,5 +125,8 @@ public class Enemy extends Entity {
             }
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
+    }
+    public void stun(){
+        
     }
 }

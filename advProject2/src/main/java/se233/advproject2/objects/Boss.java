@@ -29,26 +29,23 @@ public class Boss extends Enemy {
 //        switch ((int)Math.floor((Math.random()*2.99999999))){
         switch (2){ // for force test
             default -> {
-                hp = 60;
+                hp = 90;
                 name = "scatter";
                 type = bossType.scatter;
-                sprite = Color.PINK;
                 this.shootCD_reduction = 150;
                 this.shotsAmount = 8+lvl;
             }
             case 1 -> {
-                hp = 80;
+                hp = 120;
                 name = "tracker";
                 type = bossType.tracker;
-                sprite = Color.PURPLE;
                 this.shootCD_reduction = 120;
                 this.shotsAmount += 20+lvl;
             }
             case 2 -> {
-                hp = 40;
+                hp = 60;
                 name = "fast";
                 type = bossType.fast;
-                sprite = Color.GREEN;
                 this.shootCD_reduction = 285;
                 this.moveCD_reduction = 90;
                 this.shotsAmount = 1;
@@ -92,7 +89,6 @@ public class Boss extends Enemy {
                 for (int i = 0; i < shotsAmount; i++) {
                     dir -= 10;
                     Bullet b = new Bullet(getX() + (getSize() / 2), getY() + getSize() + 5, dir, 3, Player.class);
-                    game.bulletList.add(b);
                 }
             }
             cdReset();
@@ -111,7 +107,6 @@ public class Boss extends Enemy {
                     Bullet b = new Bullet(getX() + (getSize() / 2), getY() + getSize() + 5,
                             dir, 4, Player.class);
                     b.setTargetting();
-                    game.bulletList.add(b);
                 }
             }
             cdReset();
@@ -127,7 +122,6 @@ public class Boss extends Enemy {
                 for (int i = 0; i < shotsAmount; i++) {
                     Bullet b = new Bullet(getX() + (getSize() / 2), getY() + getSize() + 5,
                             targetPlayerDir()+(Math.random()*40)-20, 5, Player.class);
-                    game.bulletList.add(b);
                 }
             }
             cdReset();

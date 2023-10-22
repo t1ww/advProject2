@@ -19,7 +19,6 @@ public class Entity extends Pane {
     public int hp;
     double x, y;
     int size;
-    Color sprite = Color.BLACK;
     Image characterImg;
     AnimatedSprite imageView;
     // default
@@ -71,5 +70,8 @@ public class Entity extends Pane {
             imageView.setFitHeight(this.size);
             this.getChildren().setAll(imageView);
         });
+    }
+
+    public void stun() {
     }
 }
