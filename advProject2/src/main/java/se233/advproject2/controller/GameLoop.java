@@ -173,13 +173,6 @@ public class GameLoop implements Runnable {
         for (Entity ent : entities) {
             ent.step();
         }
-//        Iterator<Entity> entityIterator = entities.iterator();
-//        while (entityIterator.hasNext()) {
-//            Entity ent = entityIterator.next();
-//            if (ent.dead) {
-//                entityIterator.remove();
-//            }
-//        }
 
         /// handling particles
         synchronized(particleList) {
@@ -202,9 +195,9 @@ public class GameLoop implements Runnable {
                 if (waveCD_count == waveCD) {
                     spawnWaveInit(3);
                 }
-                // step events
+                // alarm events
                 if (alarm != null) alarm.step();
-            }
+            }else if (alarm != null) alarm.step();
         }
 
         // runtime counting
