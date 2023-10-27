@@ -126,6 +126,11 @@ public class Enemy extends Entity {
     public void hurt(int dmg){
         hp -= dmg;
         if(hp <= 0){
+            /// dead
+            // create collectible (by chance)
+            if(Math.random()*2 > 1){
+                new Collectibles(x,y,270,5);
+            }
             Platform.runLater(() -> {
                 // Remove the entity to the platform's children
                 platform.getChildren().remove(this);

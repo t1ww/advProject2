@@ -76,8 +76,7 @@ public class Particle extends Pane {
 
         this.animationFrames *= 3;
     }
-
-    public void move() {
+    public void step() {
         if(isAnimated) {
             animationFrames--;
             if (animationFrames < 0) {
@@ -85,6 +84,12 @@ public class Particle extends Pane {
                 return;
             }
         }
+        if (!isOnScreen()) {
+            removeSelf();
+        }
+        move();
+    }
+    public void move() {
         ///handling
         double angleRad = Math.toRadians(direction);
         double hsp = Math.cos(angleRad) * speed;
@@ -99,10 +104,6 @@ public class Particle extends Pane {
             setTranslateX(x);
             setTranslateY(y);
         });
-
-        if (!isOnScreen()) {
-            removeSelf();
-        }
     }
     public void removeSelf(){
         logger.info("Removing particle [ Path : {}", spritePath);
@@ -119,4 +120,5 @@ public class Particle extends Pane {
     }
     // logger //
     private static final Logger logger = LogManager.getLogger(Character.class);
+
 }

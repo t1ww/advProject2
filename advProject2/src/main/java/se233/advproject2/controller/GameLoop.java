@@ -27,11 +27,10 @@ public class GameLoop implements Runnable {
     public DrawingLoop drawingLoop;
     public Player player;
     private final List<Entity> entities = Collections.synchronizedList(new ArrayList<>());
-    private List<Enemy> enemyList = new CopyOnWriteArrayList<Enemy>();
-    public List<Bullet> bulletList = new CopyOnWriteArrayList<Bullet>();
-    public List<Particle> particleList = new CopyOnWriteArrayList<Particle>();
-    private float interval = 1000.0f / 60;
-    private int waveCD = 1200;
+    private List<Enemy> enemyList = new CopyOnWriteArrayList<>();
+    public List<Bullet> bulletList = new CopyOnWriteArrayList<>();
+    public final List<Particle> particleList = new CopyOnWriteArrayList<>();
+    public final List<Collectibles> collectiblesList = new CopyOnWriteArrayList<>();
     public int waveCD_count = 0;
     public int level = 0;
     private int score;
@@ -89,10 +88,11 @@ public class GameLoop implements Runnable {
                     _x2 += lerp(_x2, xto2, .05);
                     platform.renderReset();
                     // key instruction
-                    String str = "A, D or <-arrow-> to move" +
-                            "\nPRESS SPACE TO SHOOT" +
-                            "\nPRESS G TO USE BOMB (STUN AND CLEAR BULLETS)" +
-                            "\nPRESS LSHIFT TO SPRINT";
+                    String str = """
+                            A, D or <-arrow-> to move
+                            PRESS SPACE TO SHOOT
+                            PRESS G TO USE BOMB (STUN AND CLEAR BULLETS)
+                            PRESS LSHIFT TO SPRINT""";
                     platform.renderText(str, (int)_x, 300);
                     platform.renderText("press Space to start game", (int)_x2, 400);
                     if(platform.getKeys().contains(KeyCode.SPACE)){
@@ -137,6 +137,7 @@ public class GameLoop implements Runnable {
             }
             time = System.currentTimeMillis() - time;
             /// delay a bit based on fps
+            float interval = 1000.0f / 60;
             if (time < interval) {
                 try {
                     Thread.sleep((long) (interval - time));
@@ -164,7 +165,7 @@ public class GameLoop implements Runnable {
         List<Bullet> bulletsToRemove = new ArrayList<>();
         for (Bullet b : bulletList) {
             b.step();
-            if (b.dead || b.getY() > platform.WIDTH + 50 || b.getY() < -50) {
+            if (b.dead || b.getY() > GameScreen.WIDTH + 50 || b.getY() < -50) {
                 bulletsToRemove.add(b);
             }
         }
@@ -177,10 +178,15 @@ public class GameLoop implements Runnable {
         /// handling particles
         synchronized(particleList) {
             for (Particle p : particleList) {
-                p.move();
+                p.step();
             }
         }
-
+        /// handling Collectibles
+        synchronized(collectiblesList) {
+            for (Collectibles c : collectiblesList) {
+                c.step();
+            }
+        }
         /// only during creeps wave
         if(stun) { // wave stop stun
             // count the stun
@@ -192,6 +198,7 @@ public class GameLoop implements Runnable {
             if (gameWave.equals(WAVE.Creeps)) {
                 waveCD_count++;
                 // next wave every given time
+                int waveCD = 1200;
                 if (waveCD_count == waveCD) {
                     spawnWaveInit(3);
                 }
@@ -210,7 +217,7 @@ public class GameLoop implements Runnable {
     private void draw() throws Exception {
         /// render setup
         platform.renderReset();
-        // draw the finishline for enemy
+        // draw the finish line for enemy
         platform.renderDeadLine();
         platform.renderBullets(bulletList);
         // draw ui
@@ -273,7 +280,7 @@ public class GameLoop implements Runnable {
             waveCD_count = 0; // reset counter
         } else { // boss wave
             // boss creation
-            entities.add(new Boss((platform.WIDTH / 2) , 150, 64, level));
+            entities.add(new Boss(((double) GameScreen.WIDTH / 2) , 150, 64, level));
             enemyCount++;
         }
         waveCD_count = 0; // reset spawn wave
@@ -285,9 +292,7 @@ public class GameLoop implements Runnable {
                 .map(ent -> (Enemy) ent)
                 .toList();
         enemyCount = enemyList.size(); // recheck size
-        Iterator<Enemy> enemyIterator = enemyList.iterator();
-        while(enemyIterator.hasNext()) {
-            Enemy enemy = enemyIterator.next();
+        for (Enemy enemy : enemyList) {
             enemy.moveDown();
         }
     }

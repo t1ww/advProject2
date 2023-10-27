@@ -40,14 +40,21 @@ public class Player extends Entity {
         normal, scatter, homing
     }
     private ShotType shotType = ShotType.normal;
+    public void heal(){
+        logger.info("healed player");
+        hp++;
+    }
     public void setNormalShot(){
+        logger.info("player now using normal gun");
         shotType = ShotType.normal;
     }
     public void setScatterShot(){
+        logger.info("player now using scatter gun");
         shotType = ShotType.scatter;
         ammo = 50;
     }
     public void setHomingShot(){
+        logger.info("player now using homing gun");
         shotType = ShotType.homing;
         ammo = 100;
     }
