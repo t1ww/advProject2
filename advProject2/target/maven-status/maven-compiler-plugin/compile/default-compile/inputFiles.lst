@@ -1,7 +1,8 @@
 D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\controller\DrawingLoop.java
+D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\objects\Collectibles.java
 D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\objects\Particle.java
+D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\model\AnimatedSprite.java
 D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\module-info.java
-D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\view\AnimatedSprite.java
 D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\objects\Player.java
 D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\view\GameScreen.java
 D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\objects\Bullet.java
@@ -12,5 +13,6 @@ D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java
 D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\objects\Enemy.java
 D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\JarLauncher.java
 D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\objects\Entity.java
+D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\objects\SpecialBullet.java
 D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\objects\Boss.java
 D:\camt y2\advance programming\advProject2\advProject2\advProject2\src\main\java\se233\advproject2\example\SpaceInvaderApp.java

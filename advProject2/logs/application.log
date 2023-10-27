@@ -24570,3 +24570,11 @@ java.util.ConcurrentModificationException: null
 [ INFO] Fri 2023-10-27 21:21:12 [JavaFX Application Thread] GameLoop.(Line - ) - x:96.07250058616262 y:600.4564879083257 left:true right:false sprint:false
 [ INFO] Fri 2023-10-27 21:21:12 [JavaFX Application Thread] GameLoop.(Line - ) - x:45.07250058616262 y:600.4564879083257 left:true right:true sprint:false
 [ INFO] Fri 2023-10-27 21:21:13 [JavaFX Application Thread] GameLoop.(Line - ) - x:345.0725005861626 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Fri 2023-10-27 23:20:16 [JavaFX Application Thread] GameLoop.(Line - ) - Game started.
+[ INFO] Fri 2023-10-27 23:20:16 [JavaFX Application Thread] GameLoop.(Line - ) - special fired at x:299.6344311151002 y:600.4564879083257
+[ INFO] Fri 2023-10-27 23:20:16 [JavaFX Application Thread] GameLoop.(Line - ) - Game started.
+[ INFO] Fri 2023-10-27 23:20:16 [JavaFX Application Thread] GameLoop.(Line - ) - x:300.493597881722 y:600.2425963904884 left:true right:false sprint:false
+[ INFO] Fri 2023-10-27 23:20:16 [JavaFX Application Thread] GameLoop.(Line - ) - Game started.
+[ INFO] Fri 2023-10-27 23:20:16 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:299.5145489686161 y:600.2995017166525
+[ INFO] Fri 2023-10-27 23:20:16 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Fri 2023-10-27 23:20:16 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 1
