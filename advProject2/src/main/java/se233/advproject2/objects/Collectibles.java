@@ -29,25 +29,28 @@ public class Collectibles extends Pane {
     public Collectibles(double x, double y, double direction, double speed){
         this.x = x;
         this.y = y;
-        setTranslateX(this.x);
-        setTranslateY(this.y);
+        Platform.runLater(() -> {
+            // set rendering
+            setTranslateX(x - 16);
+            setTranslateY(y - 16);
+        });
         // setting up (randomly)
         String spritePath;
         switch ((int)Math.floor(Math.random()*3)){
             default -> {
                 type = TYPE.health;
                 // sprite
-                spritePath = "assets/Collectible-sheet.png";
+                spritePath = "assets/Collectible_heal-Sheet.png";
             }
             case 1 -> {
                 type = TYPE.scatterGun;
                 // sprite
-                spritePath = "assets/Collectible-sheet.png";
+                spritePath = "assets/Collectible_scatter-Sheet.png";
             }
             case 2 -> {
                 type = TYPE.homingGun;
                 // sprite
-                spritePath = "assets/Collectible-sheet.png";
+                spritePath = "assets/Collectible_homing-Sheet.png";
             }
         }
         this.speed = speed;
@@ -65,28 +68,6 @@ public class Collectibles extends Pane {
             game.collectiblesList.add(this);
         });
     }
-    public Collectibles(String spritePath, double x, double y, double direction, double speed){
-        this.x = x;
-        this.y = y;
-        setTranslateX(this.x);
-        setTranslateY(this.y);
-
-        this.speed = speed;
-        this.direction = direction;
-        // sprite
-        this.spritePath = spritePath;
-        this.characterImg = new Image(Objects.requireNonNull(Launcher.class.getResourceAsStream(this.spritePath)));
-        int size = 32;
-        this.imageView = new AnimatedSprite(characterImg,2,2,1,0,0,size,size,500);
-        this.imageView.setFitWidth(size);
-        this.imageView.setFitHeight(size);
-        this.getChildren().addAll(this.imageView);
-        // Use Platform.runLater to update rendering entity immediately upon creation
-        Platform.runLater(() -> {
-            // Add the entity to the platform's children
-            platform.getChildren().addAll(this);
-        });
-    }
 
     /// methods //
 
@@ -102,9 +83,11 @@ public class Collectibles extends Pane {
         // update pos
         x += hsp;
         y -= vsp;
-        // set translate
-        setTranslateX(x);
-        setTranslateY(y);
+        Platform.runLater(() -> {
+            // set rendering
+            setTranslateX(x - 16);
+            setTranslateY(y - 16);
+        });
     }
     private void collision() throws ConcurrentModificationException {
         Player ent = game.player;

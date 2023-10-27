@@ -154,6 +154,8 @@ public class Boss extends Enemy {
     public void hurt(int dmg){
         hp -= dmg;
         if(hp <= 0){
+            // drop chance
+            dropChance(1);
             logger.info("boss killed");
             // Use Platform.runLater to update rendering entity immediately upon death
             Platform.runLater(() -> {

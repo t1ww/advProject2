@@ -28,6 +28,7 @@ public class Enemy extends Entity {
     }
     boolean stun = false;
     int stunTimer = 0;
+    double dropChance = .1;
     public MOVE_ROTAION moveDir = MOVE_ROTAION.left;
     // constructor
     public Enemy(double x, double y, int size, int lvl) {
@@ -128,9 +129,7 @@ public class Enemy extends Entity {
         if(hp <= 0){
             /// dead
             // create collectible (by chance)
-            if(Math.random()*2 > 1){
-                new Collectibles(x,y,270,5);
-            }
+            dropChance(dropChance);
             Platform.runLater(() -> {
                 // Remove the entity to the platform's children
                 platform.getChildren().remove(this);
@@ -150,7 +149,11 @@ public class Enemy extends Entity {
         stun = true;
         stunTimer = 60;
     }
-
+    void dropChance(double chance){
+        if(Math.random() > 1-chance){
+            new Collectibles(x,y,270,5);
+        }
+    }
     public void enemyCount(){
         // counting enemies
         List<Enemy> enemyList = game.getEntities().stream()

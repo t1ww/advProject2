@@ -31,9 +31,11 @@ public class SpecialBullet extends Bullet {
             // Add the entity to the platform's children
             platform.getChildren().addAll(this);
         });
-        // set rendering
-        setTranslateX(x-16);
-        setTranslateY(y-16);
+        Platform.runLater(() -> {
+            // set rendering
+            setTranslateX(x - 16);
+            setTranslateY(y - 16);
+        });
     }
 
     // methods

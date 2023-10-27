@@ -69,7 +69,6 @@ public class Player extends Entity {
         this.startY = y;
         this.x = Math.random()*800;
         this.y = 750;
-        setScatterShot(); // testing different ammo type
     }
     // step
     public void step() throws ConcurrentModificationException {
