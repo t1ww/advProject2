@@ -24499,3 +24499,74 @@ java.util.ConcurrentModificationException: null
 [ INFO] Fri 2023-10-27 20:45:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
 [ INFO] Fri 2023-10-27 20:45:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
 [ INFO] Fri 2023-10-27 20:45:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Fri 2023-10-27 21:21:01 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Fri 2023-10-27 21:21:02 [JavaFX Application Thread] GameLoop.(Line - ) - x:300.0725005861626 y:600.4564879083257 left:true right:false sprint:true
+[ INFO] Fri 2023-10-27 21:21:03 [JavaFX Application Thread] GameLoop.(Line - ) - x:210.07250058616262 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Fri 2023-10-27 21:21:03 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:219.07250058616262 y:600.4564879083257
+[ INFO] Fri 2023-10-27 21:21:03 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Fri 2023-10-27 21:21:03 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 1
+[ INFO] Fri 2023-10-27 21:21:03 [JavaFX Application Thread] GameLoop.(Line - ) - x:261.0725005861626 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:243.07250058616262 y:600.4564879083257
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - x:219.07250058616262 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:264.0725005861626 y:600.4564879083257
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 2
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:294.0725005861626 y:600.4564879083257
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:330.0725005861626 y:600.4564879083257
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Fri 2023-10-27 21:21:04 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 3
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 4
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - x:426.0725005861626 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 5
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:05 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - x:117.07250058616262 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:06 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Fri 2023-10-27 21:21:07 [JavaFX Application Thread] GameLoop.(Line - ) - x:276.0725005861626 y:600.4564879083257 left:true right:true sprint:true
+[ INFO] Fri 2023-10-27 21:21:07 [JavaFX Application Thread] GameLoop.(Line - ) - x:204.07250058616262 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Fri 2023-10-27 21:21:07 [JavaFX Application Thread] GameLoop.(Line - ) - x:252.07250058616262 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Fri 2023-10-27 21:21:08 [JavaFX Application Thread] GameLoop.(Line - ) - x:372.0725005861626 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Fri 2023-10-27 21:21:08 [JavaFX Application Thread] GameLoop.(Line - ) - x:282.0725005861626 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Fri 2023-10-27 21:21:09 [JavaFX Application Thread] GameLoop.(Line - ) - x:321.0725005861626 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Fri 2023-10-27 21:21:09 [JavaFX Application Thread] GameLoop.(Line - ) - x:261.0725005861626 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Fri 2023-10-27 21:21:10 [JavaFX Application Thread] GameLoop.(Line - ) - x:189.07250058616262 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Fri 2023-10-27 21:21:10 [JavaFX Application Thread] GameLoop.(Line - ) - x:222.07250058616262 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Fri 2023-10-27 21:21:11 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Fri 2023-10-27 21:21:11 [JavaFX Application Thread] GameLoop.(Line - ) - x:42.07250058616262 y:600.4564879083257 left:false right:true sprint:false
+[ INFO] Fri 2023-10-27 21:21:12 [JavaFX Application Thread] GameLoop.(Line - ) - x:96.07250058616262 y:600.4564879083257 left:true right:false sprint:false
+[ INFO] Fri 2023-10-27 21:21:12 [JavaFX Application Thread] GameLoop.(Line - ) - x:45.07250058616262 y:600.4564879083257 left:true right:true sprint:false
+[ INFO] Fri 2023-10-27 21:21:13 [JavaFX Application Thread] GameLoop.(Line - ) - x:345.0725005861626 y:600.4564879083257 left:true right:false sprint:false
