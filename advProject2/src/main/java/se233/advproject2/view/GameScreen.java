@@ -7,7 +7,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import se233.advproject2.objects.Bullet;
-import se233.advproject2.objects.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,12 +38,13 @@ public class GameScreen extends Pane {
             gc.fillRect(e.getX()-2 , e.getY()-2 , 5, 5);
         }
     }
-    public void render(Color color, double x, double y, int s) // render one ent
-            throws NullPointerException, IndexOutOfBoundsException {
-        // will be changed to sprite rendering
-        gc.setFill(color);
-        gc.fillRect(x, y, s, s);
-    }
+
+//    public void render(Color color, double x, double y, int s) // render one ent
+//            throws NullPointerException, IndexOutOfBoundsException {
+//        // will be changed to sprite rendering
+//        gc.setFill(color);
+//        gc.fillRect(x, y, s, s);
+//    }
     public void renderText(String Text, double x, double y) {
         gc.setFill(Color.BLACK);
         gc.fillText(Text, x , y);
