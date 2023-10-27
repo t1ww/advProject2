@@ -119,6 +119,6 @@ public class Particle extends Pane {
                 getTranslateY() > -200 &&  getTranslateY() < GameScreen.HEIGHT +200;
     }
     // logger //
-    private static final Logger logger = LogManager.getLogger(Character.class);
+    private static final Logger logger = GameLoop.logger;
 
 }

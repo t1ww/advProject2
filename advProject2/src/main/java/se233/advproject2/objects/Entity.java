@@ -71,7 +71,7 @@ public class Entity extends Pane {
             this.getChildren().setAll(imageView);
         });
     }
-
     public void stun() {
+        // unaffected
     }
 }

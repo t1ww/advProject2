@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import se233.advproject2.controller.GameLoop;
 import se233.advproject2.view.GameScreen;
 
 import java.util.ConcurrentModificationException;
@@ -279,7 +280,7 @@ public class Player extends Entity {
         }else System.out.println(name + " now has " + hp + " hp");
     }
     // logger //
-    private static final Logger logger = LogManager.getLogger(Character.class);
+    private static final Logger logger = GameLoop.logger;
     public void trace() {
         logger.info("x:{} y:{} left:{} right:{} sprint:{}",x,y,keyLeft,keyRight,keySprint);
     }

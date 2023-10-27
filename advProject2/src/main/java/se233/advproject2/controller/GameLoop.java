@@ -375,7 +375,7 @@ public class GameLoop implements Runnable {
         return this.entities;
     }
     // logger //
-    private static final Logger logger = LogManager.getLogger(GameLoop.class);
+    public static final Logger logger = LogManager.getLogger(GameLoop.class);
     private void logScoreChange() {
         logger.info("Score has been updated to: " + score);
     }
