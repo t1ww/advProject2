@@ -26,8 +26,7 @@ public class Particle extends Pane {
     public Particle(double x, double y, String spritePath, int width, int height, double speed, double direction, boolean isAnimated, int animationFrames) {
         this.x = x;
         this.y = y;
-        setTranslateX(this.x);
-        setTranslateY(this.y);
+
         this.spritePath = spritePath;
 
         this.speed = speed;
@@ -45,6 +44,8 @@ public class Particle extends Pane {
         Platform.runLater(() -> {
             // Add the particle to the platform's children
             platform.getChildren().addAll(this);
+            setTranslateX(this.x);
+            setTranslateY(this.y);
         });
 
         this.animationFrames *= 3;
