@@ -69,6 +69,7 @@ public class Bullet extends Pane {
         this.damage = damage;
         this.homing = false;
         game.bulletList.add(this);
+        GameLoop.logger.info("created bullet");
     }
     boolean check;
     public void step(){
@@ -92,8 +93,10 @@ public class Bullet extends Pane {
                         // add score
                         if (ent.getClass() == Enemy.class) {
                             game.setScore(game.getScore()+1); // score add
+                            GameLoop.logger.info("hit enemy, score added");
                         }else if (ent.getClass() == EnemyHighRank.class){
                             game.setScore(game.getScore()+2); // score add
+                            GameLoop.logger.info("hit enemy high rank, score added");
                         }
                         // create explosion effect
                         new Particle(getX()-32,getY()-32,"assets/bulletFlashSprite-Sheet.png",
@@ -103,7 +106,6 @@ public class Bullet extends Pane {
                             new Particle(getX()-32,getY()-32,"assets/debris.png",
                                     3,3,10+(Math.random()*10), 10, Math.random()*360,false,1);
                         }
-                        System.out.println("Collided with " + ent.name);
                         return;
                     }
                 }

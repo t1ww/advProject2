@@ -16,9 +16,9 @@ import se233.advproject2.view.GameScreen;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GameLoopTest {
     private GameLoop gameLoopUnderTest;
@@ -125,9 +125,10 @@ public class GameLoopTest {
                     clockTickHelper();
                 }
                 // Check if bullet was destroyed
-                Assert.assertEquals("Expected bullet to be removed from bullet list.", 0, gameLoopUnderTest.bulletList.size());                                             gameLoopUnderTest.setScore(gameLoopUnderTest.getScore()+1);
+                Assert.assertEquals("Expected bullet to be removed from bullet list.", 0, gameLoopUnderTest.bulletList.size());
                 Assert.assertEquals("Expected no more enemy.", 0, gameLoopUnderTest.enemyCount);
-                Assert.assertNotEquals("Expected score to not be 0",0, gameLoopUnderTest.getScore()); // score should be added
+
+//                Assert.assertNotEquals("Expected score to not be 0",0, gameLoopUnderTest.getScore()); // score should be added
             } catch (Exception e) {
                 fail("Failed within Platform.runLater(): " + e.getMessage());
             } finally {
@@ -137,7 +138,67 @@ public class GameLoopTest {
 
         latch.await();
     }
+    @Test
+    public void testScoreUpdate() throws Exception {
+        final CountDownLatch latch = new CountDownLatch(1);
 
+        Platform.runLater(() -> {
+            try {
+                // Initialize the game loop and start it
+                gameLoopUnderTest.setInstance(gameLoopUnderTest);
+                gameLoopUnderTest.Start();
+                gameLoopUnderTest.alarm = null; // don't spawn wave
+                clockTickHelper();
+
+                Player player = gameLoopUnderTest.getPlayer();
+                while (player.starting){
+                    clockTickHelper();
+                }// wait for player in position
+
+                player = gameLoopUnderTest.getPlayer();
+                double cur_x = player.getX(), cur_y = player.getY();
+                gameLoopUnderTest.enemyCount = 0; // reset the count
+                int initialScore = gameLoopUnderTest.getScore();
+
+                Enemy etest = new Enemy(cur_x, cur_y-100, 32, 0);
+                etest.setX(cur_x);
+                etest.setY(cur_y-100); // Adjust Y to ensure the enemy is in the path of the bullet
+                gameLoopUnderTest.getEntities().add(etest);
+
+                Assert.assertEquals("Expect to have an enemy in the list", 2, gameLoopUnderTest.getEntities().size());
+
+                // Simulate shooting key press
+                gameScreenUnderTest.pressKey(KeyCode.SPACE);
+                clockTickHelper();
+                gameScreenUnderTest.releaseKey(KeyCode.SPACE);
+
+                // Check if bullet was added to the bullet list
+                Assert.assertEquals("Expected bullet to be added to bullet list.", 1, gameLoopUnderTest.bulletList.size());
+
+                // Wait until the bullet hits the enemy
+                while (!gameLoopUnderTest.bulletList.isEmpty()) {
+                    clockTickHelper();
+                }
+
+                // Check if bullet was destroyed
+                Assert.assertEquals("Expected bullet to be removed from bullet list.", 0, gameLoopUnderTest.bulletList.size());
+
+                // Check if enemy was destroyed
+                Assert.assertEquals("Expected no more enemies.", 0, gameLoopUnderTest.enemyCount);
+
+                // Check if score was updated
+                int updatedScore = gameLoopUnderTest.getScore();
+                Assert.assertTrue("Expected score to be greater than initial score", updatedScore > initialScore);
+
+            } catch (Exception e) {
+                fail("Failed within Platform.runLater(): " + e.getMessage());
+            } finally {
+                latch.countDown();
+            }
+        });
+
+        latch.await(5, TimeUnit.SECONDS); // Wait up to 5 seconds for Platform.runLater() to finish
+    }
     @Test
     public void testSpecialAttackMechanism() throws Exception {
         final CountDownLatch latch = new CountDownLatch(1);
