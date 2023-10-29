@@ -56,7 +56,7 @@ public class GameLoopTest {
         assertNotEquals(gameLoopUnderTest.runtime, 0);
     }
     @Test
-    public void testKeyPressHandling() throws Exception {
+    public void testPlayerMove() throws Exception {
         final CountDownLatch latch = new CountDownLatch(1);
 
         Platform.runLater(() -> {
@@ -230,6 +230,7 @@ public class GameLoopTest {
 
         latch.await();
     }
+
     // helper methods
     private void clockTickHelper() throws InvocationTargetException,
             IllegalAccessException {
