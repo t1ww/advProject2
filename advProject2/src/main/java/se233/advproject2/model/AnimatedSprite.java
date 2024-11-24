@@ -7,10 +7,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-//Imports are omitted
+// Imports are omitted
 public class AnimatedSprite extends ImageView {
-    int count, columns, rows, offsetX, offsetY, width, height, curIndex,
-            curColumnIndex = 0, curRowIndex = 0;
+    int count, columns, rows, offsetX, offsetY, width, height, currentIndex,
+            currentColumnIndex = 0, currentRowIndex = 0;
     private final Timeline animationTimeline;
     public AnimatedSprite(Image image, int count, int columns, int rows, int
             offsetX, int offsetY, int width, int height, int ms) {
@@ -29,14 +29,14 @@ public class AnimatedSprite extends ImageView {
         startAnimation();
     }
     public void tick() {
-        curColumnIndex = curIndex % columns;
-        curRowIndex = curIndex / columns;
-        curIndex = (curIndex+1) % (columns * rows);
+        currentColumnIndex = currentIndex % columns;
+        currentRowIndex = currentIndex / columns;
+        currentIndex = (currentIndex +1) % (columns * rows);
         interpolate();
     }
     protected void interpolate() {
-        final int x = curColumnIndex * width + offsetX;
-        final int y = curRowIndex * height + offsetY;
+        final int x = currentColumnIndex * width + offsetX;
+        final int y = currentRowIndex * height + offsetY;
         this.setViewport(new Rectangle2D(x, y, width, height));
     }
     public void startAnimation() {
@@ -48,6 +48,6 @@ public class AnimatedSprite extends ImageView {
     }
 
     public int getIndex() {
-        return curIndex;
+        return currentIndex;
     }
 }
