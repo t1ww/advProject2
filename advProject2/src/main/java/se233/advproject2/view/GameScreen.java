@@ -38,13 +38,6 @@ public class GameScreen extends Pane {
             gc.fillRect(e.getX()-2 , e.getY()-2 , 5, 5);
         }
     }
-
-//    public void render(Color color, double x, double y, int s) // render one ent
-//            throws NullPointerException, IndexOutOfBoundsException {
-//        // will be changed to sprite rendering
-//        gc.setFill(color);
-//        gc.fillRect(x, y, s, s);
-//    }
     public void renderText(String Text, double x, double y) {
         gc.setFill(Color.BLACK);
         gc.fillText(Text, x , y);
@@ -69,8 +62,8 @@ public class GameScreen extends Pane {
         gc.fillRect(0, 500, 600, 1);
     }
 
-    /// getting keys pressed
-    private List<KeyCode> key = new ArrayList<>();
+    /// Getting keys pressed
+    private final List<KeyCode> key = new ArrayList<>();
     public List<KeyCode> getKeys() { return key; }
 
     public void pressKey(KeyCode key) {
