@@ -78,11 +78,11 @@ public class Collectibles extends Pane {
     private void move() throws ConcurrentModificationException {
         // handling
         double angleRad = Math.toRadians(direction);
-        double hsp = Math.cos(angleRad) * speed;
-        double vsp = Math.sin(angleRad) * speed;
+        double horizontalSpeed = Math.cos(angleRad) * speed;
+        double verticalSpeed = Math.sin(angleRad) * speed;
         // update pos
-        x += hsp;
-        y -= vsp;
+        x += horizontalSpeed;
+        y -= verticalSpeed;
         Platform.runLater(() -> {
             // set rendering
             setTranslateX(x - 16);

@@ -92,13 +92,13 @@ public class Particle extends Pane {
     public void move() {
         // Handling
         double angleRad = Math.toRadians(direction);
-        double hsp = Math.cos(angleRad) * speed;
-        double vsp = Math.sin(angleRad) * speed;
+        double horizontalSpeed = Math.cos(angleRad) * speed;
+        double verticalSpeed = Math.sin(angleRad) * speed;
         // slow down the speed
         if(!isAnimated)speed += game.lerp(speed, speedMin, .1);
         // update pos
-        x += hsp;
-        y -= vsp;
+        x += horizontalSpeed;
+        y -= verticalSpeed;
 
         Platform.runLater(() -> {
             setTranslateX(x);

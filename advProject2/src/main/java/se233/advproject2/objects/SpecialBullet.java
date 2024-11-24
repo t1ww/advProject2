@@ -11,9 +11,6 @@ import java.util.Objects;
 
 public class SpecialBullet extends Bullet {
     int size = 32;
-    public SpecialBullet(String sprPath, double x, double y, double direction, double speed, Class checkFor) {
-        super(x, y, direction, speed, checkFor);
-    }
     public SpecialBullet(String sprPath, double x, double y, double direction, double speed, Class checkFor, int damage) {
         super(x, y, direction, speed, checkFor, damage);
         this.spritePath = sprPath;
@@ -41,15 +38,15 @@ public class SpecialBullet extends Bullet {
         bulletCollision(game.getEntities());
     }
     public void move(){
-        ///handling
+        // Handling
         double angleRad = Math.toRadians(direction);
-        double hsp = Math.cos(angleRad) * speed;
-        double vsp = Math.sin(angleRad) * speed;
+        double horizontalSpeed = Math.cos(angleRad) * speed;
+        double verticalSpeed = Math.sin(angleRad) * speed;
         // slow down the speed
         speed += game.lerp(speed, 0, .1);
         // update pos
-        x += hsp;
-        y -= vsp;
+        x += horizontalSpeed;
+        y -= verticalSpeed;
         int buffer = -16;
         Platform.runLater(() -> {
             setTranslateX(x+buffer);
@@ -93,8 +90,6 @@ public class SpecialBullet extends Bullet {
                         3, 3, 10 + (Math.random() * 10), 10, Math.random() * 360, false, 1);
             }
         }
-
-
         timer--;
     }
 }
