@@ -7,7 +7,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import se233.advproject2.controller.DrawingLoop;
 import se233.advproject2.controller.GameLoop;
 import se233.advproject2.objects.Enemy;
 import se233.advproject2.objects.Player;
@@ -23,7 +22,6 @@ import static org.junit.Assert.*;
 public class GameLoopTest {
     private GameLoop gameLoopUnderTest;
     private GameScreen gameScreenUnderTest;
-    private DrawingLoop drawingLoop;
     private Method step;
     @BeforeClass
     public static void initJFX() throws InterruptedException {
@@ -43,7 +41,6 @@ public class GameLoopTest {
     public void init() throws NoSuchMethodException {
         gameScreenUnderTest = new GameScreen();
         gameLoopUnderTest = new GameLoop(gameScreenUnderTest);
-        drawingLoop = new DrawingLoop(gameLoopUnderTest);
         step = GameLoop.class.getDeclaredMethod("step");
         step.setAccessible(true);
     }
@@ -104,7 +101,7 @@ public class GameLoopTest {
                 }// wait for player in position
                 player = gameLoopUnderTest.getPlayer();
                 double cur_x = player.getX(), cur_y = player.getY();
-                gameLoopUnderTest.enemyCount = 0; // reset the count
+                gameLoopUnderTest.setEnemyCount(0); // reset the count
                 gameLoopUnderTest.setScore(0); // reset the score
                 Enemy etest = new Enemy(cur_x, cur_y-100,32,0);
                 etest.setX(cur_x);
@@ -116,14 +113,14 @@ public class GameLoopTest {
                 clockTickHelper();
                 gameScreenUnderTest.releaseKey(KeyCode.SPACE);
                 // Check if bullet was added to the bullet list
-                Assert.assertEquals("Expected bullet to be added to bullet list.", 1, gameLoopUnderTest.getB.size());
+                Assert.assertEquals("Expected bullet to be added to bullet list.", 1, gameLoopUnderTest.getBulletList().size());
                 // steps until the bullet is gone (bullet should hit the enemy etest)
-                while (gameLoopUnderTest.getBulletList().size() != 0){
+                while (!gameLoopUnderTest.getBulletList().isEmpty()){
                     clockTickHelper();
                 }
                 // Check if bullet was destroyed
                 Assert.assertEquals("Expected bullet to be removed from bullet list.", 0, gameLoopUnderTest.getBulletList().size());
-                Assert.assertEquals("Expected no more enemy.", 0, gameLoopUnderTest.enemyCount);
+                Assert.assertEquals("Expected no more enemy.", 0, gameLoopUnderTest.getEnemyCount());
 
 //                Assert.assertNotEquals("Expected score to not be 0",0, gameLoopUnderTest.getScore()); // score should be added
             } catch (Exception e) {
@@ -142,9 +139,8 @@ public class GameLoopTest {
         Platform.runLater(() -> {
             try {
                 // Initialize the game loop and start it
-                gameLoopUnderTest.setInstance(gameLoopUnderTest);
                 gameLoopUnderTest.Start();
-                gameLoopUnderTest.alarm = null; // don't spawn wave
+                gameLoopUnderTest.setAlarm(null); // don't spawn wave
                 clockTickHelper();
 
                 Player player = gameLoopUnderTest.getPlayer();
@@ -154,7 +150,7 @@ public class GameLoopTest {
 
                 player = gameLoopUnderTest.getPlayer();
                 double cur_x = player.getX(), cur_y = player.getY();
-                gameLoopUnderTest.enemyCount = 0; // reset the count
+                gameLoopUnderTest.setEnemyCount(0); // reset the count
                 int initialScore = gameLoopUnderTest.getScore();
 
                 Enemy etest = new Enemy(cur_x, cur_y-100, 32, 0);
@@ -202,7 +198,6 @@ public class GameLoopTest {
 
         Platform.runLater(() -> {
             try {
-                gameLoopUnderTest.setInstance(gameLoopUnderTest);
                 gameLoopUnderTest.Start();
                 clockTickHelper();
                 Player player = gameLoopUnderTest.getPlayer();
