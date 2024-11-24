@@ -2,11 +2,8 @@ package se233.advproject2.objects;
 
 import javafx.application.Platform;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
 import se233.advproject2.Launcher;
-import se233.advproject2.controller.GameLoop;
 import se233.advproject2.model.AnimatedSprite;
-import se233.advproject2.view.GameScreen;
 
 import java.util.ConcurrentModificationException;
 import java.util.List;

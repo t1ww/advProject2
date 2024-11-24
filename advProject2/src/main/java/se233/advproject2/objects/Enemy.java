@@ -1,10 +1,7 @@
 package se233.advproject2.objects;
 
 import javafx.application.Platform;
-import javafx.scene.paint.Color;
-
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Enemy extends Entity {
     // var init

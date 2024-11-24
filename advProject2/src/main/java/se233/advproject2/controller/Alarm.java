@@ -1,9 +1,5 @@
 package se233.advproject2.controller;
 
-import se233.advproject2.controller.GameLoop;
-
-import java.lang.reflect.Method;
-
 public class Alarm {
     GameLoop game = GameLoop.getInstance();
     public static int countdown;

@@ -1,8 +1,6 @@
 package se233.advproject2.controller;
 
-
 import se233.advproject2.objects.Entity;
-import se233.advproject2.objects.Particle;
 
 import java.util.List;
 
@@ -20,7 +18,6 @@ public class DrawingLoop implements Runnable {
     private final float interval;
     private final GameLoop game;
     private final List<Entity> entities;
-    private final List<Particle> particles;
 
     public boolean running;
 
@@ -30,7 +27,6 @@ public class DrawingLoop implements Runnable {
         this.interval = MS_IN_SECOND / frameRate;
         this.running = false;
         this.entities = this.game.getEntities();
-        this.particles = this.game.getParticleList();
     }
 
     private void paint(Entity e) {

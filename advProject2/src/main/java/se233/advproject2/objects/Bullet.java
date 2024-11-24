@@ -9,7 +9,6 @@ import se233.advproject2.view.GameScreen;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Bullet extends Pane {
     GameLoop game = GameLoop.getInstance();

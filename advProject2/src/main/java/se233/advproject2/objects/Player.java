@@ -2,7 +2,6 @@ package se233.advproject2.objects;
 
 import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import se233.advproject2.controller.GameLoop;
 import se233.advproject2.view.GameScreen;
