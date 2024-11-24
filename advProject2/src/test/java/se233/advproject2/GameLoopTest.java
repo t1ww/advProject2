@@ -51,9 +51,8 @@ public class GameLoopTest {
     public void testClockTick() throws InvocationTargetException,
             IllegalAccessException {
         gameLoopUnderTest = new GameLoop(new GameScreen());
-        gameLoopUnderTest.setInstance(gameLoopUnderTest);
         clockTickHelper();
-        assertNotEquals(gameLoopUnderTest.runtime, 0);
+        assertNotEquals(gameLoopUnderTest.getRuntime(), 0);
     }
     @Test
     public void testPlayerMove() throws Exception {
@@ -62,7 +61,6 @@ public class GameLoopTest {
         Platform.runLater(() -> {
             try {
                 // start anew
-                gameLoopUnderTest.setInstance(gameLoopUnderTest);
                 gameLoopUnderTest.Start();
                 // Run the game loop's step method to proceed
                 clockTickHelper();
@@ -97,9 +95,8 @@ public class GameLoopTest {
         Platform.runLater(() -> {
             try {
                 // Initialize the game loop and start it
-                gameLoopUnderTest.setInstance(gameLoopUnderTest);
                 gameLoopUnderTest.Start();
-                gameLoopUnderTest.alarm = null; // don't spawn wave
+                gameLoopUnderTest.setAlarm(null); // don't spawn wave
                 clockTickHelper();
                 Player player = gameLoopUnderTest.getPlayer();
                 while (player.starting){
@@ -119,13 +116,13 @@ public class GameLoopTest {
                 clockTickHelper();
                 gameScreenUnderTest.releaseKey(KeyCode.SPACE);
                 // Check if bullet was added to the bullet list
-                Assert.assertEquals("Expected bullet to be added to bullet list.", 1, gameLoopUnderTest.bulletList.size());
+                Assert.assertEquals("Expected bullet to be added to bullet list.", 1, gameLoopUnderTest.getB.size());
                 // steps until the bullet is gone (bullet should hit the enemy etest)
-                while (gameLoopUnderTest.bulletList.size() != 0){
+                while (gameLoopUnderTest.getBulletList().size() != 0){
                     clockTickHelper();
                 }
                 // Check if bullet was destroyed
-                Assert.assertEquals("Expected bullet to be removed from bullet list.", 0, gameLoopUnderTest.bulletList.size());
+                Assert.assertEquals("Expected bullet to be removed from bullet list.", 0, gameLoopUnderTest.getBulletList().size());
                 Assert.assertEquals("Expected no more enemy.", 0, gameLoopUnderTest.enemyCount);
 
 //                Assert.assertNotEquals("Expected score to not be 0",0, gameLoopUnderTest.getScore()); // score should be added
@@ -173,18 +170,18 @@ public class GameLoopTest {
                 gameScreenUnderTest.releaseKey(KeyCode.SPACE);
 
                 // Check if bullet was added to the bullet list
-                Assert.assertEquals("Expected bullet to be added to bullet list.", 1, gameLoopUnderTest.bulletList.size());
+                Assert.assertEquals("Expected bullet to be added to bullet list.", 1, gameLoopUnderTest.getBulletList().size());
 
                 // Wait until the bullet hits the enemy
-                while (!gameLoopUnderTest.bulletList.isEmpty()) {
+                while (!gameLoopUnderTest.getBulletList().isEmpty()) {
                     clockTickHelper();
                 }
 
                 // Check if bullet was destroyed
-                Assert.assertEquals("Expected bullet to be removed from bullet list.", 0, gameLoopUnderTest.bulletList.size());
+                Assert.assertEquals("Expected bullet to be removed from bullet list.", 0, gameLoopUnderTest.getBulletList().size());
 
                 // Check if enemy was destroyed
-                Assert.assertEquals("Expected no more enemies.", 0, gameLoopUnderTest.enemyCount);
+                Assert.assertEquals("Expected no more enemies.", 0, gameLoopUnderTest.getEnemyCount());
 
                 // Check if score was updated
                 int updatedScore = gameLoopUnderTest.getScore();
@@ -218,7 +215,7 @@ public class GameLoopTest {
                 clockTickHelper();
 
                 // Check if special bullet was added to the bullet list
-                Assert.assertEquals("Expected special bullet to be added to bullet list.", 1, gameLoopUnderTest.bulletList.size());
+                Assert.assertEquals("Expected special bullet to be added to bullet list.", 1, gameLoopUnderTest.getBulletList().size());
 
                 gameScreenUnderTest.releaseKey(KeyCode.G);
             } catch (Exception e) {

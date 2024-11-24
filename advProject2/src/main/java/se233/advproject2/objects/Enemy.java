@@ -136,7 +136,7 @@ public class Enemy extends Entity {
                 game.getEntities().remove(this);
                 // counting enemies
                 enemyCount();
-                if(game.enemyCount == 0) {
+                if(game.getEnemyCount() == 0) {
                     // start new wave
                     game.setBossWave();
                     game.spawnWaveInit(5);
@@ -160,6 +160,6 @@ public class Enemy extends Entity {
                 .filter(ent -> ent instanceof Enemy)
                 .map(ent -> (Enemy) ent)
                 .toList();
-        game.enemyCount = enemyList.size(); // recheck size
+        game.setEnemyCount(enemyList.size()); // Update enemy counts
     }
 }

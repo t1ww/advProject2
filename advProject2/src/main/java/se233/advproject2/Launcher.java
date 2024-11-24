@@ -16,8 +16,6 @@ public class Launcher extends Application {
         // create game controllers
         GameScreen p = new GameScreen();
         GameLoop gameLoop = new GameLoop(p);
-        gameLoop.setInstance(gameLoop);
-        DrawingLoop drawingLoop = new DrawingLoop(gameLoop);
         // scene
         Scene scene = new Scene(p, GameScreen.WIDTH, GameScreen.HEIGHT);
         scene.setOnKeyPressed(event-> p.pressKey(event.getCode()));
@@ -32,7 +30,7 @@ public class Launcher extends Application {
         stage.show();
         // thread
         (new Thread(gameLoop)).start();
-        (new Thread(drawingLoop)).start();
+        (new Thread(DrawingLoop.getInstance())).start();
     }
 
     public static void main(String[] args) {

@@ -12,8 +12,8 @@ import se233.advproject2.view.GameScreen;
 import java.util.Objects;
 
 public class Entity extends Pane {
-    GameLoop game = GameLoop.Instance;
-    GameScreen platform = GameLoop.Instance.platform;
+    GameLoop game = GameLoop.getInstance();
+    GameScreen platform = GameLoop.getInstance().getPlatform();
     String name;
     // init variables
     public int hp;

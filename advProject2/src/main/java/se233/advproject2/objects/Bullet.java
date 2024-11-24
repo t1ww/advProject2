@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Bullet extends Pane {
-    GameLoop game = GameLoop.Instance;
-    GameScreen platform = GameLoop.Instance.platform;
+    GameLoop game = GameLoop.getInstance();
+    GameScreen platform = GameLoop.getInstance().getPlatform();;
     Image characterImg;
     AnimatedSprite imageView;
     // default
@@ -58,7 +58,7 @@ public class Bullet extends Pane {
         this.speed = speed;
         this.checkFor = checkFor;
         this.homing = false;
-        game.bulletList.add(this);
+        game.getBulletList().add(this);
     }
     public Bullet(double x, double y, double direction, double speed, Class checkFor, int damage){
         this.x = x;
@@ -68,7 +68,7 @@ public class Bullet extends Pane {
         this.checkFor = checkFor;
         this.damage = damage;
         this.homing = false;
-        game.bulletList.add(this);
+        game.getBulletList().add(this);
         GameLoop.logger.info("created bullet");
     }
     boolean check;
@@ -160,7 +160,7 @@ public class Bullet extends Pane {
         x += hsp;
         y -= vsp;
     }
-    Player player = GameLoop.Instance.player;
+    Player player = GameLoop.getInstance().getPlayer();
     private void targetPlayer(){
         double x1 = x, y1 = y;
         double x2 = player.x, y2 = player.y - 100;

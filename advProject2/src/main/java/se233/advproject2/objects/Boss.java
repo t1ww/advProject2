@@ -164,7 +164,7 @@ public class Boss extends Enemy {
                 game.getEntities().remove(this);
                 // counting enemies
                 enemyCount();
-                if(game.enemyCount == 0) {
+                if(game.getEnemyCount() == 0) {
                     // starting new wave
                     game.setCreepsWave();
                     game.spawnWaveInit(3);
@@ -173,7 +173,7 @@ public class Boss extends Enemy {
             game.level++; // next level
             game.setScore(game.getScore()+50); // score add
             // reset phase
-            game.creationPhase = true;
+            game.setCreationPhase(true);
             System.out.println(name + " is dead");
         }else System.out.println(name + " now has " + hp + " hp");
     }

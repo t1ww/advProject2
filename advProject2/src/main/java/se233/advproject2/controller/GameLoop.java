@@ -13,34 +13,89 @@ import se233.advproject2.view.GameScreen;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class GameLoop implements Runnable {
-    public static GameLoop Instance;
-    public void setInstance(GameLoop inst){
-        Instance = inst;
-    };
-    // variables
-    public GameScreen platform;
-    public DrawingLoop drawingLoop;
+    private static GameLoop instance = null;
+    public static synchronized GameLoop getInstance()
+    {
+        return instance;
+    }
+    // Constructor
+    public GameLoop(GameScreen p) {
+        instance = this;
+        this.platform = p;
+        this.runtime = 1;
+    }
+
+    // Variables
+    private final GameScreen platform;
     public Player player;
     private final List<Entity> entities = Collections.synchronizedList(new ArrayList<>());
     private List<Enemy> enemyList = new CopyOnWriteArrayList<>();
-    public List<Bullet> bulletList = new CopyOnWriteArrayList<>();
-    public final List<Particle> particleList = new CopyOnWriteArrayList<>();
-    public final List<Collectibles> collectiblesList = new CopyOnWriteArrayList<>();
-    public int waveCD_count = 0;
-    public int level = 0;
+    private final List<Bullet> bulletList = new CopyOnWriteArrayList<>();
+    private final List<Particle> particleList = new CopyOnWriteArrayList<>();
+    private final List<Collectibles> collectiblesList = new CopyOnWriteArrayList<>();
+    private int waveCD_count = 0;
     private int score;
-    public int runtime;
-    public int enemyCount = -1;
-    public Alarm alarm;
-    public boolean creationPhase;
-    // getter setter
+    private int runtime;
+    private int enemyCount = -1;
+    private Alarm alarm;
+    private boolean creationPhase;
+    public int level = 0;
+
+    // Getter
+    public Alarm getAlarm() {
+        return alarm;
+    }
+
+    public boolean isCreationPhase() {
+        return creationPhase;
+    }
+
+    public int getRuntime() {
+        return runtime;
+    }
+
     public int getScore() {
         return score;
+    }
+
+    public int getEnemyCount() {
+        return enemyCount;
+    }
+
+    public GameScreen getPlatform() {
+        return platform;
+    }
+
+    public List<Bullet> getBulletList() {
+        return bulletList;
+    }
+
+    public List<Collectibles> getCollectiblesList() {
+        return collectiblesList;
+    }
+
+    public List<Particle> getParticleList() {
+        return particleList;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+    // Setter
+    public void setAlarm(Alarm alarm) {
+        this.alarm = alarm;
+    }
+
+    public void setCreationPhase(boolean creationPhase) {
+        this.creationPhase = creationPhase;
+    }
+
+    public void setEnemyCount(int enemyCount) {
+        this.enemyCount = enemyCount;
     }
 
     public void setScore(int score) {
@@ -50,11 +105,7 @@ public class GameLoop implements Runnable {
         }
     }
 
-    public Player getPlayer() {
-        return player;
-    }
-
-    // states
+    // States
     private enum STATE {
         PreStart, Running, End
     } public STATE gameState = STATE.PreStart;
@@ -66,11 +117,6 @@ public class GameLoop implements Runnable {
     }
     public void setBossWave(){
         gameWave = WAVE.Boss;
-    }
-    // constructor
-    public GameLoop(GameScreen p) {
-        this.platform = p;
-        this.runtime = 1;
     }
 
     /// // METHODS // ///
@@ -114,12 +160,12 @@ public class GameLoop implements Runnable {
                     }
                 }
                 case End -> {
-                    String gametime = getTime(runtime);
+                    String gameTime = getTime(runtime);
                     _x += lerp(_x, xto, .07);
                     _x2 += lerp(_x2, xto2, .05);
                     Platform.runLater(() -> {
                         platform.renderReset();
-                        platform.renderText("YOU LASTED : " + gametime, (int) _x, 300);
+                        platform.renderText("YOU LASTED : " + gameTime, (int) _x, 300);
                         platform.renderText("Game OVER, press enter to restart", (int) _x2, 330);
                         platform.renderText("SCORE : " + score, 200,360);
                     });
@@ -136,17 +182,19 @@ public class GameLoop implements Runnable {
                 });
             }
             time = System.currentTimeMillis() - time;
-            /// delay a bit based on fps
+            // Delay a bit based on delta-time
             float interval = 1000.0f / 60;
             if (time < interval) {
                 try {
                     Thread.sleep((long) (interval - time));
-                } catch (InterruptedException e) {logger.error("Interruption caught during game loop:", e);
+                } catch (InterruptedException e) {
+                    logger.error("Interruption caught during game loop:", e);
                 }
             } else {
                 try {
                     Thread.sleep((long) (interval - (interval % time)));
                 } catch (InterruptedException e) {
+                    logger.error("Interruption caught during game loop:", e);
                 }
             }
         }
@@ -154,7 +202,7 @@ public class GameLoop implements Runnable {
 
     /// // METHODS // ///
     private void step() throws Exception {
-        // small chance
+        // Small chance
         if((int)(Math.random()*30) == 1){
             // create stars (decor)
             String sprPath = "assets/blackDot.png";
@@ -170,26 +218,27 @@ public class GameLoop implements Runnable {
             }
         }
         bulletList.removeAll(bulletsToRemove);
+
         // Update entities
         for (Entity ent : entities) {
             ent.step();
         }
 
-        /// handling particles
+        // Handling particles
         synchronized(particleList) {
             for (Particle p : particleList) {
                 p.step();
             }
         }
-        /// handling Collectibles
+        // Handling Collectibles
         synchronized(collectiblesList) {
             for (Collectibles c : collectiblesList) {
                 c.step();
             }
         }
-        /// only during creeps wave
-        if(stun) { // wave stop stun
-            // count the stun
+
+        if(stun) { // Wave stop stun
+            // Count then check
             if(--stunTimer < 0){
                 stun = false;
             }
@@ -213,14 +262,16 @@ public class GameLoop implements Runnable {
         if (Alarm.countdown < 0) alarm = null;
     }
 
-    /// draw
+    // DRAW
     private void draw() throws Exception {
-        /// render setup
+        // Render reset
         platform.renderReset();
-        // draw the finish line for enemy
+
+        // Draw the finish line for enemy
         platform.renderDeadLine();
         platform.renderBullets(bulletList);
-        // draw ui
+
+        // Draw ui
         if(player != null) {
             double px = player.getX();
             double py = player.getY();
@@ -228,7 +279,7 @@ public class GameLoop implements Runnable {
             platform.renderSpecialAmmo(player.getSpecialAmmo(), px,py);
             if(!player.isNormal())platform.renderText("Ammo : " + player.getAmmo(), px + 32, py-10);
         }
-        //
+
         platform.renderText("Score : " + score, 10, 10);
         platform.renderText("Level : " + level, 10, 30);
         String time = getTime(runtime);
@@ -237,7 +288,8 @@ public class GameLoop implements Runnable {
         String spawningText = (gameWave == WAVE.Creeps) ? "A Wave of Enemy Creeps spawning in " : "Boss spawning in ";
         if (alarm != null) platform.renderText(spawningText + alarm.countdown, 150, 100);
     }
-    //// enemies handling
+
+    // Enemies handling
     public void spawnWaveInit(int count){
         alarm = new Alarm(count);
     }
@@ -260,7 +312,8 @@ public class GameLoop implements Runnable {
             }
             // move all previous enemies down
             enemiesMoveDown();
-            /// create a wave of enemies
+
+            // Create a wave of enemies
             System.out.println("spawning creep wave");
             // left wall
             for (int i = 0; i < 3; i++) {
@@ -296,55 +349,59 @@ public class GameLoop implements Runnable {
             enemy.moveDown();
         }
     }
-    // stun feature
+
+    // Stun feature
     boolean stun = false;
     int stunTimer = 0;
+
+    // Only during creeps waves
     public void stun(){
         if(gameWave == WAVE.Creeps) {
             stun = true;
             stunTimer = 60;
         }
     }
-    // game setup methods
+
+    // Game setup methods
     public void Start(){
-        // start drawing loop
-        drawingLoop.running = true;
-        // reset variables
+        // Start drawing loop
+        DrawingLoop.getInstance().running = true;
+        // Reset variables
         creationPhase = true;
         runtime = 0;level = 0;score = 0;
         waveCD_count = 0;
         enemyCount = -1;
         platform.renderReset();
-    /// / creating
-        // create player
+
+        // Create player
         player = new Player(300, 600, 32);
         entities.add(player);
-        // create enemies
+        // Create enemies
         alarm = new Alarm(1);
         gameState = STATE.Running;
         gameWave = WAVE.Creeps;
-//        gameWave = WAVE.Boss; // forcing boss for testing
-    /// / set pos to ease in from
+        // Set position coords to ease-in from
         xStart = -200;xto = 200;_x = xStart;
         xStart2 = -400;xto2 = 200;_x2 = xStart;
-    /// / log start
+        // Log "start game"
         logger.info("Game started.");
     }
     public void End(){
-    /// / clean up
-        clear(); // clear lists
-        // stop drawing loop
-        drawingLoop.running = false;
+        // Clean up
+        player = null;
+        clear_list();
+
+        // Stop drawing loop
+        DrawingLoop.getInstance().running = false;
         gameState = STATE.End;
-        // set pos to ease in from
+
+        // Set position coords to ease-in from
         xStart = -200;xto = 200;_x = xStart;
         xStart2 = -400;xto2 = 200;_x2 = xStart;
-    /// / log end
+        // Log end
         logger.info("Game ended. Lasted: " + getTime(runtime));
     }
-    public void clear(){
-        player = null;
-        // clear lists
+    public void clear_list(){
         Platform.runLater(()->{
             entities.clear();
             particleList.clear();
@@ -352,7 +409,7 @@ public class GameLoop implements Runnable {
             platform.reset();
         });
     }
-    /// misc methods
+    // Misc methods
     public String getTime(int time){
         String str = "";
         int hours = time/216000;
@@ -363,17 +420,16 @@ public class GameLoop implements Runnable {
         str = String.format("%02d:%02d:%02d", hours, minutes, seconds);
         return str;
     }
+
+    // Linear interpolation
     public double lerp(double v1, double v2, double amount){
         return (v2-v1)*amount;
     }
-    public void gameRestart(){
-        End();
-        clear();
-        Start();
-    }
+
     public List<Entity> getEntities() {
         return this.entities;
     }
+
     // logger //
     public static final Logger logger = LogManager.getLogger(GameLoop.class);
     private void logScoreChange() {

@@ -77,13 +77,13 @@ public class SpecialBullet extends Bullet {
             }
             // remove special bullets render
             Platform.runLater(() -> {
-                for (Bullet b : game.bulletList) {
+                for (Bullet b : game.getBulletList()) {
                     if (b.getClass() == SpecialBullet.class) {
                         platform.getChildren().remove(b);
                     }
                 }
                 // clear the bullets
-                game.bulletList.clear();
+                game.getBulletList().clear();
             });
             // add score
             game.setScore(game.getScore() + 10); // score add

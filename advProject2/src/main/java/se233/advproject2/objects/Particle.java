@@ -13,8 +13,8 @@ import se233.advproject2.view.GameScreen;
 import java.util.Objects;
 
 public class Particle extends Pane {
-    GameLoop game = GameLoop.Instance;
-    GameScreen platform = game.platform;
+    GameLoop game = GameLoop.getInstance();
+    GameScreen platform = game.getPlatform();
 
     private final AnimatedSprite imageView;
     private final Image particleImage;
@@ -40,7 +40,7 @@ public class Particle extends Pane {
         this.imageView.setFitHeight(height);
         this.getChildren().addAll(this.imageView);
         // setup
-        game.particleList.add(this);
+        game.getParticleList().add(this);
         Platform.runLater(() -> {
             // Add the particle to the platform's children
             platform.getChildren().addAll(this);
@@ -69,7 +69,7 @@ public class Particle extends Pane {
         this.imageView.setFitHeight(height);
         this.getChildren().addAll(this.imageView);
         // setup
-        game.particleList.add(this);
+        game.getParticleList().add(this);
         Platform.runLater(() -> {
             // Add the particle to the platform's children
             platform.getChildren().addAll(this);
@@ -109,7 +109,7 @@ public class Particle extends Pane {
     public void removeSelf(){
         logger.info("Removing particle [ Path : {}", spritePath);
         // remove from update list
-        game.particleList.remove(this);
+        game.getParticleList().remove(this);
         Platform.runLater(() -> {
             // Remove the particle to the platform's children
             platform.getChildren().remove(this);

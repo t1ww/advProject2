@@ -13,8 +13,8 @@ import java.util.Objects;
 
 public class Collectibles extends Pane {
     // controller access
-    GameLoop game = GameLoop.Instance;
-    GameScreen platform = GameLoop.Instance.platform;
+    GameLoop game = GameLoop.getInstance();
+    GameScreen platform = game.getPlatform();
     // initialise variables
     Image characterImg;
     AnimatedSprite imageView;
@@ -65,7 +65,7 @@ public class Collectibles extends Pane {
         Platform.runLater(() -> {
             // Add the entity to the platform's children
             platform.getChildren().addAll(this);
-            game.collectiblesList.add(this);
+            game.getCollectiblesList().add(this);
         });
     }
 
@@ -107,7 +107,7 @@ public class Collectibles extends Pane {
     }
     private void removeSelf(){
         // remove from update list
-        game.collectiblesList.remove(this);
+        game.getCollectiblesList().remove(this);
         Platform.runLater(() -> {
             // Remove from the platform's children (drawing)
             platform.getChildren().remove(this);
