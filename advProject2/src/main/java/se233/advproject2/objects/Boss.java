@@ -9,7 +9,7 @@ public class Boss extends Enemy {
     enum bossType {
         scatter, tracker, fast
     }
-    private bossType type;
+    private final bossType type;
     int moveCD = 180;
     int moveCD_count = 0;
     int moveCD_reduction = 0;
@@ -19,22 +19,15 @@ public class Boss extends Enemy {
     int atkCD_reduction = 0;
     double xto, yto;
     int shotsAmount;
-    // constructor
+
+    // Constructor
     public Boss (double x, double y, int size, int lvl){
         super(x, y, size, lvl, "assets/bossSprite-Sheet.png");
         xto = x;yto = y;
         this.y = -100;
         this.moveCD_reduction += Math.min(lvl, 35);
-        // random type
+        // Random type
         switch ((int)Math.floor((Math.random()*2.99999999))){
-//        switch (2){ // for force test
-            default -> {
-                hp = 90;
-                name = "scatter";
-                type = bossType.scatter;
-                this.shootCD_reduction = 150;
-                this.shotsAmount = 8+lvl;
-            }
             case 1 -> {
                 hp = 120;
                 name = "tracker";
@@ -50,6 +43,13 @@ public class Boss extends Enemy {
                 this.moveCD_reduction = 90;
                 this.shotsAmount = 1;
                 updateSprite("assets/cirnoBoss-Sheet.png");
+            }
+            default -> {
+                hp = 90;
+                name = "scatter";
+                type = bossType.scatter;
+                this.shootCD_reduction = 150;
+                this.shotsAmount = 8+lvl;
             }
         }
         logger.info("boss created : {}",name);
@@ -67,12 +67,6 @@ public class Boss extends Enemy {
         } else {
             moveCD_count++;
         }
-//        // change attack sometimes
-//        if(atkCD_count > atkCD){
-//            changeAtk();
-//        } else {
-//            atkCD_count++;
-//        }
         // if move to changed, lerp x and y to that move to
         if(xto != Math.round(x) || yto != Math.round(y)){
             x += game.lerp(x, xto, 0.05);
@@ -88,7 +82,7 @@ public class Boss extends Enemy {
                 dir += 10 * shotsAmount / 2; // buffer the direction to cover the player equally left right
                 for (int i = 0; i < shotsAmount; i++) {
                     dir -= 10;
-                    Bullet b = new Bullet(getX() + (getSize() / 2), getY() + getSize() + 5, dir, 3, Player.class);
+                    new Bullet(getX() + ((double) getSize() / 2), getY() + getSize() + 5, dir, 3, Player.class);
                 }
             }
             cdReset();
@@ -104,7 +98,7 @@ public class Boss extends Enemy {
                 int dir = -90;
                 for (int i = 0; i < shotsAmount; i++) {
                     dir -= (360 / shotsAmount);
-                    Bullet b = new Bullet(getX() + (getSize() / 2), getY() + getSize() + 5,
+                    Bullet b = new Bullet(getX() + ((double) getSize() / 2), getY() + getSize() + 5,
                             dir, 4, Player.class);
                     b.setTargetting();
                 }
@@ -120,7 +114,7 @@ public class Boss extends Enemy {
             } else {
                 // shoot faster and aim at player with small spreading
                 for (int i = 0; i < shotsAmount; i++) {
-                    Bullet b = new Bullet(getX() + (getSize() / 2), getY() + getSize() + 5,
+                    Bullet b = new Bullet(getX() + ((double) getSize() / 2), getY() + getSize() + 5,
                             targetPlayerDir()+(Math.random()*40)-20, 5, Player.class);
                 }
             }
@@ -133,7 +127,7 @@ public class Boss extends Enemy {
     //// MISC
 
     void moveCDReset(){//randomness + reduction
-        moveCD_count = (int)(Math.random()*((moveCD-moveCD_reduction)/2)) + (moveCD_reduction);
+        moveCD_count = (int)(Math.random()*((double) (moveCD - moveCD_reduction) /2)) + (moveCD_reduction);
     }
     public void move(){
         xto = 50 + (Math.random()*500);
@@ -141,7 +135,7 @@ public class Boss extends Enemy {
         moveCDReset();
     }
     void atkCDReset(){//randomness + reduction
-        atkCD_count = (int)(Math.random()*((atkCD-atkCD_reduction)/2)) + (atkCD_reduction);
+        atkCD_count = (int)(Math.random()*((double) (atkCD - atkCD_reduction) /2)) + (atkCD_reduction);
     }
     public void changeAtk(){
         if (attack == 0){
@@ -178,5 +172,5 @@ public class Boss extends Enemy {
         }else System.out.println(name + " now has " + hp + " hp");
     }
     // logger //
-    private static final Logger logger = LogManager.getLogger(Character.class);
+    private static final Logger logger = LogManager.getLogger(Boss.class);
 }
