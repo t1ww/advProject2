@@ -68,8 +68,8 @@ public class Boss extends Enemy {
         }
         // if move to changed, lerp x and y to that move to
         if(xto != Math.round(x) || yto != Math.round(y)){
-            x += game.lerp(x, xto, 0.05);
-            y += game.lerp(y, yto, 0.05);
+            x += game.linearInterpolation(x, xto, 0.05);
+            y += game.linearInterpolation(y, yto, 0.05);
         }
     }
     ///// STEPS //// FUNCTIONS ////

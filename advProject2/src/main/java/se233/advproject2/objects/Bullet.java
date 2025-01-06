@@ -18,7 +18,7 @@ public class Bullet extends Pane {
     // default
     String spritePath;
     public boolean dead = false;
-    double x, y, direction, speed;
+    double x, y, direction, moveSpeed;
     int damage = 1;
     public double getX() { return x; }
     public double getY() { return y; }
@@ -31,11 +31,11 @@ public class Bullet extends Pane {
     public void setDirection(double direction) {
         this.direction = direction;
     }
-    public double getSpeed() {
-        return speed;
+    public double getMoveSpeed() {
+        return moveSpeed;
     }
-    public void setSpeed(double speed) {
-        this.speed = speed;
+    public void setMoveSpeed(double speed) {
+        this.moveSpeed = speed;
     }
     List<Entity> hit = new ArrayList<>();
     Class checkFor;
@@ -54,7 +54,7 @@ public class Bullet extends Pane {
         this.x = x;
         this.y = y;
         this.direction = direction;
-        this.speed = speed;
+        this.moveSpeed = speed;
         this.checkFor = checkFor;
         this.homing = false;
         game.getBulletList().add(this);
@@ -63,7 +63,7 @@ public class Bullet extends Pane {
         this.x = x;
         this.y = y;
         this.direction = direction;
-        this.speed = speed;
+        this.moveSpeed = speed;
         this.checkFor = checkFor;
         this.damage = damage;
         this.homing = false;
@@ -153,8 +153,8 @@ public class Bullet extends Pane {
         }
         // handling
         double angleRad = Math.toRadians(direction);
-        double hsp = Math.cos(angleRad) * speed;
-        double vsp = Math.sin(angleRad) * speed;
+        double hsp = Math.cos(angleRad) * moveSpeed;
+        double vsp = Math.sin(angleRad) * moveSpeed;
         // update pos
         x += hsp;
         y -= vsp;

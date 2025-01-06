@@ -85,8 +85,8 @@ public class Player extends Entity {
     public void step() throws ConcurrentModificationException {
         if (starting) {
             // ease in player when starting
-            x += game.lerp(x, startX, 0.1);
-            y += game.lerp(y, startY, 0.1);
+            x += game.linearInterpolation(x, startX, 0.1);
+            y += game.linearInterpolation(y, startY, 0.1);
             if (Math.round(x) == startX && Math.round(y) == startY) {
                 System.out.println("player ready, game started");
                 starting = false;

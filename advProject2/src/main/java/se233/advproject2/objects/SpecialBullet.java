@@ -40,10 +40,10 @@ public class SpecialBullet extends Bullet {
     public void move(){
         // Handling
         double angleRad = Math.toRadians(direction);
-        double horizontalSpeed = Math.cos(angleRad) * speed;
-        double verticalSpeed = Math.sin(angleRad) * speed;
+        double horizontalSpeed = Math.cos(angleRad) * moveSpeed;
+        double verticalSpeed = Math.sin(angleRad) * moveSpeed;
         // slow down the speed
-        speed += game.lerp(speed, 0, .1);
+        moveSpeed += game.linearInterpolation(moveSpeed, 0, .1);
         // update pos
         x += horizontalSpeed;
         y -= verticalSpeed;

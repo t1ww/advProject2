@@ -95,7 +95,7 @@ public class Particle extends Pane {
         double horizontalSpeed = Math.cos(angleRad) * speed;
         double verticalSpeed = Math.sin(angleRad) * speed;
         // slow down the speed
-        if(!isAnimated)speed += game.lerp(speed, speedMin, .1);
+        if(!isAnimated)speed += game.linearInterpolation(speed, speedMin, .1);
         // update pos
         x += horizontalSpeed;
         y -= verticalSpeed;

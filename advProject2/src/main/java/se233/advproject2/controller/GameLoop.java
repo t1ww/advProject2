@@ -130,8 +130,8 @@ public class GameLoop implements Runnable {
             float time = System.currentTimeMillis();
             switch (gameState){
                 case PreStart -> {
-                    _x += lerp(_x, xto, .07);
-                    _x2 += lerp(_x2, xto2, .05);
+                    _x += linearInterpolation(_x, xto, .07);
+                    _x2 += linearInterpolation(_x2, xto2, .05);
                     platform.renderReset();
                     // key instruction
                     String str = """
@@ -161,8 +161,8 @@ public class GameLoop implements Runnable {
                 }
                 case End -> {
                     String gameTime = getTime(runtime);
-                    _x += lerp(_x, xto, .07);
-                    _x2 += lerp(_x2, xto2, .05);
+                    _x += linearInterpolation(_x, xto, .07);
+                    _x2 += linearInterpolation(_x2, xto2, .05);
                     Platform.runLater(() -> {
                         platform.renderReset();
                         platform.renderText("YOU LASTED : " + gameTime, (int) _x, 300);
@@ -422,7 +422,8 @@ public class GameLoop implements Runnable {
     }
 
     // Linear interpolation
-    public double lerp(double v1, double v2, double amount){
+    // : returns the number between 2 values (range 0 - 1)
+    public double linearInterpolation(double v1, double v2, double amount){
         return (v2-v1)*amount;
     }
 
