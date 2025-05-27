@@ -26,8 +26,8 @@ public class Boss extends Enemy {
         this.y = -100;
         this.moveCD_reduction += Math.min(lvl, 35);
         // random type
-        switch ((int)Math.floor((Math.random()*2.99999999))){
-//        switch (2){ // for force test
+//        switch ((int)Math.floor((Math.random()*2.99999999))){
+        switch (1){ // for force test
             default -> {
                 hp = 90;
                 name = "scatter";
