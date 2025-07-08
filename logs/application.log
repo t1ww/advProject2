@@ -2769,3 +2769,147 @@
 [ INFO] Tue 2025-05-27 14:36:43 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
 [ INFO] Tue 2025-05-27 14:36:43 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
 [ INFO] Tue 2025-05-27 14:36:43 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:03 [Thread-3] GameLoop.(Line - ) - Game started.
+[ INFO] Wed 2025-05-28 14:07:09 [JavaFX Application Thread] GameLoop.(Line - ) - x:300.498575737538 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:10 [JavaFX Application Thread] GameLoop.(Line - ) - x:228.49857573753798 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:11 [JavaFX Application Thread] GameLoop.(Line - ) - x:186.49857573753798 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:12 [JavaFX Application Thread] GameLoop.(Line - ) - x:120.49857573753798 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Wed 2025-05-28 14:07:12 [JavaFX Application Thread] GameLoop.(Line - ) - x:153.49857573753798 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:13 [JavaFX Application Thread] GameLoop.(Line - ) - x:75.49857573753798 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:13 [JavaFX Application Thread] GameLoop.(Line - ) - x:18.498575737537976 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Wed 2025-05-28 14:07:14 [JavaFX Application Thread] GameLoop.(Line - ) - x:132.49857573753798 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Wed 2025-05-28 14:07:15 [JavaFX Application Thread] GameLoop.(Line - ) - x:162.49857573753798 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Wed 2025-05-28 14:07:16 [JavaFX Application Thread] GameLoop.(Line - ) - x:204.49857573753798 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Wed 2025-05-28 14:07:17 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:18 [JavaFX Application Thread] GameLoop.(Line - ) - x:330.498575737538 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Wed 2025-05-28 14:07:18 [JavaFX Application Thread] GameLoop.(Line - ) - x:375.498575737538 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Wed 2025-05-28 14:07:19 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:19 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:20 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:20 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:20 [JavaFX Application Thread] GameLoop.(Line - ) - x:441.498575737538 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:20 [JavaFX Application Thread] GameLoop.(Line - ) - x:420.498575737538 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Wed 2025-05-28 14:07:20 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:21 [JavaFX Application Thread] GameLoop.(Line - ) - x:495.498575737538 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:21 [JavaFX Application Thread] GameLoop.(Line - ) - x:474.498575737538 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:21 [JavaFX Application Thread] GameLoop.(Line - ) - created bullet
+[ INFO] Wed 2025-05-28 14:07:21 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:468.498575737538 y:600.2183367514396
+[ INFO] Wed 2025-05-28 14:07:21 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:21 [JavaFX Application Thread] GameLoop.(Line - ) - created bullet
+[ INFO] Wed 2025-05-28 14:07:21 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:420.498575737538 y:600.2183367514396
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - created bullet
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:372.498575737538 y:600.2183367514396
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - hp:2
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - created bullet
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:324.498575737538 y:600.2183367514396
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 1
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - hit enemy, score added
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - created bullet
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:276.498575737538 y:600.2183367514396
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 2
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - hit enemy, score added
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:22 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - created bullet
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:228.49857573753798 y:600.2183367514396
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 3
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - hit enemy, score added
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - x:198.49857573753798 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - created bullet
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:207.49857573753798 y:600.2183367514396
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 4
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - hit enemy, score added
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - created bullet
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - shot fired at x:249.49857573753798 y:600.2183367514396
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 5
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - hit enemy, score added
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/shotSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 6
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - hit enemy, score added
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:23 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Score has been updated to: 7
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - hit enemy, score added
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/bulletFlashSprite-Sheet.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - x:249.49857573753798 y:600.2183367514396 left:false right:true sprint:false
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:24 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:25 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:25 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:25 [JavaFX Application Thread] GameLoop.(Line - ) - x:279.498575737538 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:25 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:25 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:25 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:25 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:25 [JavaFX Application Thread] GameLoop.(Line - ) - x:252.49857573753798 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:25 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/debris.png
+[ INFO] Wed 2025-05-28 14:07:25 [JavaFX Application Thread] GameLoop.(Line - ) - player now using homing gun
+[ INFO] Wed 2025-05-28 14:07:26 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:26 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:26 [JavaFX Application Thread] GameLoop.(Line - ) - x:213.49857573753798 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:27 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:28 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:28 [JavaFX Application Thread] GameLoop.(Line - ) - x:174.49857573753798 y:600.2183367514396 left:true right:false sprint:false
+[ INFO] Wed 2025-05-28 14:07:28 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:29 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:29 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:30 [JavaFX Application Thread] GameLoop.(Line - ) - Removing particle [ Path : assets/blackDot.png
+[ INFO] Wed 2025-05-28 14:07:30 [JavaFX Application Thread] GameLoop.(Line - ) - hp:1
+[ INFO] Wed 2025-05-28 14:07:30 [JavaFX Application Thread] GameLoop.(Line - ) - hp:0
+[ INFO] Wed 2025-05-28 14:07:30 [JavaFX Application Thread] GameLoop.(Line - ) - Game ended. Lasted: 00:00:27

@@ -13,7 +13,7 @@ public class Launcher extends Application {
     public void start(Stage stage) {
         // Initialize Log4j 3 using the configuration file
         System.setProperty("log4j.configurationFile", "log4j2.yaml");
-        // create game controllers
+        // create game controllers  
         GameScreen p = new GameScreen();
         GameLoop gameLoop = new GameLoop(p);
         gameLoop.setInstance(gameLoop);
